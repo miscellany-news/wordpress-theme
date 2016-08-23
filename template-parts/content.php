@@ -1,42 +1,48 @@
 <?php
 /**
- * Template part for displaying post or page content
- */
- ?>
+* Template part for displaying post or page content
+*/
+?>
 
- <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-   <header>
-     <h1><a href="<?php the_permalink();?>" rel="bookmark"><?php the_title();?></a></h1>
-     <p>By: <?php the_author_link(); ?></p>
-     <p>Posted On: <time datetime="<?php the_date('Y-m-d');?>"><?php the_time('F j, Y');?></time></p>
-   </header>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+  <header>
+    <?php if( get_the_title() ) : ?>
+      <h1><a href="<?php the_permalink();?>" rel="bookmark"><?php the_title();?></a></h1>
+    <?php else : ?>
+      <p><a href="<?php the_permalink();?>" rel="bookmark">Permalink</a></p>
+    <?php endif;?>
 
-  <?php
-    // check if the post has a Post Thumbnail assigned to it.
-    if ( has_post_thumbnail() ) : ?>
+    <p>By: <?php the_author_link(); ?></p>
+    <p>Posted On: <time datetime="<?php the_date('Y-m-d');?>"><?php the_time('F j, Y');?></time></p>
 
-    <figure>
-      <?php
-      the_post_thumbnail();
+  </header>
 
-      $thumbnail_caption = get_post(get_post_thumbnail_id())->post_excerpt;
+<?php
+// check if the post has a Post Thumbnail assigned to it.
+if ( has_post_thumbnail() ) : ?>
 
-      if ($thumbnail_caption) : ?>
-        <figcaption>
-          <?php echo $thumbnail_caption; ?>
-        </figcaption>
-      <?php endif;?>
-    </figure>
+<figure>
+<?php
+the_post_thumbnail();
 
-    <?php
-    endif;
+$thumbnail_caption = get_post(get_post_thumbnail_id())->post_excerpt;
 
-    the_content();
+if ($thumbnail_caption) : ?>
+<figcaption>
+<?php echo $thumbnail_caption; ?>
+</figcaption>
+<?php endif;?>
+</figure>
 
-    wp_link_pages( array(
-      'before' => '<nav class="link-pages">',
-      'after'  => '</nav>',
-    ));
-  ?>
+<?php
+endif;
 
- </article>
+the_content();
+
+wp_link_pages( array(
+'before' => '<nav class="link-pages">',
+'after'  => '</nav>',
+));
+?>
+
+</article>
