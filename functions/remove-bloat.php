@@ -4,7 +4,7 @@
 /*
  * Remove some bloat from the <head> tag
  */
-function cleanup_head() {
+function themiscellanynews_cleanup_head() {
   remove_action( 'wp_head', 'rsd_link' ); // EditURI link
   remove_action( 'wp_head', 'feed_links_extra', 3 ); // Category feed links
   remove_action( 'wp_head', 'feed_links', 2 ); // Post and comment feed links
@@ -18,10 +18,9 @@ function cleanup_head() {
   remove_action( 'wp_head', 'wp_generator' ); // WP version
 
 }
-
-function start_cleanup() {
-// Initialize the cleanup
-add_action('init', 'cleanup_head');
+function themiscellanynews_start_cleanup() {
+  // Initialize the cleanup
+  add_action('init', 'cleanup_head');
 }
 add_action('after_setup_theme','start_cleanup');
 
