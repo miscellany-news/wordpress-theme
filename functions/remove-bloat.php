@@ -20,9 +20,9 @@ function themiscellanynews_cleanup_head() {
 }
 function themiscellanynews_start_cleanup() {
   // Initialize the cleanup
-  add_action('init', 'cleanup_head');
+  add_action('init', 'themiscellanynews_cleanup_head');
 }
-add_action('after_setup_theme','start_cleanup');
+add_action('after_setup_theme','themiscellanynews_start_cleanup');
 
 
 
