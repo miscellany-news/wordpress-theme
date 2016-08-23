@@ -17,6 +17,12 @@ function themiscellanynews_register_required_plugins() {
 			'required'  => false,
 		),
 
+		array(
+			'name'			=> 'W3 Total Cache',
+			'slug'      => 'w3-total-cache',
+			'required'  => false,
+		),
+
 	);
 
 	$config = array(
