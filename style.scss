@@ -13,11 +13,14 @@ Text Domain: themiscellanynews
 /* CSS Reset */
 @import url("css/reset.css");
 
+/* Wordpress-specific */
+@import "css/wordpress";
+
 // Sass Variables
 @import "css/global-variables";
 
 /* Typography */
 @import "css/typography";
 
-/* Wordpress-specific */
-@import "css/wordpress";
+/* Image Styling */
+@import "css/images";
