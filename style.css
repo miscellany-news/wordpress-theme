@@ -88,6 +88,7 @@ dt { display: block; }
 
 ol ul, ul ol, ul ul, ol ol { margin: 0; }
 
+/* Wordpress-specific */
 /* Don't display screen reader text */
 .screen-reader-text { display: none; }
 

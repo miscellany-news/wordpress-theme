@@ -1,0 +1,14 @@
+/* Don't display screen reader text */
+.screen-reader-text {
+	display: none;
+}
+
+/* Recommended for content width https://codex.wordpress.org/Content_Width */
+.size-auto,
+.size-full,
+.size-large,
+.size-medium,
+.size-thumbnail {
+	max-width: 100%;
+	height: auto;
+}
