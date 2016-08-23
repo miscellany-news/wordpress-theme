@@ -1,5 +1,5 @@
 body {
-  font-family: serif;
+  font-family: $regular-text;
   font-size: 100%;
   font-weight: normal;
   line-height: 1.2;
@@ -8,6 +8,19 @@ body {
 
 p {
   margin: 1em 0;
+}
+
+a {
+  color: $link-color;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:visited {
+  color: $link-visited;
 }
 
 blockquote {
@@ -41,13 +54,12 @@ i, cite, em, var, address, dfn {
     font-style: italic;
 }
 
-tt, code, kbd, samp {
-    font-family: monospace;
+tt, code, kbd, samp, pre {
+    font-family: $monospace;
 }
 
 pre {
     display: block;
-    font-family: monospace;
     white-space: pre;
     margin: 1em 0;
     width: 100%;
