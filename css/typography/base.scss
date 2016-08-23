@@ -4,6 +4,8 @@ body {
   font-weight: normal;
   line-height: 1.2;
   -webkit-font-smoothing: antialiased;
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
 }
 
 p {
