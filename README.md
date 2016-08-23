@@ -4,3 +4,4 @@ The custom Wordpress theme for Vassar's student newspaper, The Miscellany News
 ## Reminders when Installing
 
  - USE CLOUDFLARE
+ - Disable pingbacks and trackbacks
