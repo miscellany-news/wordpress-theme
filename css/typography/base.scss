@@ -1,0 +1,82 @@
+html {
+  font-family: serif;
+  font-size: 100%;
+  font-weight: normal;
+  line-height: 1.2em;
+  -webkit-font-smoothing: antialiased;
+}
+
+p {
+  margin: 1em 0;
+}
+
+blockquote {
+  margin: 1em 2.5em;
+}
+
+q::before {
+  content: open-quote;
+}
+
+q::after {
+  content: close-quote;
+}
+
+hr {
+    display: block;
+    margin: .5em auto;
+    border-style: inset;
+    border-width: 1px;
+}
+
+u, ins {
+    text-decoration: underline;
+}
+
+strong, b {
+    font-weight: bold;
+}
+
+i, cite, em, var, address, dfn {
+    font-style: italic;
+}
+
+tt, code, kbd, samp {
+    font-family: monospace;
+}
+
+pre {
+    display: block;
+    font-family: monospace;
+    white-space: pre;
+    margin: 1em 0;
+    width: 100%;
+    overflow: scroll;
+}
+
+mark {
+    background-color: yellow;
+    color: black;
+}
+
+big {
+    font-size: larger;
+}
+
+small {
+    font-size: smaller;
+}
+
+s, strike, del {
+    text-decoration: line-through;
+}
+
+sub {
+    vertical-align: sub;
+    font-size: smaller;
+}
+
+sup {
+    vertical-align: super;
+    font-size: smaller;
+}

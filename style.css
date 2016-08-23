@@ -9,21 +9,87 @@ License: GNU General Public License v3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: themiscellanynews
 */
+/* CSS Reset */
+@import url("css/reset.css");
+/* SASS Variables */
+/* 480px / 16px */
+/* 768px / 16px */
+/* 900px / 16px */
+/* Typography */
+html { font-family: serif; font-size: 100%; font-weight: normal; line-height: 1.2em; -webkit-font-smoothing: antialiased; }
 
-/* NORMALIZE */
-@import url("css/normalize.css");
+p { margin: 1em 0; }
+
+blockquote { margin: 1em 2.5em; }
+
+q::before { content: open-quote; }
+
+q::after { content: close-quote; }
+
+hr { display: block; margin: .5em auto; border-style: inset; border-width: 1px; }
+
+u, ins { text-decoration: underline; }
+
+strong, b { font-weight: bold; }
+
+i, cite, em, var, address, dfn { font-style: italic; }
+
+tt, code, kbd, samp { font-family: monospace; }
+
+pre { display: block; font-family: monospace; white-space: pre; margin: 1em 0; width: 100%; overflow: scroll; }
+
+mark { background-color: yellow; color: black; }
+
+big { font-size: larger; }
+
+small { font-size: smaller; }
+
+s, strike, del { text-decoration: line-through; }
+
+sub { vertical-align: sub; font-size: smaller; }
+
+sup { vertical-align: super; font-size: smaller; }
+
+h1, h2, h3, h4, h5, h6 { font-weight: bold; margin: .67em 0; }
+
+h1 { margin-top: 0; font-size: 2em; }
+
+article h1, aside h1, nav h1, section h1 { font-size: 1.5em; margin: .83em 0; }
+
+h2 { font-size: 1.5em; margin: .83em 0; }
+
+h3 { font-size: 1.17em; margin: 1em 0; }
+
+h4 { font-size: 1em; margin: 1.33em 0; }
+
+h5 { font-size: .83em; margin: 1.67em 0; }
+
+h6 { font-size: .67em; margin: 2.33em 0; }
+
+table { display: table; }
+
+ul, menu, dir { display: block; list-style-type: disc; margin: 1em 0; padding-left: 2.5em; }
+
+ol { display: block; list-style-type: decimal; margin: 1em 0; padding-left: 2.5em; }
+
+li { display: list-item; }
+
+ul ul, ol ul { list-style-type: circle; }
+
+ol ol ul, ol ul ul, ul ol ul, ul ul ul { list-style-type: square; }
+
+dd { display: block; padding-left: 2.5em; }
+
+dl { display: block; margin: 1em 0; }
+
+dt { display: block; }
+
+ol ul, ul ol, ul ul, ol ol { margin: 0; }
 
 /* Don't display screen reader text */
-.screen-reader-text {
-	display: none;
-}
+.screen-reader-text { display: none; }
 
 /* Recommended for content width https://codex.wordpress.org/Content_Width */
-.size-auto,
-.size-full,
-.size-large,
-.size-medium,
-.size-thumbnail {
-	max-width: 100%;
-	height: auto;
-}
+.size-auto, .size-full, .size-large, .size-medium, .size-thumbnail { max-width: 100%; height: auto; }
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,35 @@
+/*
+Theme Name: The Miscellany News
+Theme URI: http://www.miscellanynews.org/
+Author: George Witteman & The Miscellany News
+Author URI: http://www.georgewitteman.me/
+Description: This is the official theme for Vassar's student newspaper, The Miscellany News.
+Version: 0.1.0
+License: GNU General Public License v3
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Text Domain: themiscellanynews
+*/
+
+/* CSS Reset */
+@import url("css/reset.css");
+
+/* SASS Variables */
+@import "css/global-variables";
+
+/* Typography */
+@import "css/typography";
+
+/* Don't display screen reader text */
+.screen-reader-text {
+	display: none;
+}
+
+/* Recommended for content width https://codex.wordpress.org/Content_Width */
+.size-auto,
+.size-full,
+.size-large,
+.size-medium,
+.size-thumbnail {
+	max-width: 100%;
+	height: auto;
+}
