@@ -18,3 +18,5 @@ wp-content/plugins/hello.php
 
 .sass-cache/
 *.css.map
+
+.DS_Store
