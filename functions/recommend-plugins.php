@@ -15,13 +15,13 @@ function themiscellanynews_register_required_plugins() {
 			'name'      => 'Disable Emojis',
 			'slug'      => 'disable-emojis',
 			'required'  => false,
-		),
+		)/*,
 
 		array(
 			'name'			=> 'W3 Total Cache',
 			'slug'      => 'w3-total-cache',
 			'required'  => false,
-		),
+		),*/
 
 	);
 
