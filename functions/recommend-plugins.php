@@ -15,6 +15,12 @@ function themiscellanynews_register_required_plugins() {
 			'name'      => 'Disable Emojis',
 			'slug'      => 'disable-emojis',
 			'required'  => false,
+		),
+		
+		array(
+			'name'      => 'Co-Authors Plus',
+			'slug'      => 'co-authors-plus',
+			'required'  => false,
 		)/*,
 
 		array(
