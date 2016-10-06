@@ -37,7 +37,7 @@ $media_credit = get_media_credit(get_post_thumbnail_id($post));
 if($media_credit != " " || $media_credit != "") :
 ?>
 <span class="media-credit">
-<?php the_media_credit(get_post_thumbnail_id($post)); ?>
+<?php the_media_credit_html(get_post_thumbnail_id($post)); ?>
 </span>
 <?php
 endif;
