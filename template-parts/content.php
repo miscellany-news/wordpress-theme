@@ -11,19 +11,36 @@
     <?php else : ?>
       <p><a href="<?php the_permalink();?>" rel="bookmark">Permalink</a></p>
     <?php endif;?>
-
-    <p>By: <?php the_author_link(); ?></p>
+		
+    <p>By: 
+			<?php
+			if ( function_exists( 'coauthors_posts_links' ) ) {
+				coauthors_posts_links();
+			} else {
+				the_author_link();
+			}?>
+		</p>
     <p>Posted On: <time datetime="<?php the_date('Y-m-d');?>"><?php the_time('F j, Y');?></time></p>
 
   </header>
 
 <?php
-// check if the post has a Post Thumbnail assigned to it.
-if ( has_post_thumbnail() ) : ?>
+
+if (has_post_thumbnail()) : ?>
 
 <figure>
 <?php
 the_post_thumbnail();
+
+$media_credit = get_media_credit(get_post_thumbnail_id($post));
+
+if($media_credit != " " || $media_credit != "") :
+?>
+<span class="media-credit">
+<?php the_media_credit(get_post_thumbnail_id($post)); ?>
+</span>
+<?php
+endif;
 
 $thumbnail_caption = get_post(get_post_thumbnail_id())->post_excerpt;
 
@@ -33,7 +50,6 @@ if ($thumbnail_caption) : ?>
 </figcaption>
 <?php endif;?>
 </figure>
-
 <?php
 endif;
 

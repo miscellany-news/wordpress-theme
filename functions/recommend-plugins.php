@@ -21,6 +21,12 @@ function themiscellanynews_register_required_plugins() {
 			'name'      => 'Co-Authors Plus',
 			'slug'      => 'co-authors-plus',
 			'required'  => false,
+		),
+		
+		array(
+			'name'      => 'Media Credit',
+			'slug'      => 'media-credit',
+			'required'  => false,
 		)/*,
 
 		array(
