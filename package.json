@@ -1,0 +1,15 @@
+{
+  "name": "themiscellanynews",
+  "version": "1.0.0",
+  "description": "The custom Wordpress theme for Vassar's student newspaper, The Miscellany News",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/georgewitteman/themiscellanynews.git"
+  },
+	"license": "GPL-3.0",
+  "author": "George Witteman",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.3.2"
+  }
+}

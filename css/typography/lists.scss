@@ -1,15 +1,11 @@
-ul, menu, dir {
+ul, menu, ol {
     display: block;
     list-style-type: disc;
-    margin: 1em 0;
-    padding-left: 2.5em;
+    padding: 1em 0 1em 2.5em;
 }
 
 ol {
-    display: block;
     list-style-type: decimal;
-    margin: 1em 0;
-    padding-left: 2.5em;
   }
 
 li {

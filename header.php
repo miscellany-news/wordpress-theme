@@ -8,7 +8,7 @@
 </head>
 <body <?php body_class(); ?>>
 
-  <header>
+  <header class="header-main">
 		<div class="aux-header">
 		  <?php wp_nav_menu( array(
 		    'theme_location' => 'auxiliary-menu',
