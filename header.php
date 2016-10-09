@@ -16,6 +16,7 @@
 				'menu_id' => 'aux-nav-1',
 		    'container_class' => 'aux-navigation'
 		  )); ?>
+			<?php get_search_form() ?>
 		</div>
 		<a href="#main-nav-1" class="screen-reader-text">Skip to navigation</a>
     <h1><a href="<?php echo esc_url( home_url( '/' ) );?>"><?php bloginfo("name"); ?></a></h1>
