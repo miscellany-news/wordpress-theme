@@ -1,8 +1,8 @@
 body {
   font-family: $serif;
-  font-size: 100%;
+  font-size: $base-font-size;
   font-weight: normal;
-  line-height: 1.2;
+  line-height: $base-line-height;
   -webkit-font-smoothing: antialiased;
   -ms-word-wrap: break-word;
   word-wrap: break-word;
