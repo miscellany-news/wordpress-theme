@@ -483,11 +483,7 @@ a img.aligncenter {
 body {
   font-family: Georgia, serif;
   font-size: 1em;
-  font-weight: normal;
-  line-height: 1.4em;
-  -webkit-font-smoothing: antialiased;
-  -ms-word-wrap: break-word;
-  word-wrap: break-word; }
+  line-height: 1.4em; }
 
 p {
   margin: 1em 0; }
@@ -636,4 +632,32 @@ img {
 
 /* Header styles */
 .header-main {
-  background-color: #7e0308; }
+  background-color: #7e0308;
+  height: 48px;
+  line-height: 48px; }
+
+.header-main .header-logo {
+  display: block;
+  margin: 0 auto;
+  width: 241px;
+  height: 24px;
+  padding-top: 6px; }
+
+.header-main .header-menu {
+  display: block;
+  height: 0;
+  width: 0;
+  overflow: hidden; }
+
+.header-main .header-menu:before {
+  content: ' ';
+  display: block;
+  background: url("images/hamburger.png");
+  background-size: 20px 18px;
+  width: 20px;
+  height: 18px;
+  position: absolute;
+  right: 17px;
+  top: 15px; }
+
+/* Menu styles */
