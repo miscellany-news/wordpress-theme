@@ -49,6 +49,7 @@ add_action( 'after_setup_theme', 'themiscellanynews_setup' );
  */
 function themiscellanynews_register_menu() {
   register_nav_menu( 'primary-menu', 'Primary Menu' );
+	register_nav_menu( 'auxiliary-menu', 'Auxiliary Menu' );
 }
 add_action( 'init', 'themiscellanynews_register_menu' );
 
