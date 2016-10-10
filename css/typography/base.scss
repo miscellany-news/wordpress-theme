@@ -1,11 +1,11 @@
 body {
   font-family: $serif;
   font-size: $base-font-size;
-  line-height: $base-line-height;
 }
 
 p {
   margin: 1em 0;
+	line-height: $base-line-height;
 }
 
 a {

@@ -57,10 +57,9 @@ add_action( 'init', 'themiscellanynews_register_menu' );
  * Enqueue scripts and styles.
  */
 function themiscellanynews_scripts() {
-
   /* Add main Stylesheet */
 	wp_enqueue_style("core", get_stylesheet_uri() );
-
+	wp_enqueue_script("menu", get_template_directory_uri() . '/javascript/menu.js');
 }
 add_action("wp_enqueue_scripts", "themiscellanynews_scripts");
 ?>

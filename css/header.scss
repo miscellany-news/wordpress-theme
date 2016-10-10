@@ -1,15 +1,20 @@
 .header-main {
 	background-color: $vc-burgundy;
-	height: 48px;
-	line-height: 48px;
+	background-image: url("images/seal.svg");
+	background-repeat: no-repeat;
+	background-position: 20% 30%;
 }
 
 .header-main .header-logo {
 	display: block;
 	margin: 0 auto;
-	width: 241px;
-	height: 24px;
   padding-top: 6px;
+	text-align: center;
+	padding: 1em 0;
+}
+
+.header-main .header-logo img {
+	width: 300px;
 }
 
 .header-main .header-menu {

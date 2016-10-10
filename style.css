@@ -482,11 +482,11 @@ a img.aligncenter {
 /* Typography */
 body {
   font-family: Georgia, serif;
-  font-size: 1em;
-  line-height: 1.4em; }
+  font-size: 1em; }
 
 p {
-  margin: 1em 0; }
+  margin: 1em 0;
+  line-height: 1.4em; }
 
 a {
   color: #1a0dab;
@@ -555,74 +555,10 @@ sup {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Helvetica Neue", Helvetica, sans-serif;
-  font-weight: bold;
-  margin: 0; }
-
-h1 {
-  margin-bottom: .5em;
-  font-size: 2.25em; }
-
-article h1,
-aside h1,
-nav h1,
-section h1 {
-  font-size: 2em;
-  margin: .67em 0; }
-
-h2 {
-  font-size: 1.5em;
-  margin: .83em 0; }
-
-h3 {
-  font-size: 1.17em;
-  margin: 1em 0; }
-
-h4 {
-  font-size: 1em;
-  margin: 1.33em 0; }
-
-h5 {
-  font-size: .83em;
-  margin: 1.67em 0; }
-
-h6 {
-  font-size: .67em;
-  margin: 2.33em 0; }
+  font-weight: bold; }
 
 table {
   display: table; }
-
-ul, menu, ol {
-  display: block;
-  list-style-type: disc;
-  padding: 1em 0 1em 2.5em;
-  margin: 0; }
-
-ol {
-  list-style-type: decimal; }
-
-li {
-  display: list-item; }
-
-ul ul, ol ul {
-  list-style-type: circle; }
-
-ol ol ul, ol ul ul, ul ol ul, ul ul ul {
-  list-style-type: square; }
-
-dd {
-  display: block;
-  padding-left: 2.5em; }
-
-dl {
-  display: block;
-  margin: 1em 0; }
-
-dt {
-  display: block; }
-
-ol ul, ul ol, ul ul, ol ol {
-  margin: 0; }
 
 /* Image Styling */
 img {
@@ -632,16 +568,20 @@ img {
 
 /* Header styles */
 .header-main {
-  background-color: #7e0308;
-  height: 48px;
-  line-height: 48px; }
+  background-color: #8C0309;
+  background-image: url("images/seal.svg");
+  background-repeat: no-repeat;
+  background-position: 20% 30%; }
 
 .header-main .header-logo {
   display: block;
   margin: 0 auto;
-  width: 241px;
-  height: 24px;
-  padding-top: 6px; }
+  padding-top: 6px;
+  text-align: center;
+  padding: 1em 0; }
+
+.header-main .header-logo img {
+  width: 300px; }
 
 .header-main .header-menu {
   display: block;
@@ -661,3 +601,16 @@ img {
   top: 15px; }
 
 /* Menu styles */
+.navigation .hidden {
+  display: none; }
+
+#sections-button {
+  display: block;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  background-color: #eee;
+  border-bottom: 1px solid #ddd;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  color: #111;
+  text-decoration: none; }
