@@ -480,6 +480,11 @@ a img.aligncenter {
   /* Above WP toolbar. */ }
 
 /* Sass Variables */
+/* Import some useful helper classes */
+.clear {
+  clear: both;
+  display: block; }
+
 /* Grid */
 .container {
   max-width: 56.25em;
@@ -488,7 +493,7 @@ a img.aligncenter {
 
 /* Typography */
 body {
-  font-family: Georgia, serif;
+  font-family: Palatino, serif;
   font-size: 1em; }
 
 p {
@@ -561,7 +566,7 @@ sup {
   font-size: smaller; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-family: Palatino, serif;
   font-weight: bold; }
 
 table {
@@ -576,11 +581,12 @@ img {
 /* Header styles */
 .header-main {
   background-color: #8C0309; }
-  .header-main .container {
+  .header-main .header-image {
     background-image: url("images/seal.svg");
     background-size: 200px 200px;
     background-repeat: no-repeat;
-    background-position: 10% -5%; }
+    background-position: 10% 5%;
+    padding-top: 10px; }
   .header-main .under-logo {
     display: none; }
   .header-main .header-logo {
@@ -597,10 +603,10 @@ img {
   .header-main .under-logo {
     display: block;
     text-align: center;
-    font-family: "Helvetica Neue", Helvetica, sans-serif;
-    padding-bottom: 10px;
+    font-family: -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding-bottom: 1em;
     color: white;
-    font-size: .75em;
+    font-size: .7em;
     font-weight: 300; }
     .header-main .under-logo em {
       font-weight: bold;
@@ -610,11 +616,40 @@ img {
     width: 500px;
     padding: 0; } }
 
+/* Search styles */
+.search-form {
+  font-family: -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: .7em;
+  width: 200px; }
+  .search-form label {
+    width: 150px;
+    display: inline-block;
+    float: left;
+    box-sizing: border-box; }
+  .search-form input {
+    box-sizing: border-box;
+    display: inline-block;
+    background: transparent;
+    float: right;
+    border: 0;
+    margin: 0;
+    border-radius: 3px 0 0 3px;
+    outline: none;
+    color: #fff;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.2); }
+  .search-form input.search-submit {
+    margin: 0;
+    width: 50px;
+    cursor: pointer;
+    border-radius: 0 3px 3px 0;
+    background-color: rgba(0, 0, 0, 0.4); }
+
 /* Menu styles */
 .main-navigation {
   background-color: #eee;
   border-bottom: 1px solid #ddd;
-  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-family: -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-align: center; }
 
 #sections-button {
@@ -680,19 +715,23 @@ img {
       background-color: #ddd;
       border-radius: 0; }
   .aux-menu {
-    padding-top: 5px; }
+    padding: 3px 0;
+    display: block;
+    background: rgba(0, 0, 0, 0.1); }
     .aux-menu ul {
       display: block;
       margin: 0;
       padding: 0;
       list-style-type: none; }
       .aux-menu ul li {
-        float: left; }
+        float: left;
+        margin-top: 3px; }
         .aux-menu ul li a {
           color: white;
-          font-family: "Helvetica Neue", Helvetica, sans-serif;
-          font-size: .8em;
+          font-family: -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
+          font-size: .75em;
           margin-right: 1.2em; }
+    .aux-menu .aux-navigation {
+      float: left; }
     .aux-menu .search-form {
-      float: right;
-      font-size: .9em; } }
+      float: right; } }

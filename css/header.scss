@@ -1,11 +1,12 @@
 .header-main {
 	background-color: $vc-burgundy;
 	
-	.container {
+	.header-image {
 		background-image: url("images/seal.svg");
 		background-size: 200px 200px;
 		background-repeat: no-repeat;
-		background-position: 10% -5%;
+		background-position: 10% 5%;
+		padding-top: 10px;
 	}
 	
 	.under-logo {
@@ -32,9 +33,9 @@
 			display: block;
 			text-align: center;
 			font-family: $sans-serif;
-			padding-bottom: 10px;
+			padding-bottom: 1em;
 			color: white;
-			font-size: .75em;
+			font-size: .7em;
 			font-weight: 300;
 			
 			em{

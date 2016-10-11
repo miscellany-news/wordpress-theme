@@ -9,9 +9,9 @@ $larger-than-tablet : "min-width: " + $tablet;
 $larger-than-desktop: "min-width: " + $desktop; 
 
 // Fonts
-$serif: Georgia, serif;
-$sans-serif: "Helvetica Neue", Helvetica, sans-serif;
-$monospace: monospace;
+$serif: Palatino, serif;
+$sans-serif: -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
+$monospace: monospace; 
 
 $base-font-size: 1em;
 $base-line-height: 1.4em;
