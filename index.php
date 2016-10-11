@@ -2,7 +2,9 @@
 
 /* Include the header.php file */
 get_header();
-
+?>
+<main class="container">
+<?php
 if ( have_posts() ) :
 
   /* Start the Loop */
@@ -29,7 +31,9 @@ else :
   get_template_part( 'template-parts/content', 'none' );
 
 endif;
-
+?>
+</main>
+<?php
 /* Include the footer.php file */
 get_footer();
 

@@ -9,9 +9,23 @@
 <body <?php body_class(); ?>>
 
   <header class="header-main">
-    <a class="header-logo" href="<?php echo esc_url( home_url( '/' ) );?>">
+		<div class="container">
+			<div class="aux-menu">
+				<?php wp_nav_menu( array(
+				'theme_location' => 'auxiliary-menu',
+				'container' => 'nav',
+				'menu_id' => 'aux-nav-1',
+				'container_class' => 'aux-navigation'
+				)); ?>
+				<?php get_search_form() ?>
+			</div>
+			<a class="header-logo" href="<?php echo esc_url( home_url( '/' ) );?>">
 				<img src="<?php echo get_template_directory_uri() . '/images/logo.svg'?>">
-		</a>
+			</a>
+			<span class="under-logo">
+				Since 1866 | <em>Wednesday,</em> October 24, 2016 | <em>Sunny</em> 73°/46°
+			</span>
+		</div>
   </header>
 	<nav class="navigation main-navigation sections-navigation">
 		<a href="#main-nav-1" id="sections-button">Sections</a>

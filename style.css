@@ -479,6 +479,13 @@ a img.aligncenter {
   z-index: 100000;
   /* Above WP toolbar. */ }
 
+/* Sass Variables */
+/* Grid */
+.container {
+  max-width: 56.25em;
+  padding: 0 1em;
+  margin: 0 auto; }
+
 /* Typography */
 body {
   font-family: Georgia, serif;
@@ -568,20 +575,40 @@ img {
 
 /* Header styles */
 .header-main {
-  background-color: #8C0309;
-  background-image: url("images/seal.svg");
-  background-repeat: no-repeat;
-  background-position: 20% 30%; }
+  background-color: #8C0309; }
+  .header-main .container {
+    background-image: url("images/seal.svg");
+    background-size: 200px 200px;
+    background-repeat: no-repeat;
+    background-position: 10% -5%; }
+  .header-main .under-logo {
+    display: none; }
+  .header-main .header-logo {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0;
+    clear: both; }
+  .header-main .header-logo img {
+    width: 300px;
+    padding: 10px 0 5px 0; }
 
-.header-main .header-logo {
-  display: block;
-  margin: 0 auto;
-  text-align: center;
-  padding: 0; }
-
-.header-main .header-logo img {
-  width: 300px;
-  padding: 10px 0 5px 0; }
+@media (min-width: 48em) {
+  .header-main .under-logo {
+    display: block;
+    text-align: center;
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    padding-bottom: 10px;
+    color: white;
+    font-size: .75em;
+    font-weight: 300; }
+    .header-main .under-logo em {
+      font-weight: bold;
+      font-style: normal; }
+  .header-main .header-logo img {
+    margin-top: 5px;
+    width: 500px;
+    padding: 0; } }
 
 /* Menu styles */
 .main-navigation {
@@ -627,3 +654,45 @@ img {
   border-radius: 5px;
   margin: 5px;
   background-color: white; }
+
+.aux-menu {
+  text-align: center; }
+  .aux-menu ul {
+    display: none; }
+
+@media (min-width: 30em) {
+  #sections-button {
+    display: none; }
+  .main-navigation .menu.hidden {
+    display: block; }
+  .main-navigation ul {
+    display: block;
+    padding: 0; }
+  .main-navigation ul li {
+    display: inline-block; }
+  .main-navigation ul li a {
+    width: auto;
+    background-color: transparent;
+    margin: 0;
+    padding: 8px 10px;
+    font-size: .85em; }
+    .main-navigation ul li a:hover {
+      background-color: #ddd;
+      border-radius: 0; }
+  .aux-menu {
+    padding-top: 5px; }
+    .aux-menu ul {
+      display: block;
+      margin: 0;
+      padding: 0;
+      list-style-type: none; }
+      .aux-menu ul li {
+        float: left; }
+        .aux-menu ul li a {
+          color: white;
+          font-family: "Helvetica Neue", Helvetica, sans-serif;
+          font-size: .8em;
+          margin-right: 1.2em; }
+    .aux-menu .search-form {
+      float: right;
+      font-size: .9em; } }

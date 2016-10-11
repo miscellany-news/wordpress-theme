@@ -1,18 +1,56 @@
 .header-main {
 	background-color: $vc-burgundy;
-	background-image: url("images/seal.svg");
-	background-repeat: no-repeat;
-	background-position: 20% 30%;
+	
+	.container {
+		background-image: url("images/seal.svg");
+		background-size: 200px 200px;
+		background-repeat: no-repeat;
+		background-position: 10% -5%;
+	}
+	
+	.under-logo {
+		display: none;
+	}
+	
+	.header-logo {
+		display: block;
+		margin: 0 auto;
+		text-align: center;
+		padding:0;
+		clear: both;
+	}
+	.header-logo img {
+		width: 300px;
+		padding: 10px 0 5px 0;
+	}
 }
 
-.header-main .header-logo {
-	display: block;
-	margin: 0 auto;
-	text-align: center;
-	padding:0;
-}
-
-.header-main .header-logo img {
-	width: 300px;
-	padding: 10px 0 5px 0;
+@media ($larger-than-tablet) {
+	.header-main {
+		
+		.under-logo {
+			display: block;
+			text-align: center;
+			font-family: $sans-serif;
+			padding-bottom: 10px;
+			color: white;
+			font-size: .75em;
+			font-weight: 300;
+			
+			em{
+				font-weight: bold;
+				font-style: normal;
+			}
+		}
+		
+		.header-logo {
+			img {
+				margin-top: 5px;
+			  width: 500px;
+				padding: 0;
+			}
+			
+		}
+		
+	}
 }

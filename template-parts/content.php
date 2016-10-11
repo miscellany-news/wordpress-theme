@@ -3,7 +3,6 @@
 * Template part for displaying post or page content
 */
 ?>
-
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
   <header>
     <?php if( get_the_title() ) : ?>
