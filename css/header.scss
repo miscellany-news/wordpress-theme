@@ -8,30 +8,11 @@
 .header-main .header-logo {
 	display: block;
 	margin: 0 auto;
-  padding-top: 6px;
 	text-align: center;
-	padding: 1em 0;
+	padding:0;
 }
 
 .header-main .header-logo img {
 	width: 300px;
-}
-
-.header-main .header-menu {
-	display: block;
-	height: 0;
-	width: 0;
-	overflow: hidden;
-}
-
-.header-main .header-menu:before {
-	content: ' ';
-	display: block;
-	background: url("images/hamburger.png");
-	background-size: 20px 18px;
-	width: 20px;
-	height: 18px;
-	position: absolute;
-	right: 17px;
-	top: 15px;
+	padding: 10px 0 5px 0;
 }
