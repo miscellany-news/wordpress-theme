@@ -11,31 +11,31 @@ Text Domain: themiscellanynews
 */
 
 /* CSS Reset */
-@import "css/normalize";
+@import "css/foundation/normalize";
 
 /* Wordpress-specific */
-@import "css/wordpress";
+@import "css/foundation/wordpress";
 
 /* Sass Variables */
 @import "css/global-variables";
 
 /* Import some useful helper classes */
-@import "css/helpers";
+@import "css/foundation/helpers";
 
 /* Grid */
-@import "css/grid";
+@import "css/foundation/grid";
 
 /* Typography */
 @import "css/typography";
 
 /* Image Styling */
-@import "css/images";
+@import "css/foundation/images";
 
 /* Header styles */
-@import "css/header";
+@import "css/parts/header";
 
 /* Search styles */
-@import "css/search";
+@import "css/parts/search";
 
 /* Menu styles */
-@import "css/menu";
+@import "css/parts/menu";
