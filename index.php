@@ -4,6 +4,8 @@
 get_header();
 ?>
 <main class="container">
+<div class="row">
+	<div class="col-md-8">
 <?php
 if ( have_posts() ) :
 
@@ -31,8 +33,15 @@ else :
   get_template_part( 'template-parts/content', 'none' );
 
 endif;
+?></div>
+<aside class="col-md-4">
+<?php
+get_sidebar();
 ?>
+</aside>
+</div>
 </main>
+
 <?php
 /* Include the footer.php file */
 get_footer();

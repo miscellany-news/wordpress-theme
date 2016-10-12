@@ -10,25 +10,26 @@
     <?php else : ?>
       <p><a href="<?php the_permalink();?>" rel="bookmark">Permalink</a></p>
     <?php endif;?>
-		<?php
-		get_template_part('template-parts/post-meta', get_post_format());
-		?>
+    <?php
+    get_template_part('template-parts/post-meta', get_post_format());
+    ?>
   </header>
+  <?php
+  get_template_part( 'template-parts/featured-image', get_post_format() );
+  ?>
 
-<?php
-	get_template_part( 'template-parts/featured-image', get_post_format() );
-?>
-<div class="post-content">
-<?php
-the_content();
-?>
-<?php
-wp_link_pages( array(
-'before' => '<nav class="link-pages">',
-'after'  => '</nav>',
-));
-?>
-</div>
+  <div class="post-content">
+    <?php
+    the_content();
+    
+    wp_link_pages( array(
+    'before' => '<nav class="link-pages">',
+    'after'  => '</nav>',
+    ));
+    
+    ?>
+  </div>
+
 
 
 </article>

@@ -1,3 +1,11 @@
+html {
+	box-sizing: border-box;
+}
+
+* {
+	box-sizing: inherit;
+}
+
 .clear {
 	clear: both;
 	display: block;

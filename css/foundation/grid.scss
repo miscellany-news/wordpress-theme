@@ -1,5 +1,56 @@
-.container {
-	max-width: $desktop;
-	padding: 0 1em;
-	margin: 0 auto;
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
+
+.container {
+	width: 100%;
+	max-width: $desktop; 
+	margin: 0 auto;
+	padding: 0 1em;
+}
+
+.grid {
+	width: 100%;
+}
+
+$grid-columns: 12;
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+	margin-left: -0.5rem;
+	margin-right: -0.5rem;
+}
+
+[class*='col-'] {
+  flex-basis: 100%;
+	padding: 0 .5rem;
+}
+
+@media screen and ($larger-than-mobile) {
+	@for $i from 1 through $grid-columns {      
+		.col-sm-#{$i} {         
+			flex: $i / $grid-columns;
+		}
+	}
+}
+
+@media screen and ($larger-than-tablet) {
+	@for $i from 1 through $grid-columns {      
+		.col-md-#{$i} {         
+			flex: $i / $grid-columns;
+		}
+	}	
+}
+
+@media screen and ($larger-than-desktop) {
+	@for $i from 1 through $grid-columns {      
+		.col-lg-#{$i} {         
+			flex: $i / $grid-columns;
+		}
+	}	
+}
+

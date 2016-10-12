@@ -6,10 +6,12 @@
     "type": "git",
     "url": "git+https://github.com/georgewitteman/themiscellanynews.git"
   },
-	"license": "GPL-3.0",
+  "license": "GPL-3.0",
   "author": "George Witteman",
   "devDependencies": {
     "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.0.13",
+    "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.3.2"
   }
 }

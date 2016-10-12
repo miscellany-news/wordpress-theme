@@ -1,7 +1,7 @@
 // Widths
-$mobile: 30em;// 480px / 16px
-$tablet: 48em;// 768px / 16px
-$desktop: 56.25em;// 900px / 16px
+$mobile: 30em; // 480px / 16px
+$tablet: 48em; // 768px / 16px
+$desktop: 64em; // 1024px / 16px
 
 // Breakpoints
 $larger-than-mobile : "min-width: " + $mobile;    
@@ -14,10 +14,12 @@ $sans-serif: -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
 $monospace: monospace; 
 
 $base-font-size: 1em;
-$base-line-height: 1.4em;
+$base-line-height: 1.6em;
 
 // Colors
-$link-color: #1a0dab;
+$font-color: #111;
+
+$link-color: #326891;
 $link-visited: $link-color;
 
 $vc-burgundy: #8C0309;
