@@ -1,12 +1,6 @@
 .header-main {
 	background-color: $vc-burgundy;
-	
-	.header-image {
-		background-image: url("images/seal.svg");
-		background-size: 200px 200px;
-		background-repeat: no-repeat;
-		background-position: 10% 5%;
-	}
+  padding-bottom: .6em;
 	
 	.under-logo {
 		display: none;
@@ -25,14 +19,18 @@
 	}
 }
 
-@media ($larger-than-tablet) {
+@media ($larger-than-mobile) {
 	.header-main {
-		
+  	background-image: url("images/seal.svg");
+  	background-size: 225px 225px;
+  	background-repeat: no-repeat;
+  	background-position: calc(50% - 300px) 0;
+    
 		.under-logo {
 			display: block;
 			text-align: center;
 			font-family: $sans-serif;
-			padding-bottom: 1em;
+			
 			color: white;
 			font-size: .7em;
 			font-weight: 300;
@@ -44,8 +42,9 @@
 		}
 		
 		.header-logo {
+      padding-top: .8em;
+      
 			img {
-				margin-top: 5px;
 			  width: 500px;
 				padding: 0;
 			}

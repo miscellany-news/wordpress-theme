@@ -17,7 +17,7 @@ class Posts_Large extends WP_Widget {
     $title = apply_filters('widget_title', empty($instance['title']) ? '' : $instance['title'], $instance, $this->id_base);
     $category = isset($instance['category']) ? $instance['category'] : '';
     $postcount = empty($instance['postcount']) ? '5' : $instance['postcount'];
-    $showfeatured = empty($instance['postcount']) ? true : $instance['showfeatured'];
+    $showfeatured = $instance['showfeatured'] ? '1' : '0';
     
     echo $before_widget;
     
@@ -86,7 +86,7 @@ class Posts_Large extends WP_Widget {
     
     <!-- Show Featured Image -->
     <p>
-      <input type="checkbox" id="<?php echo $this->get_field_id('showfeatured');?>" name="<?php echo $this->get_field_name('showfeatured'); ?>" value="<?php echo $instance['postcount']; ?>">
+      <input type="checkbox" id="<?php echo $this->get_field_id('showfeatured');?>" name="<?php echo $this->get_field_name('showfeatured'); ?>" <?php checked( $instance['showfeatured'] ); ?>>
       <label for"<?php echo $this->get_field_id('showfeatured');?>">Show Featured Image</label>
     </p>
     <?php 
@@ -98,7 +98,7 @@ class Posts_Large extends WP_Widget {
     $instance['title'] = sanitize_text_field($new_instance['title']);
     $instance['category'] = absint($new_instance['category']);
     $instance['postcount'] = absint($new_instance['postcount']);
-    $instance['showfeatured'] = absint($new_instance['showfeatured']);
+    $instance['showfeatured'] = $new_instance['showfeatured'] ? 1 : 0;
     return $instance;
   }
   

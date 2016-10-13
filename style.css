@@ -685,12 +685,8 @@ img {
 
 /* Header styles */
 .header-main {
-  background-color: #8C0309; }
-  .header-main .header-image {
-    background-image: url("images/seal.svg");
-    background-size: 200px 200px;
-    background-repeat: no-repeat;
-    background-position: 10% 5%; }
+  background-color: #8C0309;
+  padding-bottom: .6em; }
   .header-main .under-logo {
     display: none; }
   .header-main .header-logo {
@@ -703,26 +699,31 @@ img {
     width: 300px;
     padding: 10px 0 5px 0; }
 
-@media (min-width: 48em) {
-  .header-main .under-logo {
-    display: block;
-    text-align: center;
-    font-family: -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    padding-bottom: 1em;
-    color: white;
-    font-size: .7em;
-    font-weight: 300; }
-    .header-main .under-logo em {
-      font-weight: bold;
-      font-style: normal; }
-  .header-main .header-logo img {
-    margin-top: 5px;
-    width: 500px;
-    padding: 0; } }
+@media (min-width: 30em) {
+  .header-main {
+    background-image: url("images/seal.svg");
+    background-size: 225px 225px;
+    background-repeat: no-repeat;
+    background-position: calc(50% - 300px) 0; }
+    .header-main .under-logo {
+      display: block;
+      text-align: center;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      color: white;
+      font-size: .7em;
+      font-weight: 300; }
+      .header-main .under-logo em {
+        font-weight: bold;
+        font-style: normal; }
+    .header-main .header-logo {
+      padding-top: .8em; }
+      .header-main .header-logo img {
+        width: 500px;
+        padding: 0; } }
 
 /* Search styles */
 .search-form {
-  font-family: -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: .7em;
   width: 200px;
   display: block;
@@ -760,7 +761,7 @@ img {
 .main-navigation {
   background-color: #eee;
   border-bottom: 1px solid #ddd;
-  font-family: -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-align: center; }
 
 #sections-button {
@@ -839,7 +840,7 @@ img {
         margin-top: 3px; }
         .aux-menu ul li a {
           color: white;
-          font-family: -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
+          font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
           font-size: .75em;
           margin-right: 1.2em;
           text-decoration: none; }
@@ -862,7 +863,7 @@ img {
   .post .featured-image {
     margin: 0;
     font-size: .7em;
-    font-family: -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif; }
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
     .post .featured-image .image-box {
       position: relative; }
       .post .featured-image .image-box img {
