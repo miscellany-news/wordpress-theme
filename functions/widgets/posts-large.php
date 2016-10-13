@@ -17,6 +17,7 @@ class Posts_Large extends WP_Widget {
     $title = apply_filters('widget_title', empty($instance['title']) ? '' : $instance['title'], $instance, $this->id_base);
     $category = isset($instance['category']) ? $instance['category'] : '';
     $postcount = empty($instance['postcount']) ? '5' : $instance['postcount'];
+    $showfeatured = empty($instance['postcount']) ? true : $instance['showfeatured'];
     
     echo $before_widget;
     
@@ -33,9 +34,14 @@ class Posts_Large extends WP_Widget {
     <ul>
       <?php
       while ($widget_loop->have_posts()) : $widget_loop->the_post(); // The loop ?>
-        <li><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?></a></li>
-      <?php
-      endwhile; wp_reset_postdata(); ?>
+      <li>
+        <?php
+        if (has_post_thumbnail() && $showfeatured) : ?>
+          <?php the_post_thumbnail('medium'); ?>
+        <?php endif;?>
+        <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?></a>
+      </li>
+      <?php endwhile; wp_reset_postdata(); ?>
     </ul>
     
     <?php
@@ -49,28 +55,40 @@ class Posts_Large extends WP_Widget {
     ?>
     
     <!-- Title -->
-    <label for="<?php echo $this->get_field_id('title'); ?>">Title</label> 
-    <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $instance['title']; ?>">
+    <p>
+      <label for="<?php echo $this->get_field_id('title'); ?>">Title</label> 
+      <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $instance['title']; ?>">
+    </p>
     
     <!-- Category -->
-    <label for="<?php echo $this->get_field_id('category'); ?>">Select a Category</label>
-    <select id="<?php echo $this->get_field_id('category'); ?>" class="widefat" name="<?php echo $this->get_field_name('category'); ?>">
-      <option value="0" <?php if (!$instance['category']) echo 'selected="selected"'; ?>><?php _e('All', 'mh-newsdesk-lite'); ?></option>
-      <?php
-      $categories = get_categories(array('type' => 'post'));
-      foreach($categories as $cat) {
-        echo '<option value="' . $cat->cat_ID . '"';
-        if ($cat->cat_ID == $instance['category']) { echo ' selected="selected"'; }
-        echo '>' . $cat->cat_name . ' (' . $cat->category_count . ')';
-        echo '</option>';
-      }
-      ?>
-    </select>
+    <p>
+      <label for="<?php echo $this->get_field_id('category'); ?>">Select a Category</label>
+      <select id="<?php echo $this->get_field_id('category'); ?>" class="widefat" name="<?php echo $this->get_field_name('category'); ?>">
+        <option value="0" <?php if (!$instance['category']) echo 'selected="selected"'; ?>><?php _e('All', 'mh-newsdesk-lite'); ?></option>
+        <?php
+        $categories = get_categories(array('type' => 'post'));
+        foreach($categories as $cat) {
+          echo '<option value="' . $cat->cat_ID . '"';
+          if ($cat->cat_ID == $instance['category']) { echo ' selected="selected"'; }
+          echo '>' . $cat->cat_name . ' (' . $cat->category_count . ')';
+          echo '</option>';
+        }
+        ?>
+      </select>
+   </p>
     
     <!-- Post Count -->
-    <label for="<?php echo $this->get_field_id('postcount'); ?>">Number of Posts</label> 
-    <input class="widefat" id="<?php echo $this->get_field_id( 'postcount' ); ?>" name="<?php echo $this->get_field_name( 'postcount' ); ?>" type="text" value="<?php echo $instance['postcount']; ?>">
+    <p>
+      <label for="<?php echo $this->get_field_id('postcount'); ?>">Number of Posts</label> 
+      <input class="widefat" id="<?php echo $this->get_field_id( 'postcount' ); ?>" name="<?php echo $this->get_field_name( 'postcount' ); ?>" type="text" value="<?php echo $instance['postcount']; ?>">
+      <small>How many posts do you want displayed?</small>
+    </p>
     
+    <!-- Show Featured Image -->
+    <p>
+      <input type="checkbox" id="<?php echo $this->get_field_id('showfeatured');?>" name="<?php echo $this->get_field_name('showfeatured'); ?>" value="<?php echo $instance['postcount']; ?>">
+      <label for"<?php echo $this->get_field_id('showfeatured');?>">Show Featured Image</label>
+    </p>
     <?php 
   }
   
@@ -80,6 +98,7 @@ class Posts_Large extends WP_Widget {
     $instance['title'] = sanitize_text_field($new_instance['title']);
     $instance['category'] = absint($new_instance['category']);
     $instance['postcount'] = absint($new_instance['postcount']);
+    $instance['showfeatured'] = absint($new_instance['showfeatured']);
     return $instance;
   }
   
