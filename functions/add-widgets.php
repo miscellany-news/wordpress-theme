@@ -1,4 +1,13 @@
 <?php
+// Useful functions
+function the_excerpt_limit($limit, $read_more = false) {
+  echo "<p>";
+  echo wp_trim_words(get_the_excerpt(), $limit, '&hellip;');
+  if($read_more) {
+    echo '&nbsp;<a href="'. esc_url( get_permalink() ) . '">'  . 'Read more &raquo;</a></p>';
+  }
+}
+
 function themiscellanynews_widgets_init() {
 	register_sidebar( array( 
 		'id'            => 'primary',

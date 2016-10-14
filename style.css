@@ -9,7 +9,7 @@ License: GNU General Public License v3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: themiscellanynews
 */
-/* CSS Reset */
+/* Framework */
 /*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Change the default font family in all browsers (opinionated).
@@ -376,7 +376,6 @@ textarea {
   font: inherit;
   /* 2 */ }
 
-/* Wordpress-specific */
 /* Recommended for content width https://codex.wordpress.org/Content_Width */
 .size-auto,
 .size-full,
@@ -479,8 +478,6 @@ a img.aligncenter {
   z-index: 100000;
   /* Above WP toolbar. */ }
 
-/* Sass Variables */
-/* Import some useful helper classes */
 html {
   box-sizing: border-box; }
 
@@ -491,7 +488,6 @@ html {
   clear: both;
   display: block; }
 
-/* Grid */
 *, *:before, *:after {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -595,7 +591,6 @@ html {
   .col-lg-12 {
     flex: 1; } }
 
-/* Typography */
 body {
   font-family: Palatino, serif;
   font-size: 1em;
@@ -677,7 +672,6 @@ h1, h2, h3, h4, h5, h6 {
 table {
   display: table; }
 
-/* Image Styling */
 img {
   width: auto;
   max-width: 100%;
@@ -686,11 +680,12 @@ img {
 /* Header styles */
 .header-main {
   background-color: #8C0309;
-  padding-bottom: .6em; }
+  padding-bottom: .6em;
+  text-align: center; }
   .header-main .under-logo {
     display: none; }
   .header-main .header-logo {
-    display: block;
+    display: inline-block;
     margin: 0 auto;
     text-align: center;
     padding: 0;
@@ -908,3 +903,31 @@ img {
   .post .post-content {
     max-width: 38em;
     margin: 0 auto; } }
+
+/* Import widgets */
+/* Posts-Large */
+ul.widget-posts-large {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  padding-top: 1em; }
+  ul.widget-posts-large li {
+    display: block;
+    position: relative;
+    margin-bottom: 1em; }
+  ul.widget-posts-large img {
+    margin-bottom: 3px; }
+  ul.widget-posts-large a.title {
+    text-decoration: none;
+    color: #111;
+    font-weight: bold;
+    font-size: 1.3em; }
+  ul.widget-posts-large .meta {
+    color: #555;
+    margin-bottom: .5em;
+    font-size: .75em; }
+  ul.widget-posts-large p {
+    font-size: .9em;
+    line-height: 1.2em;
+    margin: 0;
+    padding: 0; }

@@ -1,13 +1,14 @@
 .header-main {
 	background-color: $vc-burgundy;
   padding-bottom: .6em;
+  text-align: center;
 	
 	.under-logo {
 		display: none;
 	}
 	
 	.header-logo {
-		display: block;
+		display: inline-block;
 		margin: 0 auto;
 		text-align: center;
 		padding:0;

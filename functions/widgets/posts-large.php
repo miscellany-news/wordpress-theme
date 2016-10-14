@@ -4,12 +4,16 @@
 */
 class Posts_Large extends WP_Widget {
  
-  // Register the Widget
+  /**
+   * Register the widget
+   */
   public function __construct() {
     parent::__construct( 'posts-large', 'Posts Large', array( 'description' => __( 'A large post', 'text_domain' ), ));
   }
   
-  // Output the content of the widget
+  /**
+   * Output the content of the widget
+   */
   public function widget($args, $instance) {
     
     // Variables
@@ -25,22 +29,35 @@ class Posts_Large extends WP_Widget {
     if (!empty($title)) echo $before_title . esc_attr($title) . $after_title;
     
     // Build Arguments for WP_Query
-    $args = array('posts_per_page' => $postcount, 'cat' => $category,);
-    
+    $args = array('posts_per_page' => $postcount, 'cat' => $category);
     $widget_loop = new WP_Query($args); 
     
-    // Display the posts
     ?>
-    <ul>
+    
+    <ul class="widget widget-posts-large">
       <?php
       while ($widget_loop->have_posts()) : $widget_loop->the_post(); // The loop ?>
+      
       <li>
         <?php
-        if (has_post_thumbnail() && $showfeatured) : ?>
-          <?php the_post_thumbnail('medium'); ?>
-        <?php endif;?>
-        <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?></a>
+        if (has_post_thumbnail() && $showfeatured) { ?>
+          <?php the_post_thumbnail('large'); ?>
+        <?php }?>
+        <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark" class="title"><?php the_title(); ?></a>
+  			<p class="meta">By 
+  				<?php
+  				if ( function_exists( 'coauthors_posts_links' ) ) {
+  					coauthors_posts_links();
+  				} else {
+  					the_author_link();
+  				}?>
+          on
+          <time datetime="<?php the_date('Y-m-d');?>"><?php the_time('F j, Y');?></time>
+        </p>
+        <?php the_excerpt_limit(30) ?>
+      
       </li>
+      
       <?php endwhile; wp_reset_postdata(); ?>
     </ul>
     
@@ -48,7 +65,9 @@ class Posts_Large extends WP_Widget {
     echo $after_widget;
   }
   
-  // Options form in dashboard
+  /**
+   * Create the options form in the dashboard
+   */
   public function form($instance) {
     $defaults = array('title' => '', 'category' => '', 'postcount' => '5');
     $instance = wp_parse_args((array) $instance, $defaults);
@@ -92,7 +111,9 @@ class Posts_Large extends WP_Widget {
     <?php 
   }
   
-  // Process options from form on save
+  /**
+   * Process options from form on save
+   */
   public function update($new_instance, $old_instance) {
     $instance = $old_instance;
     $instance['title'] = sanitize_text_field($new_instance['title']);

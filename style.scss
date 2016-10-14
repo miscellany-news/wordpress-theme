@@ -10,26 +10,10 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: themiscellanynews
 */
 
-/* CSS Reset */
-@import "css/foundation/normalize";
-
-/* Wordpress-specific */
-@import "css/foundation/wordpress";
-
-/* Sass Variables */
 @import "css/global-variables";
 
-/* Import some useful helper classes */
-@import "css/foundation/helpers";
-
-/* Grid */
-@import "css/foundation/grid";
-
-/* Typography */
-@import "css/typography";
-
-/* Image Styling */
-@import "css/foundation/images";
+/* Framework */
+@import "css/foundation";
 
 /* Header styles */
 @import "css/parts/header";
@@ -42,3 +26,6 @@ Text Domain: themiscellanynews
 
 /* Article styles */
 @import "css/parts/article";
+
+/* Import widgets */
+@import "css/widgets"

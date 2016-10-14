@@ -1,0 +1,38 @@
+/* Posts-Large */
+
+ul.widget-posts-large {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  padding-top: 1em;
+
+  li {
+    display: block;
+    position: relative;
+    margin-bottom: 1em;
+  }
+  
+  img {
+    margin-bottom: 3px;
+  }
+  
+  a.title {
+    text-decoration: none;
+    color: $font-color;
+    font-weight: bold;
+    font-size: 1.3em;
+  }
+  
+  .meta {
+    color: $font-color-lighter;
+    margin-bottom: .5em;
+    font-size: .75em;
+  }
+  
+  p {
+    font-size: .9em;
+    line-height: 1.2em;
+    margin: 0;
+    padding: 0;
+  }
+}
