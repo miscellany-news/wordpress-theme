@@ -20,16 +20,32 @@ function themiscellanynews_widgets_init() {
 	));
 	
 	register_sidebar( array( 
-		'id'            => 'home-left',
-		'name'          => __( 'Home Left Column' ),
+		'id'            => 'home-left-1',
+		'name'          => __( 'Home Top Left' ),
 		'description'   => __( 'A short description of the sidebar.' ),
 		'before_widget' => '',
 		'after_widget'  => '',
 	));
 	
 	register_sidebar( array( 
-		'id'            => 'home-middle',
-		'name'          => __( 'Home Middle Column' ),
+		'id'            => 'home-middle-1',
+		'name'          => __( 'Home Top Middle' ),
+		'description'   => __( 'A short description of the sidebar.' ),
+		'before_widget' => '',
+		'after_widget'  => '',
+	));
+  
+	register_sidebar( array( 
+		'id'            => 'home-left-2',
+		'name'          => __( 'Home Left (2)' ),
+		'description'   => __( 'A short description of the sidebar.' ),
+		'before_widget' => '',
+		'after_widget'  => '',
+	));
+	
+	register_sidebar( array( 
+		'id'            => 'home-middle-2',
+		'name'          => __( 'Home Middle (2)' ),
 		'description'   => __( 'A short description of the sidebar.' ),
 		'before_widget' => '',
 		'after_widget'  => '',

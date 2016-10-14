@@ -1,0 +1,21 @@
+.front-left {
+  order: 2;
+}
+
+.front-middle {
+  order: 1;
+}
+
+.front-right {
+  order: 3;
+}
+
+@media ($larger-than-mobile) {
+  .front-left {
+    order: 1;
+  }
+  
+  .front-middle {
+    order: 2;
+  }
+}

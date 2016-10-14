@@ -35,6 +35,7 @@
 }
 
 .main-navigation ul li {
+  display: inline-block;
 	flex-basis: 50%;
 	margin: 0;
 	padding: 0;
@@ -67,17 +68,13 @@
 	}
 	
 	.main-navigation ul {
-		display: block;
 		padding: 0;
-	}
-	
-	.main-navigation ul li {
-		display: inline-block;
+    flex-wrap: nowrap;
 	}
 	
 	.main-navigation ul li a {
-		width: auto;
 		background-color: transparent;
+    display: inline-block;
 		margin: 0;
 		padding: 8px 10px;
 		font-size: .85em;

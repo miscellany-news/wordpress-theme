@@ -83,7 +83,7 @@ class Posts_Large extends WP_Widget {
     <p>
       <label for="<?php echo $this->get_field_id('category'); ?>">Select a Category</label>
       <select id="<?php echo $this->get_field_id('category'); ?>" class="widefat" name="<?php echo $this->get_field_name('category'); ?>">
-        <option value="0" <?php if (!$instance['category']) echo 'selected="selected"'; ?>><?php _e('All', 'mh-newsdesk-lite'); ?></option>
+        <option value="0" <?php if (!$instance['category']) echo 'selected="selected"'; ?>>All</option>
         <?php
         $categories = get_categories(array('type' => 'post'));
         foreach($categories as $cat) {
@@ -104,9 +104,9 @@ class Posts_Large extends WP_Widget {
     </p>
     
     <!-- Show Featured Image -->
-    <p>
+    <p><label for"<?php echo $this->get_field_id('showfeatured');?>">
       <input type="checkbox" id="<?php echo $this->get_field_id('showfeatured');?>" name="<?php echo $this->get_field_name('showfeatured'); ?>" <?php checked( $instance['showfeatured'] ); ?>>
-      <label for"<?php echo $this->get_field_id('showfeatured');?>">Show Featured Image</label>
+      Show Featured Image</label>
     </p>
     <?php 
   }
