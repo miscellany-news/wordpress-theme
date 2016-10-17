@@ -41,21 +41,24 @@ class Posts_Large extends WP_Widget {
       <li>
         <?php
         if (has_post_thumbnail() && $showfeatured) { ?>
-          <?php the_post_thumbnail('large'); ?>
+          <a href="<?php the_permalink(); ?>">
+            <?php the_post_thumbnail('large'); ?>
+          </a>
         <?php }?>
-        <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark" class="title"><?php the_title(); ?></a>
-  			<p class="meta">By 
-  				<?php
-  				if ( function_exists( 'coauthors_posts_links' ) ) {
-  					coauthors_posts_links();
-  				} else {
-  					the_author_link();
-  				}?>
-          on
-          <time datetime="<?php the_date('Y-m-d');?>"><?php the_time('F j, Y');?></time>
-        </p>
-        <?php the_excerpt_limit(30) ?>
-      
+        <div class="text-min-width">
+          <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark" class="title"><?php the_title(); ?></a>
+          <p class="meta">By 
+            <?php
+            if ( function_exists( 'coauthors_posts_links' ) ) {
+              coauthors_posts_links();
+            } else {
+              the_author_link();
+            }?>
+            on
+            <time datetime="<?php the_date('Y-m-d');?>"><?php the_time('F j, Y');?></time>
+          </p>
+          <?php the_excerpt_limit(30) ?>
+        </div>
       </li>
       
       <?php endwhile; wp_reset_postdata(); ?>

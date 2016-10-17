@@ -1,6 +1,4 @@
 .post {
-  max-width: $tablet;
-  margin: 0 auto;
   
 	h1 {
 		margin: 0;
@@ -15,6 +13,7 @@
 	
 	.featured-image{
 		margin: 0;
+    max-width: $tablet;
 		font-size: .7em;
 		font-family: $sans-serif;
 	
@@ -53,6 +52,8 @@
 		border-bottom: 1px solid #eee;
 		padding: .7em 0;
 		margin-bottom: 1em;
+    font-size: .9em;
+    line-height: 1.1em;
 	
 		p {
 			margin: 0;
@@ -61,7 +62,6 @@
 		
 		time {
 			font-size: .8em;
-			line-height: 1em;
 		}
 	}
 	
@@ -77,8 +77,8 @@
 
 @media ($larger-than-mobile) {
 	.post .post-content {
-		max-width: 38em;
-		margin: 0 auto;
+		max-width: $tablet - 10rem;
+    margin-left: 5em;
 	}
 	
 }

@@ -69,22 +69,27 @@
 	
 	.main-navigation ul {
 		padding: 0;
-    flex-wrap: nowrap;
-	}
-	
-	.main-navigation ul li a {
-		background-color: transparent;
-    display: inline-block;
-		margin: 0;
-		padding: 8px 10px;
-		font-size: .85em;
+    display: block;
+    
+    li {
+      min-width: 0;
+      display: inline;
+      
+      a {
+        background-color: transparent;
+        margin: 0;
+        display: inline-block;
+        padding: 8px 10px;
+        font-size: .85em;
 		
-		&:hover {
-			background-color: #ddd;
-			border-radius: 0;
-		}
-	}
-	
+        &:hover {
+          background-color: #ddd;
+          border-radius: 0;
+        }
+      }
+    }
+  }
+  
 	.aux-menu {
 		padding: 3px 0;
 		display: block;

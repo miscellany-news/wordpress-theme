@@ -21,13 +21,13 @@ $grid-columns: 12;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-	margin-left: -0.5rem;
-	margin-right: -0.5rem;
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
 }
 
 [class*='col-'] {
   flex-basis: 100%;
-	padding: 0 .5rem;
+	padding: 0 0.5rem;
 }
 
 @media screen and ($larger-than-mobile) {

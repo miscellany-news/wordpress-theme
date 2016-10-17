@@ -26,7 +26,12 @@
 				<img src="<?php echo get_template_directory_uri() . '/images/logo.svg'?>">
 			</a>
 			<span class="under-logo">
-				Since 1866 | <em>Wednesday,</em> October 24, 2016 | <em>Sunny</em> 73°/46°
+        <?php
+        date_default_timezone_set('America/New_York');
+        $day = date('l',time());
+        $date = date('F j, Y', time());
+        ?>
+				Since 1866 | <em><?php echo $day; ?>,</em> <?php echo $date; ?>
 			</span>
 		</div>
 	</header>

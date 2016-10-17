@@ -1,0 +1,43 @@
+/* Posts-Grid */
+
+ul.widget-posts-grid {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  padding-top: 1em;
+  display: flex;
+  flex-wrap: wrap;
+	margin-left: -.5rem;
+	margin-right: -.5rem;
+
+  li {
+    display: block;
+    position: relative;
+    flex-basis: 50%;
+    padding: 0 .5rem 1rem;
+  }
+  
+  img {
+    margin-bottom: 3px;
+  }
+  
+  a.title {
+    text-decoration: none;
+    color: $font-color;
+    font-weight: bold;
+    font-size: 1.3em;
+  }
+  
+  .meta {
+    color: $font-color-lighter;
+    margin-bottom: .5em;
+    font-size: .75em;
+  }
+  
+  p {
+    font-size: .9em;
+    line-height: 1.2em;
+    margin: 0;
+    padding: 0;
+  }
+}
