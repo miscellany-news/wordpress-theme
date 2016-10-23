@@ -1,5 +1,4 @@
 .post {
-  
 	h1 {
 		margin: 0;
 		
@@ -8,41 +7,6 @@
 			display: inline-block;
 			color: $font-color;
 			text-decoration: none;
-		}
-	}
-	
-	.featured-image{
-		margin: 0;
-    max-width: $tablet;
-		font-size: .7em;
-		font-family: $sans-serif;
-	
-		.image-box {
-			position: relative;
-			img {
-				display: block;
-				width: 100%;
-			}
-			.media-credit {
-				position: absolute;
-				display: inline-block;
-				margin: 0;
-				bottom: 0;
-				right: 0;
-				padding: 0 5px;
-				line-height: 2em;
-				background-color: rgba(0,0,0,.4);
-				color: rgba(255,255,255,.7);
-			}
-		}
-		
-		figcaption {
-			text-align: right;
-			position: relative;
-			display: block;
-			line-height: 1.2em;
-			padding-top: 5px;
-			color: #333;
 		}
 	}
 	
@@ -64,23 +28,131 @@
 			font-size: .8em;
 		}
 	}
+  
+  .wp-caption {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    font-size: .77em;
+    font-family: $sans-serif;
+    
+    &.alignnone {
+      margin: 1em;
+    }
+    
+    &.alignleft {
+      margin-right: 1em;
+      margin-bottom: 1em;
+      text-align: left;
+    }
+    
+    &.alignright {
+      margin-left: 1em;
+      margin-bottom: 1em;
+      text-align: right;
+    }
+    
+    .media-credit-container {
+      margin: 0;
+    }
+  }
+  
+	.featured-image{
+		margin: 0;
+    max-width: $tablet;
+    font-size: .8em;
+    font-family: $sans-serif;
 	
-	.wp-caption {
-		margin: 1em auto;
-		font-size: .9em;
+		.image-box {
+			position: relative;
+			img {
+				display: block;
+				width: 100%;
+			}
+			.media-credit {
+				position: absolute;
+				display: inline-block;
+				margin: 0;
+				bottom: 0;
+				left: 0;
+				padding: 0 5px;
+				line-height: 2em;
+				background-color: rgba(0,0,0,.4);
+				color: rgba(255,255,255,.7);
+			}
+		}
 		
-		.media-credit {
-			font-size: .9em;
+		figcaption {
+			text-align: left;
+			position: relative;
+			display: block;
+			line-height: 1.2em;
+			padding-top: 5px;
+			color: #333;
 		}
 	}
+  
+  .post-content {
+    h1,h2,h3,h4,h5,h6 {
+      margin-top: 1em;
+      margin-bottom: 1em;
+    }
+    
+    h1 {
+      font-size: 1.5em;
+    }
+    
+    h2 {
+      font-size: 1.3em;
+    }
+    
+    h3 {
+      font-size: 1.2em;
+    }
+    
+    h4 {
+      font-size: 1em;
+    }
+    
+    h5, h6 {
+      font-size: .9em;
+    }
+  }
 }
 
 @media ($larger-than-mobile) {
 	.post .post-content {
 		max-width: $tablet - 10rem;
     margin-left: 5em;
-	}
-	
+	}	
 }
 
+.post.archive {
+  margin: 1em 0;
+  border-bottom: 1px solid #eee;
+  font-size: .9em;
+  
+  &:last-child {
+    border: none;
+  }
+  
+  h1 a{
+    margin:0;
+    font-size: .7em;
+  }
+  
+  .authors-links {
+    font-size: .9em;
+  }
+  
+  img {
+    max-width: 100%;
+  }
+  
+  time {
+    display: inline-block;
+  }
 
+
+  
+}

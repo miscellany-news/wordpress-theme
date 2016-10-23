@@ -1,9 +1,6 @@
 /* Posts-Grid */
 
 ul.widget-posts-grid {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
   padding-top: 1em;
   display: flex;
   flex-wrap: wrap;
@@ -24,8 +21,8 @@ ul.widget-posts-grid {
   a.title {
     text-decoration: none;
     color: $font-color;
-    font-weight: bold;
-    font-size: 1.3em;
+    font-weight: 600;
+    font-size: 1.2em;
   }
   
   .meta {

@@ -1,7 +1,6 @@
-/* Posts-Large */
+/* Posts-List */
 
-ul.widget-posts-large {
-  font-size: 1em;
+ul.widget-posts-list {
   padding-top: 1em;
 
   li {
@@ -21,7 +20,7 @@ ul.widget-posts-large {
       text-decoration: none;
       color: $font-color;
       font-weight: bold;
-      font-size: 1.5em;
+      font-size: 1.2em;
     }
   
     .meta {
