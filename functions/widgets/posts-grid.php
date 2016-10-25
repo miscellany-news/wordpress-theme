@@ -39,7 +39,7 @@ class Posts_Grid extends WP_Widget {
       while ($widget_loop->have_posts()) : $widget_loop->the_post(); // The loop ?>
       
       <li>
-        <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark" class="title">
+        <h1 class="title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark">
           <?php 
           $theshorttitle = get_post_meta(get_the_ID(), 'Short Title', true);
           if($shorttitle && $theshorttitle) :
@@ -47,7 +47,7 @@ class Posts_Grid extends WP_Widget {
           else :
             the_title();
           endif; ?>
-        </a>
+        </a></h1>
   			<p class="meta">By 
   				<?php
   				if ( function_exists( 'coauthors_posts_links' ) ) {

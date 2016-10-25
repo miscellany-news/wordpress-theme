@@ -9,15 +9,17 @@
 	
 	.header-logo {
 		display: inline-block;
-		margin: 0 auto;
 		text-align: center;
 		padding:0;
 		clear: both;
 	}
 	.header-logo img {
-		width: 300px;
-		padding: 10px 0 5px 0;
+		width: 15em;
+		padding: 1em 0 0 0;
 	}
+  .search-form {
+    display: none;
+  }
 }
 
 @media ($larger-than-mobile) {

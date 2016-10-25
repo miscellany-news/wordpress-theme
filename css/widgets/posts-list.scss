@@ -16,11 +16,14 @@ ul.widget-posts-list {
       display: block;
     }
     
-    a.title {
-      text-decoration: none;
-      color: $font-color;
-      font-weight: bold;
+    h1.title {
       font-size: 1.2em;
+      margin: 0;
+      a.title {
+        text-decoration: none;
+        color: $font-color;
+        font-weight: bold;
+      }
     }
   
     .meta {

@@ -1,4 +1,5 @@
 // Widths
+$min-width: 20rem;
 $mobile: 30rem;
 $tablet: 48rem;
 $desktop: 58rem;
@@ -13,10 +14,12 @@ $smaller-than-mobile : "max-width: " + $mobile;
 $smaller-than-tablet : "max-width: " + $tablet;    
 $smaller-than-desktop: "max-width: " + $desktop; 
 
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+@import url('https://fonts.googleapis.com/css?family=Gentium+Basic:400,400i,700,700i');
 // Fonts
-$serif: Palatino, serif;
-$body: Georgia, serif;
-$sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$serif: 'Gentium Basic', serif;
+$body: 'Gentium Basic', serif;
+$sans-serif: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $monospace: monospace; 
 
 $base-font-size: 1em;

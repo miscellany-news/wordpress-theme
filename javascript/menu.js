@@ -1,13 +1,17 @@
-document.addEventListener("DOMContentLoaded", function(event) { 
-  var items = document.getElementById("main-nav-1");
-	var button = document.getElementById("sections-button");
-	
-	items.classList.add("hidden");
-	
-	button.addEventListener('click', function (event) { 	
+document.addEventListener("DOMContentLoaded", function(event) {
+  var body = document.body;
+	var button = document.getElementById("hamburger-main");
+  var background = document.getElementById("hamburger-page-background");
+		
+  addEvent(button, 'click', function(event) {
 		event.preventDefault();
-		toggle(items);
-	});
+		toggle(body);
+  });
+  
+  addEvent(background, 'click', function(event) {
+		event.preventDefault();
+		toggle(body);
+  });
 });
 
 function addEvent(element, evnt, funct){
@@ -17,6 +21,6 @@ function addEvent(element, evnt, funct){
    return element.addEventListener(evnt, funct, false);
 }
 
-function toggle(items) {
-	items.classList.toggle("hidden");
+function toggle(element) {
+	element.classList.toggle("navigation-active");
 }

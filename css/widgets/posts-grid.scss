@@ -18,11 +18,14 @@ ul.widget-posts-grid {
     margin-bottom: 3px;
   }
   
-  a.title {
-    text-decoration: none;
-    color: $font-color;
-    font-weight: 600;
+  h1.title {
     font-size: 1.2em;
+    margin: 0;
+    a {
+      text-decoration: none;
+      color: $font-color;
+      font-weight: 600;
+    }
   }
   
   .meta {

@@ -46,7 +46,8 @@ class Posts_Large extends WP_Widget {
           </a>
         <?php }?>
         <div class="text-min-width">
-          <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark" class="title"><?php the_title(); ?></a>
+          <h1 class="title">
+          <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark" class="title"><?php the_title(); ?></a></h1>
           <p class="meta">By 
             <?php
             if ( function_exists( 'coauthors_posts_links' ) ) {
