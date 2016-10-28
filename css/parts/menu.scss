@@ -20,17 +20,17 @@
   
   .line:nth-child(1) {
     margin-bottom: 4px;
-    width: 15px;
+    width: 17px;
     margin-top: 4px;
   }
 
   .line:nth-child(2) {
     margin-bottom: 4px;
-    width: 17px;
+    width: 20px;
   }
 
   .line:nth-child(3) {
-    width: 20px;
+    width: 15px;
   }
 }
 .navigation-active {
@@ -201,6 +201,7 @@
           padding: 8px 10px;
           font-size: .85em;
           text-transform: none;
+          border: none;
 		
           &:hover {
             background-color: #ddd;

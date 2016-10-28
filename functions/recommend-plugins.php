@@ -27,13 +27,13 @@ function themiscellanynews_register_required_plugins() {
 			'name'      => 'Media Credit',
 			'slug'      => 'media-credit',
 			'required'  => false,
-		)/*,
+		),
 
 		array(
-			'name'			=> 'W3 Total Cache',
-			'slug'      => 'w3-total-cache',
+			'name'			=> 'Perfect Pullquotes',
+			'slug'      => 'perfect-pullquotes',
 			'required'  => false,
-		),*/
+		),
 
 	);
 
