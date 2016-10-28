@@ -1,0 +1,36 @@
+$footer-text-color: #999;
+
+footer.main-footer {
+  border-top: 1px solid #ddd;
+  font-size: .7em;
+  color: $footer-text-color;
+  font-family: $sans-serif;
+  padding: 1em;
+  
+  nav ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    
+    li {
+      
+      border-left: 1px solid #ddd;
+      padding-left: .5rem;
+      padding-right: .5rem;
+      
+      &:first-child {
+        border: none;
+      }
+      
+      &:last-child {
+        padding-right: 0;
+      };
+      
+      a {
+        font-size: .7rem;
+        color: $footer-text-color;
+      }
+      
+    }
+  }
+}

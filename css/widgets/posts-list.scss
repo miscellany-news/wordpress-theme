@@ -1,48 +1,16 @@
 /* Posts-List */
 
 ul.widget-posts-list {
-  padding-top: 1em;
 
   li {
-    display: block;
-    position: relative;
     margin-bottom: 1em;
-    
-    img {
-      margin-bottom: 3px;
-    }
-  
+
     ul.widget-posts-large img {
       display: block;
     }
-    
+
     h1.title {
       font-size: 1.2em;
-      margin: 0;
-      a.title {
-        text-decoration: none;
-        color: $font-color;
-        font-weight: bold;
-      }
     }
-  
-    .meta {
-      color: $font-color-lighter;
-      margin-bottom: .5em;
-      font-size: .75em;
-    }
-  
-    p {
-      font-size: .9em;
-      line-height: 1.2em;
-      margin: 0;
-      padding: 0;
-    }
-  }
-}
-
-@media ($smaller-than-tablet) {
-  ul.widget-posts-large img {
-    display: none;
   }
 }
