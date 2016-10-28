@@ -25,8 +25,7 @@ class Posts_Grid extends WP_Widget {
     
     echo $before_widget;
     
-    // Display Title
-    if (!empty($title)) echo $before_title . esc_attr($title) . $after_title;
+    
     
     // Build Arguments for WP_Query
     $args = array('posts_per_page' => $postcount, 'cat' => $category);
@@ -34,35 +33,38 @@ class Posts_Grid extends WP_Widget {
     
     ?>
     
-    <ul class="widget widget-posts-grid">
+    <div class="widget widget-posts-grid <?php if(!empty($title)) echo 'widget-border'; ?>">
       <?php
-      while ($widget_loop->have_posts()) : $widget_loop->the_post(); // The loop ?>
+      // Display Title
+      if (!empty($title)) echo $before_title . esc_attr($title) . $after_title;?>
+      <ul>
+        <?php
+        while ($widget_loop->have_posts()) : $widget_loop->the_post(); // The loop ?>
+        <li>
+          <h1 class="title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark">
+            <?php 
+            $theshorttitle = get_post_meta(get_the_ID(), 'Short Title', true);
+            if($shorttitle && $theshorttitle) :
+              echo $theshorttitle;
+              else :
+                the_title();
+              endif; ?>
+            </a></h1>
+            <p class="meta">By 
+              <?php
+              if ( function_exists( 'coauthors_posts_links' ) ) {
+                coauthors_posts_links();
+              } else {
+                the_author_link();
+              }?>
+            </p>
+            <?php the_excerpt_limit(15) ?>
       
-      <li>
-        <h1 class="title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark">
-          <?php 
-          $theshorttitle = get_post_meta(get_the_ID(), 'Short Title', true);
-          if($shorttitle && $theshorttitle) :
-            echo $theshorttitle;
-          else :
-            the_title();
-          endif; ?>
-        </a></h1>
-  			<p class="meta">By 
-  				<?php
-  				if ( function_exists( 'coauthors_posts_links' ) ) {
-  					coauthors_posts_links();
-  				} else {
-  					the_author_link();
-  				}?>
-        </p>
-        <?php the_excerpt_limit(15) ?>
+          </li>
       
-      </li>
-      
-      <?php endwhile; wp_reset_postdata(); ?>
-    </ul>
-    
+        <?php endwhile; wp_reset_postdata(); ?>
+      </ul>
+    </div>
     <?php
     echo $after_widget;
   }

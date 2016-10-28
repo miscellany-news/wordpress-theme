@@ -601,7 +601,7 @@ html {
     flex: 1; } }
 
 body {
-  font-family: "Gentium Basic", serif;
+  font-family: Palatino, serif;
   font-size: 1em;
   color: #111; }
 
@@ -675,7 +675,7 @@ sup {
   font-size: smaller; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Palatino;
   font-weight: bold; }
 
 table {
@@ -1098,23 +1098,24 @@ footer.main-footer {
 
 /* Import widgets */
 .widget {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  margin-top: .5rem;
-  margin-bottom: 2em; }
+  margin-top: 1rem; }
+  .widget.widget-border {
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    padding: .5em; }
   .widget .widgettitle {
-    background-color: #8C0309;
-    color: #fff;
+    color: #8C0309;
     font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-transform: uppercase;
     font-size: 1em;
-    padding: .1em .3em;
+    padding: 0;
     margin: 0;
-    font-weight: 300;
-    margin-top: 1rem; }
+    padding-bottom: .5em;
+    font-weight: 300; }
   .widget ul {
-    padding-top: .5em; }
+    list-style-type: none;
+    margin: 0;
+    padding: 0; }
     .widget ul img {
       margin-bottom: 3px; }
     .widget ul h1.title {
@@ -1134,41 +1135,43 @@ footer.main-footer {
       line-height: 1.2rem;
       margin: 0;
       padding: 0; }
+    .widget ul li:last-child {
+      margin-bottom: 0; }
 
 @media (max-width: 48rem) {
   ul.widget-posts-large img {
     display: none; } }
 
 /* Posts-Large */
-ul.widget-posts-large {
+.widget-posts-large ul {
   font-size: 1em; }
-  ul.widget-posts-large li {
+  .widget-posts-large ul li {
     margin-bottom: 1em; }
-    ul.widget-posts-large li ul.widget-posts-large img {
+    .widget-posts-large ul li ul.widget-posts-large img {
       display: block; }
-    ul.widget-posts-large li h1.title {
+    .widget-posts-large ul li h1.title {
       font-size: 1.5em; }
 
 /* Posts-Grid */
-ul.widget-posts-grid {
+.widget-posts-grid ul {
   display: flex;
   flex-wrap: wrap;
   margin-left: -.5rem;
   margin-right: -.5rem; }
-  ul.widget-posts-grid li {
+  .widget-posts-grid ul li {
     display: block;
     position: relative;
     flex-basis: 50%;
     padding: 0 .5rem 1rem; }
-  ul.widget-posts-grid h1.title {
+  .widget-posts-grid ul h1.title {
     font-size: 1.1em; }
 
 /* Posts-List */
-ul.widget-posts-list li {
+.widget-posts-list ul li {
   margin-bottom: 1em; }
-  ul.widget-posts-list li ul.widget-posts-large img {
+  .widget-posts-list ul li ul.widget-posts-large img {
     display: block; }
-  ul.widget-posts-list li h1.title {
+  .widget-posts-list ul li h1.title {
     font-size: 1.2em; }
 
 /* Import special page styles */

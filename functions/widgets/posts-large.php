@@ -25,8 +25,7 @@ class Posts_Large extends WP_Widget {
     
     echo $before_widget;
     
-    // Display Title
-    if (!empty($title)) echo $before_title . esc_attr($title) . $after_title;
+    
     
     // Build Arguments for WP_Query
     $args = array('posts_per_page' => $postcount, 'cat' => $category);
@@ -34,37 +33,41 @@ class Posts_Large extends WP_Widget {
     
     ?>
     
-    <ul class="widget widget-posts-large">
+    <div class="widget widget-posts-large <?php if(!empty($title)) echo 'widget-border'; ?>">
+      <?php
+      // Display Title
+      if (!empty($title)) echo $before_title . esc_attr($title) . $after_title;?>
+      <ul>
       <?php
       while ($widget_loop->have_posts()) : $widget_loop->the_post(); // The loop ?>
       
-      <li>
-        <?php
-        if (has_post_thumbnail() && $showfeatured) { ?>
-          <a href="<?php the_permalink(); ?>">
-            <?php the_post_thumbnail('large'); ?>
-          </a>
-        <?php }?>
-        <div class="text-min-width">
-          <h1 class="title">
-          <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark" class="title"><?php the_title(); ?></a></h1>
-          <p class="meta">By 
-            <?php
-            if ( function_exists( 'coauthors_posts_links' ) ) {
-              coauthors_posts_links();
-            } else {
-              the_author_link();
-            }?>
-            on
-            <time datetime="<?php the_date('Y-m-d');?>"><?php the_time('F j, Y');?></time>
-          </p>
-          <?php the_excerpt_limit(30) ?>
-        </div>
-      </li>
+        <li>
+          <?php
+          if (has_post_thumbnail() && $showfeatured) { ?>
+            <a href="<?php the_permalink(); ?>">
+              <?php the_post_thumbnail('large'); ?>
+            </a>
+            <?php }?>
+            <div class="text-min-width">
+              <h1 class="title">
+                <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark" class="title"><?php the_title(); ?></a></h1>
+                <p class="meta">By 
+                  <?php
+                  if ( function_exists( 'coauthors_posts_links' ) ) {
+                    coauthors_posts_links();
+                  } else {
+                    the_author_link();
+                  }?>
+                  on
+                  <time datetime="<?php the_date('Y-m-d');?>"><?php the_time('F j, Y');?></time>
+                </p>
+                <?php the_excerpt_limit(30) ?>
+              </div>
+            </li>
       
-      <?php endwhile; wp_reset_postdata(); ?>
-    </ul>
-    
+          <?php endwhile; wp_reset_postdata(); ?>
+        </ul>
+      </div>
     <?php
     echo $after_widget;
   }
