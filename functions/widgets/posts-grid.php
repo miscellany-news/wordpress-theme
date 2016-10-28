@@ -22,6 +22,8 @@ class Posts_Grid extends WP_Widget {
     $category = isset($instance['category']) ? $instance['category'] : '';
     $postcount = empty($instance['postcount']) ? '5' : $instance['postcount'];
     $shorttitle = $instance['shorttitle'] ? '1' : '0';
+    $background = $instance['background'] ? '1' : '0';
+    $border = $instance['border'] ? '1' : '0';
     
     echo $before_widget;
     
@@ -33,7 +35,7 @@ class Posts_Grid extends WP_Widget {
     
     ?>
     
-    <div class="widget widget-posts-grid <?php if(!empty($title)) echo 'widget-border'; ?>">
+    <div class="widget widget-posts-grid <?php if($border) echo 'widget-border '; if($background) echo 'widget-background'; ?>">
       <?php
       // Display Title
       if (!empty($title)) echo $before_title . esc_attr($title) . $after_title;?>
@@ -115,6 +117,22 @@ class Posts_Grid extends WP_Widget {
       <small>When checked, the theme will look for a Short Title custom field on the posts</small>
     </p>
     
+    <!-- Border -->
+    <p><label for"<?php echo $this->get_field_id('border');?>">
+      <input type="checkbox" id="<?php echo $this->get_field_id('border');?>" name="<?php echo $this->get_field_name('border'); ?>" <?php checked( $instance['border'] ); ?>>
+      Show border</label>
+      <br>
+      <small>Displays a border around the widget</small>
+    </p>
+    
+    <!-- Background -->
+    <p><label for"<?php echo $this->get_field_id('background');?>">
+      <input type="checkbox" id="<?php echo $this->get_field_id('background');?>" name="<?php echo $this->get_field_name('background'); ?>" <?php checked( $instance['background'] ); ?>>
+      Show background</label>
+      <br>
+      <small>Fills the widget with a background color</small>
+    </p>
+    
     <?php 
   }
   
@@ -127,6 +145,8 @@ class Posts_Grid extends WP_Widget {
     $instance['category'] = absint($new_instance['category']);
     $instance['postcount'] = absint($new_instance['postcount']);
     $instance['shorttitle'] = $new_instance['shorttitle'] ? 1 : 0;
+    $instance['background'] = $new_instance['background'] ? 1 : 0;
+    $instance['border'] = $new_instance['border'] ? 1 : 0;
     return $instance;
   }
   

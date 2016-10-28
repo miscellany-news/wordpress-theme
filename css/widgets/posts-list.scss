@@ -1,16 +1,7 @@
 /* Posts-List */
 
 .widget-posts-list ul {
-
-  li {
-    margin-bottom: 1em;
-
-    ul.widget-posts-large img {
-      display: block;
-    }
-
-    h1.title {
-      font-size: 1.2em;
-    }
+  .title {
+    font-size: 1em;
   }
 }

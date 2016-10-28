@@ -1,3 +1,38 @@
+.featured-image{
+	margin: 0;
+  max-width: $tablet;
+  font-size: .75em;
+  font-family: $sans-serif;
+
+	.image-box {
+		position: relative;
+		img {
+			display: block;
+			width: 100%;
+		}
+		.media-credit {
+			position: absolute;
+			display: inline-block;
+			margin: 0;
+			bottom: 0;
+			left: 0;
+			padding: 0 5px;
+			line-height: 2em;
+			background-color: rgba(0,0,0,.4);
+			color: rgba(255,255,255,.7);
+		}
+	}
+	
+	figcaption {
+		text-align: left;
+		position: relative;
+		display: block;
+		line-height: 1.2em;
+		padding-top: 5px;
+		color: #555;
+	}
+}
+
 .post {
 	h1 {
 		margin: 0;
@@ -57,40 +92,7 @@
     }
   }
   
-	.featured-image{
-		margin: 0;
-    max-width: $tablet;
-    font-size: .75em;
-    font-family: $sans-serif;
 	
-		.image-box {
-			position: relative;
-			img {
-				display: block;
-				width: 100%;
-			}
-			.media-credit {
-				position: absolute;
-				display: inline-block;
-				margin: 0;
-				bottom: 0;
-				left: 0;
-				padding: 0 5px;
-				line-height: 2em;
-				background-color: rgba(0,0,0,.4);
-				color: rgba(255,255,255,.7);
-			}
-		}
-		
-		figcaption {
-			text-align: left;
-			position: relative;
-			display: block;
-			line-height: 1.2em;
-			padding-top: 5px;
-			color: #555;
-		}
-	}
   
   .post-content {
     h1,h2,h3,h4,h5,h6 {

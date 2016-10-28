@@ -16,7 +16,15 @@ function themiscellanynews_widgets_init() {
     'before_widget' => '',
     'after_widget' => '',
 	));
-	
+  
+	register_sidebar( array( 
+		'id'            => 'home-main',
+		'name'          => __( 'Home Main' ),
+		'description'   => __( 'Main home widget area.' ),
+    'before_widget' => '',
+    'after_widget' => '',
+	));
+  
 	register_sidebar( array( 
 		'id'            => 'home-left-1',
 		'name'          => __( 'Home Top Left' ),
@@ -62,4 +70,6 @@ add_action( 'widgets_init', 'themiscellanynews_widgets_init' );
 require_once('widgets/posts-large.php');
 require_once('widgets/posts-list.php');
 require_once('widgets/posts-grid.php');
+require_once('widgets/horizontal-rule.php');
+require_once('widgets/featured-list.php');
 ?>

@@ -2,13 +2,13 @@
 /**
 * Adds Foo_Widget widget.
 */
-class Posts_Large extends WP_Widget {
+class Featured_list extends WP_Widget {
  
   /**
    * Register the widget
    */
   public function __construct() {
-    parent::__construct( 'posts-large', 'Posts Large', array( 'description' => __( 'A large post', 'text_domain' ), ));
+    parent::__construct( 'featured-list', 'Featured List', array( 'description' => __( 'A large post with a list of posts below', 'text_domain' ), ));
   }
   
   /**
@@ -27,56 +27,57 @@ class Posts_Large extends WP_Widget {
     
     echo $before_widget;
     
-    
-    
     // Build Arguments for WP_Query
     $args = array('posts_per_page' => $postcount, 'cat' => $category);
     $widget_loop = new WP_Query($args); 
     
     ?>
     
-    <div class="widget widget-posts-large <?php if($border) echo 'widget-border '; if($background) echo 'widget-background'; ?>">
+    <div class="widget widget-featured-list <?php if($border) echo 'widget-border '; if($background) echo 'widget-background'; ?>">
       <?php
       // Display Title
       if (!empty($title)) echo $before_title . esc_attr($title) . $after_title;?>
       <ul>
-      <?php
-      while ($widget_loop->have_posts()) : $widget_loop->the_post(); // The loop ?>
-      
-      <li>
-        <div class="row">
-          <?php
-          $thumbnail_show = has_post_thumbnail() && $showfeatured;
-            if ($thumbnail_show) : ?>
-            <div class="col-md-7">
-              <?php
-              get_template_part( 'template-parts/featured-image', get_post_format() );
-              ?>
-            </div>
-            <div class="col-md-5">
-            <?php endif;?>
-
-              <h1 class="title">
-                <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark" class="title"><?php the_title(); ?></a></h1>
-                <p class="meta">By 
-                  <?php
-                  if ( function_exists( 'coauthors_posts_links' ) ) {
-                    coauthors_posts_links();
-                  } else {
-                    the_author_link();
-                  }?>
-                  on
-                  <time datetime="<?php the_date('Y-m-d');?>"><?php the_time('F j, Y');?></time>
-                </p>
-                <?php the_excerpt_limit(40) ?>
-                <?php if($thumbnail_show) : ?>
-                </div> <?php endif; ?>
-              </div>
-            </li>
+        <?php
+        $first_post = true;
+        while ($widget_loop->have_posts()) : $widget_loop->the_post(); // The loop ?>
+        <?php if($first_post) :?>
+          <li>
+            <?php
+            if (has_post_thumbnail() && $showfeatured) { ?>
+              <a href="<?php the_permalink(); ?>">
+                <?php the_post_thumbnail('large'); ?>
+              </a>
+              <?php }?>
+              <div class="text-min-width">
+                <h1 class="title">
+                  <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark" class="title"><?php the_title(); ?></a></h1>
+                  <p class="meta">By 
+                    <?php
+                    if ( function_exists( 'coauthors_posts_links' ) ) {
+                      coauthors_posts_links();
+                    } else {
+                      the_author_link();
+                    }?>
+                    on
+                    <time datetime="<?php the_date('Y-m-d');?>"><?php the_time('F j, Y');?></time>
+                  </p>
+                  <?php the_excerpt_limit(15) ?>
+                </div>
+              </li>
+              
+              <?php 
+              $first_post = false;
+              else : ?>
+              <li class="normal-list">
+                <h1 class="title title-small"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark" class="title"><?php the_title(); ?></a></h1>
+              </li>
+            <?php endif; ?>
       
           <?php endwhile; wp_reset_postdata(); ?>
         </ul>
       </div>
+      
     <?php
     echo $after_widget;
   }
@@ -160,4 +161,4 @@ class Posts_Large extends WP_Widget {
  
 }
 
-add_action( 'widgets_init', function() { register_widget( 'Posts_Large' ); } );?>
+add_action( 'widgets_init', function() { register_widget( 'Featured_list' ); } );?>

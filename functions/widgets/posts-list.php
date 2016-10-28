@@ -21,6 +21,8 @@ class Posts_List extends WP_Widget {
     $title = apply_filters('widget_title', empty($instance['title']) ? '' : $instance['title'], $instance, $this->id_base);
     $category = isset($instance['category']) ? $instance['category'] : '';
     $postcount = empty($instance['postcount']) ? '5' : $instance['postcount'];
+    $background = $instance['background'] ? '1' : '0';
+    $border = $instance['border'] ? '1' : '0';
     
     echo $before_widget;
     
@@ -30,7 +32,7 @@ class Posts_List extends WP_Widget {
     
     ?>
     
-    <div class="widget widget-posts-list <?php if(!empty($title)) echo 'widget-border'; ?>">
+    <div class="widget widget-posts-list <?php if($border) echo 'widget-border '; if($background) echo 'widget-background'; ?>">
       <?php
       // Display Title
       if (!empty($title)) echo $before_title . esc_attr($title) . $after_title;?>
@@ -51,7 +53,7 @@ class Posts_List extends WP_Widget {
               on
               <time datetime="<?php the_date('Y-m-d');?>"><?php the_time('F j, Y');?></time>
             </p>
-            <?php the_excerpt_limit(30) ?>
+            <?php the_excerpt_limit(15) ?>
           </div>
         </li>
       
@@ -101,6 +103,22 @@ class Posts_List extends WP_Widget {
       <small>How many posts do you want displayed?</small>
     </p>
     
+    <!-- Border -->
+    <p><label for"<?php echo $this->get_field_id('border');?>">
+      <input type="checkbox" id="<?php echo $this->get_field_id('border');?>" name="<?php echo $this->get_field_name('border'); ?>" <?php checked( $instance['border'] ); ?>>
+      Show border</label>
+      <br>
+      <small>Displays a border around the widget</small>
+    </p>
+    
+    <!-- Background -->
+    <p><label for"<?php echo $this->get_field_id('background');?>">
+      <input type="checkbox" id="<?php echo $this->get_field_id('background');?>" name="<?php echo $this->get_field_name('background'); ?>" <?php checked( $instance['background'] ); ?>>
+      Show background</label>
+      <br>
+      <small>Fills the widget with a background color</small>
+    </p>
+    
     <?php 
   }
   
@@ -112,6 +130,8 @@ class Posts_List extends WP_Widget {
     $instance['title'] = sanitize_text_field($new_instance['title']);
     $instance['category'] = absint($new_instance['category']);
     $instance['postcount'] = absint($new_instance['postcount']);
+    $instance['background'] = $new_instance['background'] ? 1 : 0;
+    $instance['border'] = $new_instance['border'] ? 1 : 0;
     return $instance;
   }
   
