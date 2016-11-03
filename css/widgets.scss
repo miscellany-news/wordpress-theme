@@ -66,6 +66,7 @@ hr.widget {
       color: $font-color-lighter;
       font-size: .75em;
       line-height: 1.2rem;
+      width: auto;
     }
   
     p {
@@ -88,7 +89,7 @@ hr.widget {
     &.widget-border {
       border: none;
     }
-    ul img {
+    figure, img {
       display: none;
     }
   }
