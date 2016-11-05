@@ -1,59 +1,28 @@
 <?php get_header(); ?>
 <main class="container">
+  <?php if(is_active_sidebar('home-featured')) : ?>
+    <div class="row">
+      <div class="col-sm-12 home-featured">
+        <?php dynamic_sidebar('home-featured') ?>
+      </div>
+    </div>
+  <?php endif; ?>
+  
   <div class="row">
     <div class="col-md-9">
-      <?php if ( is_active_sidebar( 'home-main' ) ) : ?>
-        <div class="row">
-          <div class="col-sm-12">
-            <?php dynamic_sidebar( 'home-main' ); ?>
-          </div>
-        </div>
-      <?php endif; ?>
-      <div class="row">
-        <div class="col-md-4 front-left">
-          <?php if ( is_active_sidebar( 'home-left-1' ) ) : ?>
-            <?php dynamic_sidebar( 'home-left-1' ); ?>
-          <?php else : ?>
-            You need to add widgets to the left column
-          <?php endif; ?>
-        </div>
-        <div class="col-md-5 front-middle">
-          <?php if ( is_active_sidebar( 'home-middle-1' ) ) : ?>
-            <?php dynamic_sidebar( 'home-middle-1' ); ?>
-          <?php else : ?>
-            You need to add widgets to the middle column
-          <?php endif; ?>
-        </div>
-      </div>
-      
-      <?php if(is_active_sidebar('home-left-2') && is_active_sidebar('home-middle-2')) : ?>
-      <div class="row">
-        <div class="col-md-4 front-left">
-          <?php if ( is_active_sidebar( 'home-left-2' ) ) : ?>
-            <?php dynamic_sidebar( 'home-left-2' ); ?>
-          <?php else : ?>
-            You need to add widgets to the left column
-          <?php endif; ?>
-        </div>
-        <div class="col-md-5 front-middle">
-          <?php if ( is_active_sidebar( 'home-middle-2' ) ) : ?>
-            <?php dynamic_sidebar( 'home-middle-2' ); ?>
-          <?php else : ?>
-            You need to add widgets to the middle column
-          <?php endif; ?>
-        </div>
-      </div>
-      <?php endif; ?>
-      
+      <?php 
+      if(is_active_sidebar('home-main')) : 
+        dynamic_sidebar('home-main'); 
+      endif; ?>
     </div>
-    <div class="col-md-3 front-right">
-      <?php if ( is_active_sidebar( 'home-right' ) ) : ?>
-        <?php dynamic_sidebar( 'home-right' ); ?>
-      <?php else : ?>
-        You need to add widgets to the right column
-      <?php endif; ?>
-    </div>
-		
+      
+      <div class="col-md-3">
+        <?php 
+        if(is_active_sidebar('primary')) : 
+          dynamic_sidebar('primary'); 
+        endif; ?>
+      </div>
   </div>
+  
 </main>
 <?php get_footer(); ?>

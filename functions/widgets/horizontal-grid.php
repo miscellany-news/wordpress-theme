@@ -2,13 +2,13 @@
 /**
 * Adds Foo_Widget widget.
 */
-class Posts_Large extends WP_Widget {
+class Horizontal_Grid extends WP_Widget {
  
   /**
    * Register the widget
    */
   public function __construct() {
-    parent::__construct( 'posts-large', 'Posts Large', array( 'description' => __( 'A large post', 'text_domain' ), ));
+    parent::__construct( 'horizontal-grid', 'Horizontal Grid', array( 'description' => __( 'A horizontal grid of 4 posts', 'text_domain' ), ));
   }
   
   /**
@@ -20,63 +20,54 @@ class Posts_Large extends WP_Widget {
     extract($args);
     $title = apply_filters('widget_title', empty($instance['title']) ? '' : $instance['title'], $instance, $this->id_base);
     $category = isset($instance['category']) ? $instance['category'] : '';
-    $postcount = empty($instance['postcount']) ? '5' : $instance['postcount'];
-    $showfeatured = $instance['showfeatured'] ? '1' : '0';
+    $shorttitle = $instance['shorttitle'] ? '1' : '0';
     $background = $instance['background'] ? '1' : '0';
     $border = $instance['border'] ? '1' : '0';
+    $postcount = empty($instance['postcount']) ? '5' : $instance['postcount'];
+    $offset = empty($instance['offset']) ? '0' : $instance['offset'];
     
     echo $before_widget;
     
     
     
     // Build Arguments for WP_Query
-    $args = array('posts_per_page' => $postcount, 'cat' => $category);
+    $args = array('posts_per_page' => $postcount, 'cat' => $category, 'offset' => $offset);
     $widget_loop = new WP_Query($args); 
     
     ?>
     
-    <div class="widget widget-posts-large <?php if($border) echo 'widget-border '; if($background) echo 'widget-background'; ?>">
+    <div class="widget widget-horizontal-grid <?php if($border) echo 'widget-border '; if($background) echo 'widget-background'; ?>">
       <?php
       // Display Title
       if (!empty($title)) echo $before_title . esc_attr($title) . $after_title;?>
       <ul>
-      <?php
-      while ($widget_loop->have_posts()) : $widget_loop->the_post(); // The loop ?>
-      
-      <li>
-        <div class="row">
-          <?php
-          $thumbnail_show = has_post_thumbnail() && $showfeatured;
-            if ($thumbnail_show) : ?>
-            <div class="col-md-7">
+        <?php
+        while ($widget_loop->have_posts()) : $widget_loop->the_post(); // The loop ?>
+        <li>
+          <h3 class="title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark">
+            <?php 
+            $theshorttitle = get_post_meta(get_the_ID(), 'Short Title', true);
+            if($shorttitle && $theshorttitle) :
+              echo $theshorttitle;
+              else :
+                the_title();
+              endif; ?>
+            </a></h3>
+            <p class="author">By 
               <?php
-              get_template_part( 'template-parts/featured-image', get_post_format() );
-              ?>
-            </div>
-            <div class="col-md-5">
-            <?php endif;?>
-
-              <h1 class="title">
-                <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark" class="title"><?php the_title(); ?></a></h1>
-                <p class="meta">By 
-                  <?php
-                  if ( function_exists( 'coauthors_posts_links' ) ) {
-                    coauthors_posts_links();
-                  } else {
-                    the_author_link();
-                  }?>
-                  on
-                  <time datetime="<?php the_date('Y-m-d');?>"><?php the_time('F j, Y');?></time>
-                </p>
-                <?php the_excerpt_limit(40) ?>
-                <?php if($thumbnail_show) : ?>
-                </div> <?php endif; ?>
-              </div>
-            </li>
+              if ( function_exists( 'coauthors_posts_links' ) ) {
+                coauthors_posts_links();
+              } else {
+                the_author_link();
+              }?>
+            </p>
+            <?php the_excerpt_limit(15) ?>
       
-          <?php endwhile; wp_reset_postdata(); ?>
-        </ul>
-      </div>
+          </li>
+      
+        <?php endwhile; wp_reset_postdata(); ?>
+      </ul>
+    </div>
     <?php
     echo $after_widget;
   }
@@ -111,7 +102,7 @@ class Posts_Large extends WP_Widget {
         ?>
       </select>
    </p>
-    
+
     <!-- Post Count -->
     <p>
       <label for="<?php echo $this->get_field_id('postcount'); ?>">Number of Posts</label> 
@@ -119,10 +110,19 @@ class Posts_Large extends WP_Widget {
       <small>How many posts do you want displayed?</small>
     </p>
     
-    <!-- Show Featured Image -->
-    <p><label for"<?php echo $this->get_field_id('showfeatured');?>">
-      <input type="checkbox" id="<?php echo $this->get_field_id('showfeatured');?>" name="<?php echo $this->get_field_name('showfeatured'); ?>" <?php checked( $instance['showfeatured'] ); ?>>
-      Show Featured Image</label>
+    <!-- Post Offset -->
+    <p>
+      <label for="<?php echo $this->get_field_id('postcount'); ?>">Post Offset</label> 
+      <input class="widefat" id="<?php echo $this->get_field_id( 'offset' ); ?>" name="<?php echo $this->get_field_name( 'offset' ); ?>" type="text" value="<?php echo $instance['offset']; ?>">
+      <small>How many posts would you like to ignore?</small>
+    </p>
+
+    <!-- Use Short Titles Custom Fields -->
+    <p><label for"<?php echo $this->get_field_id('shorttitle');?>">
+      <input type="checkbox" id="<?php echo $this->get_field_id('shorttitle');?>" name="<?php echo $this->get_field_name('shorttitle'); ?>" <?php checked( $instance['shorttitle'] ); ?>>
+      Use short title</label>
+      <br>
+      <small>When checked, the theme will look for a Short Title custom field on the posts</small>
     </p>
     
     <!-- Border -->
@@ -140,6 +140,7 @@ class Posts_Large extends WP_Widget {
       <br>
       <small>Fills the widget with a background color</small>
     </p>
+    
     <?php 
   }
   
@@ -150,14 +151,16 @@ class Posts_Large extends WP_Widget {
     $instance = $old_instance;
     $instance['title'] = sanitize_text_field($new_instance['title']);
     $instance['category'] = absint($new_instance['category']);
-    $instance['postcount'] = absint($new_instance['postcount']);
-    $instance['showfeatured'] = $new_instance['showfeatured'] ? 1 : 0;
+    $instance['shorttitle'] = $new_instance['shorttitle'] ? 1 : 0;
     $instance['background'] = $new_instance['background'] ? 1 : 0;
     $instance['border'] = $new_instance['border'] ? 1 : 0;
+    $instance['postcount'] = absint($new_instance['postcount']);
+    $instance['offset'] = absint($new_instance['offset']);
+    
     return $instance;
   }
   
  
 }
 
-add_action( 'widgets_init', function() { register_widget( 'Posts_Large' ); } );?>
+add_action( 'widgets_init', function() { register_widget( 'Horizontal_Grid' ); } );?>
