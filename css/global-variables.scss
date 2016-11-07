@@ -26,12 +26,15 @@ $base-font-size: 1em;
 $base-line-height: 1.6em;
 
 // Colors
-$font-color: #111;
-$font-color-lighter: #555;
-
-$link-color: #326891;
-$link-visited: $link-color;
-
 //$vc-burgundy: #8C0309;
 $vc-burgundy: #820202;
 $accent: $vc-burgundy;
+
+$font-color: #111;
+$font-color-lighter: #555;
+
+//$link-color: #326891;
+$link-color: $vc-burgundy;
+$link-visited: $link-color;
+
+

@@ -31,16 +31,15 @@ class Large_Post extends WP_Widget {
     $widget_loop = new WP_Query($args); 
     
     ?>
-    
-    <div class="widget widget-large-post <?php if($border) echo 'widget-border '; if($background) echo 'widget-background'; ?>">
-      <?php
-      // Display Title
-      if (!empty($title)) echo $before_title . esc_attr($title) . $after_title;?>
-      <ul>
+    <?php
+    // Display Title
+    if (!empty($title)) echo $before_title . esc_attr($title) . $after_title;?>
+    <section class="widget widget-large-post <?php if($border) echo 'widget-border '; if($background) echo 'widget-background'; if(empty($title)) echo 'widget-no-title'; ?>">
+
       <?php
       while ($widget_loop->have_posts()) : $widget_loop->the_post(); // The loop ?>
       
-      <li>
+      <article>
         <div class="row">
           <?php
           $thumbnail_show = has_post_thumbnail() && $showfeatured;
@@ -62,7 +61,7 @@ class Large_Post extends WP_Widget {
                     the_title();
                   endif; ?>
                 </a></h3>
-                <p class="author">By 
+                <p class="meta-author">By 
                   <?php
                   if ( function_exists( 'coauthors_posts_links' ) ) {
                     coauthors_posts_links();
@@ -74,11 +73,10 @@ class Large_Post extends WP_Widget {
                 <?php if($thumbnail_show) : ?>
                 </div> <?php endif; ?>
               </div>
-            </li>
+            </article>
       
           <?php endwhile; wp_reset_postdata(); ?>
-        </ul>
-      </div>
+        </section>
     <?php
     echo $after_widget;
   }

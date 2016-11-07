@@ -20,27 +20,12 @@ function themiscellanynews_widgets_init() {
 	register_sidebar( array( 
 		'id'            => 'home-featured',
 		'name'          => __( 'Home Featured' ),
-		'description'   => __( 'The content of this widget will show up at the very top of the homepage underneath the header. It will take up the full width of the page. The main use of this area should be for special one-time content. Nothing will be displayed if it is empty' ),
+		'description'   => __( 'The content of this widget area will show up at the very top of the homepage underneath the header. It will take up the full width of the page. The main use of this area should be for special one-time content. Nothing will be displayed if it is empty' ),
     'before_widget' => '',
     'after_widget' => '',
 	));
-  
-	register_sidebar( array( 
-		'id'            => 'home-main',
-		'name'          => __( 'Home Main' ),
-		'description'   => __( 'This widget will be the first in the 2 column section of the home page (below "Home Top Full Width").' ),
-    'before_widget' => '',
-    'after_widget' => '',
-	));
-  
 }
 add_action( 'widgets_init', 'themiscellanynews_widgets_init' );
 
-//require_once('widgets/posts-large.php');
-//require_once('widgets/posts-list.php');
-//require_once('widgets/posts-grid.php');
-require_once('widgets/horizontal-rule.php');
 require_once('widgets/large-post.php');
-require_once('widgets/horizontal-grid.php');
-//require_once('widgets/featured-list.php');
 ?>
