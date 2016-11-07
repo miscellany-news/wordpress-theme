@@ -2,13 +2,13 @@
 /**
 * Adds Foo_Widget widget.
 */
-class Large_Post extends WP_Widget {
+class Breaking_News extends WP_Widget {
  
   /**
    * Register the widget
    */
   public function __construct() {
-    parent::__construct( 'large-post', 'Single Large Post', array( 'description' => __( 'A large post', 'text_domain' ), ));
+    parent::__construct( 'breaking-news', 'Breaking News', array( 'description' => __( 'A widget for breaking news', 'text_domain' ), ));
   }
   
   /**
@@ -18,7 +18,7 @@ class Large_Post extends WP_Widget {
     
     // Variables
     extract($args);
-    $title = apply_filters('widget_title', empty($instance['title']) ? '' : $instance['title'], $instance, $this->id_base);
+    $title = apply_filters('widget_title', empty($instance['title']) ? 'Breaking News' : $instance['title'], $instance, $this->id_base);
     $category = isset($instance['category']) ? $instance['category'] : '';
     $showfeatured = $instance['showfeatured'] ? '1' : '0';
     $background = $instance['background'] ? '1' : '0';
@@ -34,47 +34,17 @@ class Large_Post extends WP_Widget {
     <?php
     // Display Title
     if (!empty($title)) echo $before_title . esc_attr($title) . $after_title;?>
-    <section class="widget widget-large-post <?php if($border) echo 'widget-border '; if($background) echo 'widget-background'; if(empty($title)) echo 'widget-no-title'; ?>">
-
+    <section class="widget widget-breaking-news <?php if($border) echo 'widget-border '; if($background) echo 'widget-background'; if(empty($title)) echo 'widget-no-title'; ?>">
+      <h2 class="breaking-news-title"><?php echo $title; ?></h2>
       <?php
       while ($widget_loop->have_posts()) : $widget_loop->the_post(); // The loop ?>
       
-      <article>
-        <div class="row">
-          <?php
-          $thumbnail_show = has_post_thumbnail() && $showfeatured;
-            if ($thumbnail_show) : ?>
-            <div class="col-lg-7">
-              <?php the_post_thumbnail('featured-image-large')?>
-              
-            </div>
-            <div class="col-lg-5">
-            <?php endif;?>
+      <article style="background-image: url(<?php the_post_thumbnail_url('featured-image-wide')?>)">
+          
 
-              <h3 class="title">
-                <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark" class="title">
-                <?php 
-                $theshorttitle = get_post_meta(get_the_ID(), 'Short Title', true);
-                if($shorttitle && $theshorttitle) :
-                  echo $theshorttitle;
-                  else :
-                    the_title();
-                  endif; ?>
-                </a></h3>
-                <p class="meta-author">By 
-                  <?php
-                  if ( function_exists( 'coauthors_posts_links' ) ) {
-                    coauthors_posts_links();
-                  } else {
-                    the_author_link();
-                  }?>
-                </p>
-                <?php the_excerpt_limit(20) ?>
-                <?php if($thumbnail_show) : ?>
-                </div> <?php endif; ?>
-              </div>
+              <h3 class="title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
+                
             </article>
-      
           <?php endwhile; wp_reset_postdata(); ?>
         </section>
     <?php
@@ -152,4 +122,4 @@ class Large_Post extends WP_Widget {
  
 }
 
-add_action( 'widgets_init', function() { register_widget( 'Large_Post' ); } );?>
+add_action( 'widgets_init', function() { register_widget( 'Breaking_News' ); } );?>

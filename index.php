@@ -4,7 +4,7 @@ get_header();
 ?>
 <main class="container">
   <div class="row">
-    <div class="col-md-8 archive-page">
+    <div class="column medium-8 archive-page">
       <?php
       if ( have_posts() ) :
 
@@ -27,7 +27,7 @@ get_header();
       endif;
       ?>
     </div>
-    <aside class="col-md-4">
+    <aside class="column medium-4 top">
       <?php
       get_sidebar();
       ?>

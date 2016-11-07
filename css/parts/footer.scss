@@ -7,17 +7,18 @@ footer.main-footer {
   color: $footer-text-color;
   font-family: $sans-serif;
   padding: 1em;
+  text-align: center;
   
   nav ul {
     list-style-type: none;
-    display: flex;
     margin: 0;
+    padding: 0;
     
     li {
-      
       border-left: 1px solid #ddd;
       padding-left: .5rem;
       padding-right: .5rem;
+      display: inline-block;
       
       &:first-child {
         border: none;
@@ -31,7 +32,20 @@ footer.main-footer {
         font-size: .7rem;
         color: $footer-text-color;
       }
-      
     }
+  }
+}
+
+.copyright {
+  margin-bottom: 1em;
+}
+
+@media ($larger-than-mobile) {
+  .copyright {
+    float: left;
+  }
+  
+  .footer-menu-small {
+    text-align: right;
   }
 }

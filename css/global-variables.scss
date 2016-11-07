@@ -3,8 +3,8 @@ $min-width: 20rem;
 $mobile: 30rem;
 $tablet: 48rem;
 $desktop: 58rem;
-$max-width: 64rem;
-
+//$max-width: 64rem;
+$max-width: $desktop;
 // Breakpoints
 $larger-than-mobile : "min-width: " + $mobile;    
 $larger-than-tablet : "min-width: " + $tablet;    

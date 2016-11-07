@@ -39,7 +39,8 @@ if ( ! function_exists( 'themiscellanynews_setup' ) ) :
      * Add theme support for featured images
      */
     add_theme_support( 'post-thumbnails' );
-    add_image_size( 'featured-image-large', 2048, 1024, true );
+    add_image_size( 'featured-image-wide', 2048, 1000, true );
+    add_image_size( 'featured-image-large', 2048, 1363, true );
 
   }
 endif;

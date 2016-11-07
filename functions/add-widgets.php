@@ -27,5 +27,5 @@ function themiscellanynews_widgets_init() {
 }
 add_action( 'widgets_init', 'themiscellanynews_widgets_init' );
 
-require_once('widgets/large-post.php');
+require_once('widgets/breaking-news.php');
 ?>

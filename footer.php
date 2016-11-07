@@ -1,8 +1,8 @@
 <footer class="main-footer container">
-  <div class="float-left">
+  <div class="copyright">
     &copy; <?php bloginfo("name"); echo " " . date('Y'); ?>
   </div>
-  <div class="float-right">
+  <div class="footer-menu-small">
     <?php wp_nav_menu( array(
     'theme_location' => 'footer-menu-small',
     'container' => 'nav',

@@ -1,0 +1,35 @@
+/* Single Large Post */
+
+.widget-breaking-news {
+  text-align: center;
+  margin-top: 1rem;
+  
+  .breaking-news-title {
+    font-size: 3em;
+    color: $vc-burgundy;
+    margin:0;
+    margin-bottom: .5em;
+  }
+  
+  article {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: 50% 25%;
+    height: 100em;
+    max-height: 80vh;
+    
+    .title {
+      font-size: 4em;
+      max-width: $max-width;
+      text-shadow: 0 0 50px black;
+      
+      a {
+        color: white;
+        text-decoration: none;
+        
+      }
+    }
+  }
+} 
