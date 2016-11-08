@@ -56,15 +56,19 @@ html {
 }
 
 .tag {
+  margin: 0 .3em;
   display: inline-block;
-  font-size: .7em;
+  font-size: .75em;
   text-transform: uppercase;
   margin-bottom: .5em;
-  padding: .3em .6em;
+  padding: .2em .6em;
   color: white;
   background-color: $vc-burgundy;
   border-radius: 5px;
   font-family: $sans-serif;
+  a {
+    color: white;
+  }
 }
 
 .bottom-border {
@@ -91,4 +95,37 @@ h2 {
   margin: 0;
   font-weight: 300;
   margin-bottom: 1em;
+}
+
+figure {
+  font-size: .75em;
+  font-family: $sans-serif;
+  color: #666;
+  position: relative;
+  line-height: 1.2em;
+
+	.media-credit-container {
+		position: relative;
+    margin: 0;
+    margin-bottom: .5em;
+    
+		img {
+			display: block;
+			width: 100%;
+      margin: 0;
+      padding:0;
+      max-width: 100%;
+		}
+		.media-credit {
+			position: absolute;
+			display: inline-block;
+			margin: 0;
+			bottom: 0;
+			left: 0;
+			padding: 0 5px;
+			line-height: 2em;
+			background-color: rgba(0,0,0,.4);
+			color: rgba(255,255,255,.7);
+		}
+	}
 }

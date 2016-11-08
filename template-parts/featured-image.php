@@ -3,7 +3,7 @@
 if (has_post_thumbnail()) : ?>
 
 <figure class="featured-image">
-	<div class="image-box">
+	<div class="media-credit-container">
 	<?php the_post_thumbnail('large'); ?>
 <?php
 $media_credit = get_media_credit(get_post_thumbnail_id($post));
