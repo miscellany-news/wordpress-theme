@@ -126,6 +126,10 @@ figure {
 			line-height: 2em;
 			background-color: rgba(0,0,0,.4);
 			color: rgba(255,255,255,.7);
+			> a {
+			  color: rgba(255,255,255,.7);
+			  text-decoration: underline;
+			}
 		}
 	}
 }
