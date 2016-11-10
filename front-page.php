@@ -54,8 +54,8 @@ $main_4 = $options['miscellanynews_main_category_4'];
     </article>
   <?php endwhile; wp_reset_postdata(); ?>
 </section>
-      
-<section class="featured-list bottom-border">
+      <div class="bottom-border">
+<section class="featured-list">
   <?php 
   $the_loop = new WP_Query(array('posts_per_page' => 4, 'offset' => 1, 'cat' => $options['miscellanynews_featured_category'])); 
   ?>
@@ -91,7 +91,7 @@ $main_4 = $options['miscellanynews_main_category_4'];
       
 <?php endwhile; wp_reset_postdata(); ?>
 </section>
-
+</div>
 <div class="row top">
   <div class="column medium-8">
     <div class="row">
