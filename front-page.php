@@ -1,6 +1,13 @@
 <?php get_header(); ?>
 <?php 
 $options = get_option( 'miscellanynews_settings' );
+
+$featured_category = $options['miscellanynews_featured_category'];
+$main_1 = $options['miscellanynews_main_category_1'];
+$main_2 = $options['miscellanynews_main_category_2'];
+$main_3 = $options['miscellanynews_main_category_3'];
+$main_4 = $options['miscellanynews_main_category_4'];
+
 ?>
 <?php if(is_active_sidebar('home-featured')) : ?>
   <div class="special">
@@ -90,10 +97,10 @@ $options = get_option( 'miscellanynews_settings' );
     <div class="row">
       <section class="column large-6 category-list">
         <?php 
-        $the_loop = new WP_Query(array('posts_per_page' => 4, 'offset' => 1, 'cat' => 2));
+        $the_loop = new WP_Query(array('posts_per_page' => 4, 'offset' => 0, 'cat' => $main_1));
         ?>
-        <h2>
-          <?php echo get_cat_name(2); ?>
+        <h2 class="section-heading">
+          <?php echo get_cat_name($main_1); ?>
         </h2>
         <?php
         while ($the_loop->have_posts()) : $the_loop->the_post(); // The loop 
@@ -102,9 +109,9 @@ $options = get_option( 'miscellanynews_settings' );
       </section>
       <section class="column large-6 category-list">
         <?php 
-        $the_loop = new WP_Query(array('posts_per_page' => 4, 'offset' => 1, 'cat' => 4));?>
-        <h2>
-          <?php echo get_cat_name(4); ?>
+        $the_loop = new WP_Query(array('posts_per_page' => 4, 'offset' => 0, 'cat' => $main_2));?>
+        <h2 class="section-heading">
+          <?php echo get_cat_name($main_2); ?>
         </h2>
         <?php
         while ($the_loop->have_posts()) : $the_loop->the_post(); // The loop 
@@ -115,10 +122,10 @@ $options = get_option( 'miscellanynews_settings' );
     <div class="row">
       <section class="column large-6 category-list">
         <?php 
-        $the_loop = new WP_Query(array('posts_per_page' => 4, 'offset' => 1, 'cat' => 5));
+        $the_loop = new WP_Query(array('posts_per_page' => 4, 'offset' => 0, 'cat' => $main_3));
         ?>
-        <h2>
-          <?php echo get_cat_name(5); ?>
+        <h2 class="section-heading">
+          <?php echo get_cat_name($main_3); ?>
         </h2>
         <?php
         while ($the_loop->have_posts()) : $the_loop->the_post(); // The loop 
@@ -127,9 +134,9 @@ $options = get_option( 'miscellanynews_settings' );
       </section>
       <section class="column large-6 category-list">
         <?php 
-        $the_loop = new WP_Query(array('posts_per_page' => 4, 'offset' => 1, 'cat' => 6));?>
-        <h2>
-          <?php echo get_cat_name(6); ?>
+        $the_loop = new WP_Query(array('posts_per_page' => 4, 'offset' => 0, 'cat' => $main_4));?>
+        <h2 class="section-heading">
+          <?php echo get_cat_name($main_4); ?>
         </h2>
         <?php
         while ($the_loop->have_posts()) : $the_loop->the_post(); // The loop 

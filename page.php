@@ -4,21 +4,35 @@
 get_header();
 ?>
 <main class="container">
-  <div class="row">
-    <div class="col-md-8">
+  <div class="row top">
+    <div class="column medium-8">
       <?php
       if ( have_posts() ) :
 
         /* Start the Loop */
         while ( have_posts() ) : the_post();
-
-        /*
-        * Include the Post-Format-specific template for the content.
-        * If you want to override this in a child theme, then include a file
-        * called content-___.php (where ___ is the Post Format name) and that will
-        * be used instead.
-        */
-        get_template_part( 'template-parts/content', get_post_format() );
+?>
+        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+          <?php if( get_the_title() ) : ?>
+            <header>
+              <h1 class="page-title"><?php the_title();?></h1>
+            </header>
+          <?php endif;?>
+          <div class="post-content">
+            <?php
+            the_content();
+            ?>
+            <?php
+            wp_link_pages( array(
+              'before' => '<nav class="link-pages">',
+              'after'  => '</nav>',
+            ));
+            ?>
+          </div>
+        
+        
+        </article>
+<?php
 
       endwhile;
 
@@ -34,7 +48,7 @@ get_header();
 
       endif;
       ?></div>
-      <aside class="col-md-4">
+      <aside class="column medium-4">
         <?php
         get_sidebar();
         ?>

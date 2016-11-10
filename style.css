@@ -658,12 +658,19 @@ sup {
   vertical-align: super;
   font-size: smaller; }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: Palatino;
-  font-weight: bold; }
+.section-heading,
+.widgettitle {
+  color: #820202;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-size: 1.1em;
+  padding: 0;
+  margin: 0;
+  font-weight: 300;
+  margin-bottom: 1em; }
 
-table {
-  display: table; }
+.page-title {
+  margin-top: 0; }
 
 img {
   width: auto;
@@ -709,7 +716,6 @@ html {
   line-height: 1.4; }
 
 .tag {
-  margin: 0 .3em;
   display: inline-block;
   font-size: .75em;
   text-transform: uppercase;
@@ -733,16 +739,6 @@ html {
 .wrapleft {
   float: right;
   padding-left: 1em; }
-
-h2 {
-  color: #820202;
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
-  font-size: 1.1em;
-  padding: 0;
-  margin: 0;
-  font-weight: 300;
-  margin-bottom: 1em; }
 
 figure {
   font-size: .75em;
@@ -770,6 +766,9 @@ figure {
       line-height: 2em;
       background-color: rgba(0, 0, 0, 0.4);
       color: rgba(255, 255, 255, 0.7); }
+      figure .media-credit-container .media-credit > a {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: underline; }
 
 /* Header styles */
 .header-main {
