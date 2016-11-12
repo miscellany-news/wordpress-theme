@@ -13,11 +13,7 @@
   <div class="meta-short">
     <span class="authors-links">By 
       <?php
-      if ( function_exists( 'coauthors_posts_links' ) ) {
-        coauthors_posts_links();
-      } else {
-        the_author_link();
-      }?>
+      miscellanynews_get_author_link();?>
       <?php 
       $archive_year  = get_the_time('Y'); 
       $archive_month = get_the_time('m'); 

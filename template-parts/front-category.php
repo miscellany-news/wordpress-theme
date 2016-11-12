@@ -13,10 +13,7 @@
     <p class="meta-author">
       By 
       <?php
-      if ( function_exists( 'coauthors_posts_links' ) ) {
-        coauthors_posts_links();
-      } else {
-        the_author_link();
-      }?>
+      miscellanynews_get_author_link();
+      ?>
     </p>
   </article>

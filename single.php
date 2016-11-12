@@ -21,11 +21,8 @@ get_header();
           By 
           <span class="meta-author">
             <?php
-            if ( function_exists( 'coauthors_posts_links' ) ) {
-              coauthors_posts_links();
-            } else {
-              the_author_link();
-            }?>
+            miscellanynews_get_author_link();
+            ?>
           </span> on
           <time datetime="<?php the_date('Y-m-d');?>" class="post-date">
             <?php the_time('F j, Y');?>

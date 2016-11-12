@@ -29,12 +29,21 @@ $grid-columns: 12;
 .column {
   flex-basis: 100%;
 	padding: 0 .5rem;
+	width: auto;
+}
+
+.border-right {
+  border-right: 0;
+}
+
+.border-left {
+  border-left: 0;
 }
 
 @media screen and ($larger-than-mobile) {
 	@for $i from 1 through $grid-columns {      
 		.small-#{$i} {         
-			flex: $i / $grid-columns;
+			flex-basis: ($i / $grid-columns)*100%;
 		}
 	}
 }
@@ -42,7 +51,8 @@ $grid-columns: 12;
 @media screen and ($larger-than-tablet) {
 	@for $i from 1 through $grid-columns {      
 		.medium-#{$i} {         
-			flex: $i / $grid-columns;
+			flex-basis: ($i / $grid-columns)*100%;
+
 		}
 	}	
 }
@@ -50,7 +60,7 @@ $grid-columns: 12;
 @media screen and ($larger-than-desktop) {
 	@for $i from 1 through $grid-columns {      
 		.large-#{$i} {         
-			flex: $i / $grid-columns;
+			flex-basis: ($i / $grid-columns)*100%; 
 		}
 	}	
 }

@@ -25,6 +25,13 @@ function miscellanynews_settings_init(  ) {
 		'miscellanynews_theme_options_section' 
 	);
 	
+	add_settings_field( 
+		'miscellanynews_featured_sticky', 'Attempt to find sticky posts first', 
+		'miscellanynews_featured_sticky_render', 
+		'miscellanynews_settings_page', 
+		'miscellanynews_theme_options_section' 
+	);
+	
 	for($i = 1; $i <= 4; $i++) {
 	  add_settings_field(
 	    'miscellanynews_main_category_' . $i, 'Main Category ' . $i,
@@ -38,6 +45,14 @@ function miscellanynews_settings_init(  ) {
 
 function miscellanynews_featured_category_render(  ) { 
   miscellanynews_options_get_category( 'miscellanynews_featured_category' );
+}
+
+function miscellanynews_featured_sticky_render() {
+$options = get_option( 'miscellanynews_settings' );
+?>
+<label><input type="checkbox" name="miscellanynews_settings[miscellanynews_featured_sticky]" value="true" <?php echo ( 'true' == $options['miscellanynews_featured_sticky'] ) ? 'checked="checked"' : ''; ?>>Sticky?</label>
+  
+<?php
 }
 
 function miscellanynews_main_category_1_render () { 
