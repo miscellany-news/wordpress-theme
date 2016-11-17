@@ -1,7 +1,10 @@
 <?php get_header(); ?>
-<?php 
+<?php
+
+// Get theme options
 $options = get_option( 'miscellanynews_settings' );
 
+// Move specific options into their own variables
 $featured_category = $options['miscellanynews_featured_category'];
 $main_1 = $options['miscellanynews_main_category_1'];
 $main_2 = $options['miscellanynews_main_category_2'];
@@ -18,14 +21,17 @@ $main_4 = $options['miscellanynews_main_category_4'];
 <main class="container front-page">
   <section class="featured bottom-border top">
     <?php
+    // Large featured section loop
     $args = array(
       'posts_per_page' => 1,
       'offset' => 0,
       'cat' => $options['miscellanynews_featured_category']
     );
+    
     if($options['miscellanynews_featured_sticky']) {
       $args = array_merge($args, array('post__in'  => get_option( 'sticky_posts' ), 'ignore_sticky_posts' => 1));
     }
+    
     $the_loop = new WP_Query( $args ); 
     while ($the_loop->have_posts()) : $the_loop->the_post(); // The loop ?>
     <article class="row">
@@ -61,7 +67,8 @@ $main_4 = $options['miscellanynews_main_category_4'];
 </section>
 <section class="featured-list bottom-border">
   <div class="row">
-    <?php 
+    <?php
+    // Small featured section loop
     $the_loop = new WP_Query(array('posts_per_page' => 4, 'offset' => 1, 'cat' => $options['miscellanynews_featured_category'])); 
     ?>
     <?php
@@ -121,12 +128,7 @@ $main_4 = $options['miscellanynews_main_category_4'];
         </a>
         <h3 class="title">
           <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark" class="title">
-            <?php 
-            $theshorttitle = get_post_meta(get_the_ID(), 'Short Title', true);
-            if($theshorttitle) :
-              echo $theshorttitle;
-              else : the_title();
-            endif; ?>
+            <?php echo(miscellanynews_get_title( 'short' )); ?>
           </a>
         </h3>
                 
