@@ -3,11 +3,9 @@
 <head>
   <meta charset="<?php bloginfo( 'charset' ); ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-
 	<header class="header-main">
 		<div class="aux-menu">
 			<div class="container">
@@ -21,6 +19,7 @@
 			</div>
 			<span class="clear"></span>
 		</div>
+		
 		<div class="container header-image">
       <figure id="hamburger-main" class="hamburger-icon">
         <div class="line"></div>
@@ -40,6 +39,7 @@
 			</span>
 		</div>
 	</header>
+	
 	<nav class="navigation main-navigation">
 		<?php 
 		wp_nav_menu( array(

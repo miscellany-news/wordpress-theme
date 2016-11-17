@@ -54,10 +54,7 @@ get_header();
         <?php
         the_content();
 
-        wp_link_pages( array(
-        'before' => '<nav class="link-pages">',
-        'after'  => '</nav>',
-        ));
+        wp_link_pages(array( 'before' => '<nav class="link-pages">', 'after'  => '</nav>'));
         ?>
       </div>
 

@@ -1,40 +1,35 @@
 <?php
-
 /**
  * Register support for theme features
  */
-if ( ! function_exists( 'miscellanynews_setup' ) ) :
-  function miscellanynews_setup() {
+function miscellanynews_setup() {
+  // Add default posts and comments RSS feed links to head.
+  add_theme_support( 'automatic-feed-links' );
 
-    // Add default posts and comments RSS feed links to head.
-    add_theme_support( 'automatic-feed-links' );
+  // Let WordPress manage the document title. Don't hard code <title> tag.
+  add_theme_support( 'title-tag' );
 
-    // Let WordPress manage the document title. Don't hard code <title> tag.
-    add_theme_support( 'title-tag' );
+  // Use html5 markup
+  add_theme_support( 'html5', array(
+    'search-form',
+    'comment-form',
+    'comment-list',
+    'gallery',
+    'caption',
+  ) );
 
-    // Use html5 markup
-  	add_theme_support( 'html5', array(
-  		'search-form',
-  		'comment-form',
-  		'comment-list',
-  		'gallery',
-  		'caption',
-  	) );
+  // Add support for custom background color and images
+  add_theme_support( 'custom-background', array(
+    'default-color' => 'FFFFFF',
+  ) );
 
-    // Add support for custom background color and images
-    add_theme_support( 'custom-background', array(
- 	    'default-color' => 'FFFFFF',
-    ));
-
-    // Add theme support for featured images
-    add_theme_support( 'post-thumbnails' );
-    
-    // Add custom image sizes
-    add_image_size( 'featured-image-wide', 2048, 1000, true );
-    add_image_size( 'featured-image-large', 2048, 1363, true );
-
-  }
-endif;
+  // Add theme support for featured images
+  add_theme_support( 'post-thumbnails' );
+  
+  // Add custom image sizes
+  add_image_size( 'featured-image-wide', 2048, 1000, true );
+  add_image_size( 'featured-image-large', 2048, 1363, true );
+}
 add_action( 'after_setup_theme', 'miscellanynews_setup' );
 
 /*
@@ -57,12 +52,86 @@ function miscellanynews_scripts() {
 }
 add_action("wp_enqueue_scripts", "miscellanynews_scripts");
 
+/*
+ * Remove some bloat from the <head> tag
+ */
+function miscellanynews_cleanup_head() {
+  remove_action( 'wp_head', 'rsd_link' ); // EditURI link
+  remove_action( 'wp_head', 'feed_links_extra', 3 ); // Category feed links
+  remove_action( 'wp_head', 'feed_links', 2 ); // Post and comment feed links
+  remove_action( 'wp_head', 'wlwmanifest_link' ); // Windows Live Writer
+  remove_action( 'wp_head', 'index_rel_link' ); // Index link
+  remove_action( 'wp_head', 'parent_post_rel_link', 10, 0 ); // Previous link
+  remove_action( 'wp_head', 'start_post_rel_link', 10, 0 ); // Start link
+  remove_action( 'wp_head', 'rel_canonical', 10, 0 ); // Canonical
+  remove_action( 'wp_head', 'wp_shortlink_wp_head', 10, 0 ); // Shortlink
+  remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 ); // Links for adjacent posts
+  remove_action( 'wp_head', 'wp_generator' ); // WP version
+
+}
+function miscellanynews_start_cleanup() {
+  // Initialize the cleanup
+  add_action('init', 'miscellanynews_cleanup_head');
+}
+add_action('after_setup_theme','miscellanynews_start_cleanup');
+
+/**
+ * Register sidebars
+ */
+function miscellanynews_widgets_init() {
+	register_sidebar( array( 
+		'id'            => 'primary',
+		'name'          => __( 'Primary Sidebar' ),
+		'description'   => __( 'Main global sidebar' ),
+    'before_widget' => '',
+    'after_widget' => '',
+	));
+  
+	register_sidebar( array( 
+		'id'            => 'home-featured',
+		'name'          => __( 'Home Featured' ),
+		'description'   => __( 'The content of this widget area will show up at the very top of the homepage underneath the header. It will take up the full width of the page. The main use of this area should be for special one-time content. Nothing will be displayed if it is empty' ),
+    'before_widget' => '',
+    'after_widget' => '',
+	));
+}
+add_action( 'widgets_init', 'miscellanynews_widgets_init' );
+
+
+/**
+ * Custom login page header
+ */
+function miscellanynews_login_head() { 
+echo "
+	<style>
+	body.login #login h1 a {
+		background: url('".get_bloginfo('template_url')."/images/logo-icon.png') no-repeat scroll center top transparent;
+    background-size: 90px 90px;
+    border-radius: 10px;
+		height: 90px;
+		width: 90px;
+    outline: none;
+    border: none;
+    box-shadow: none;
+	}
+	</style>";
+}
+add_action("login_head", "miscellanynews_login_head");
+
+function miscellanynews_login_logo_url() {
+    return home_url();
+}
+add_filter( 'login_headerurl', 'miscellanynews_login_logo_url' );
+
+// Add theme options page
 require_once('inc/options.php');
-require_once('inc/remove-bloat.php');
+
+// Recommended plugins
 require_once('inc/class-tgm-plugin-activation.php');
 require_once('inc/recommend-plugins.php');
-require_once('inc/custom-login-page.php');
-require_once('inc/add-widgets.php');
+
+// Include custom widgets
+require_once('inc/widgets/breaking-news.php');
 
 /**
  * Function to print the author link. If the "author" custom field is set
@@ -81,6 +150,20 @@ function miscellanynews_get_author_link() {
   } else {
     the_author_link();
   }
+}
+
+/**
+ * Gets the excerpt with an arbitrary length.
+ * 
+ * Max length = default (55 words)
+ */
+function the_excerpt_limit($limit, $read_more = false) {
+  echo '<p class="excerpt">';
+  echo wp_trim_words(get_the_excerpt(), $limit, '&hellip;');
+  if($read_more) {
+    echo '&nbsp;<a href="'. esc_url( get_permalink() ) . '">'  . 'Read more &raquo;</a>';
+  }
+  echo '</p>';
 }
 
 function miscellanynews_get_category_list($category) { ?>
