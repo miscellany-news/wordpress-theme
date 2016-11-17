@@ -988,6 +988,7 @@ figure {
     display: none; }
   .main-navigation {
     background-color: #eee;
+    background-color: #820202;
     border-bottom: 1px solid #ddd;
     margin: 0;
     padding: 0; }
@@ -1019,7 +1020,8 @@ figure {
           padding: 8px 10px;
           font-size: .85em;
           text-transform: none;
-          border: none; }
+          border: none;
+          color: white; }
           .main-navigation .menu li a:hover {
             background-color: #ddd;
             border-radius: 0;

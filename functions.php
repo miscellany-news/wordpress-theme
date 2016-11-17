@@ -123,123 +123,18 @@ function miscellanynews_login_logo_url() {
 }
 add_filter( 'login_headerurl', 'miscellanynews_login_logo_url' );
 
+// Template Tags (custom theme functions that output small html
+require_once('inc/template-tags.php');
+
 // Add theme options page
 require_once('inc/options.php');
 
 // Recommended plugins
-require_once('inc/class-tgm-plugin-activation.php');
 require_once('inc/recommend-plugins.php');
 
 // Include custom widgets
 require_once('inc/widgets/breaking-news.php');
 
-/**
- * Function to print the author link. If the "author" custom field is set
- * then that will be used with no link. If the "Co-Authors Plus" plugin is
- * enabled then it will use that function to get the authors link.
- * Otherwise, it will use the built in the_authors_link() function.
- */
-function miscellanynews_get_author_link() {
-  // Get the "author" custom field
-  $custom_author = get_post_meta(get_the_ID(), 'author', true);
-  
-  if($custom_author) {
-    echo $custom_author; // Has "author" custom field
-  } elseif (function_exists('coauthors_posts_links')) {
-    coauthors_posts_links(); // "Co-Authors Plus" plugin
-  } else {
-    the_author_link();
-  }
-}
-
-/**
- * Gets the excerpt with an arbitrary length.
- * 
- * Max length = default (55 words)
- */
-function the_excerpt_limit($limit, $read_more = false) {
-  echo '<p class="excerpt">';
-  echo wp_trim_words(get_the_excerpt(), $limit, '&hellip;');
-  if($read_more) {
-    echo '&nbsp;<a href="'. esc_url( get_permalink() ) . '">'  . 'Read more &raquo;</a>';
-  }
-  echo '</p>';
-}
-
-/**
- * Add meta boxes for title length custom fields (metadata)
- */
-function miscellanynews_add_meta_boxes() {
-  add_meta_box('short-titles', "Short Titles", "miscellanynews_short_titles_html", "post", "side", "core");
-  add_meta_box('custom-author', "Old Author Field", "miscellanynews_custom_author_html", "post", "side", "low");
-}
-add_action( 'add_meta_boxes', 'miscellanynews_add_meta_boxes' );
-
-function miscellanynews_short_titles_html($post) {
-	wp_nonce_field( '_miscellanynews_meta_box_nonce', 'miscellanynews_meta_box_nonce' ); ?>
-
-	<p>
-		<label for="tiny_title">Tiny Title</label><br>
-		<input type="text" name="tiny_title" id="tiny_title" value="<?php echo get_post_meta(get_the_ID(), 'tiny_title', true ); ?>">
-	</p>	<p>
-		<label for="short_title">Short Title</label><br>
-		<input type="text" name="short_title" id="short_title" value="<?php echo get_post_meta(get_the_ID(), 'short_title', true ); ?>">
-	</p><?php
-}
-
-function miscellanynews_custom_author_html($post) {
-	wp_nonce_field( '_miscellanynews_meta_box_nonce', 'miscellanynews_meta_box_nonce' ); ?>
-
-	<p>
-		<label for="author">Author</label><br>
-		<input type="text" name="author" id="author" value="<?php echo get_post_meta(get_the_ID(), 'author', true ); ?>">
-		<br><small>This is not where you should put the author. It is used only to show who the author is set to on posts from the pre-2017 website</small>
-	</p><?php
-}
-
-/**
- * Save new values from the custom meta boxes
- */
-function miscellanynews_meta_box_save( $post_id ) {
-	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
-	if ( ! isset( $_POST['miscellanynews_meta_box_nonce'] ) || ! wp_verify_nonce( $_POST['miscellanynews_meta_box_nonce'], '_miscellanynews_meta_box_nonce' ) ) return;
-	if ( ! current_user_can( 'edit_post', $post_id ) ) return;
-
-	if ( isset( $_POST['tiny_title'] ) )
-		update_post_meta( $post_id, 'tiny_title', esc_attr( $_POST['tiny_title'] ) );
-	if ( isset( $_POST['short_title'] ) )
-		update_post_meta( $post_id, 'short_title', esc_attr( $_POST['short_title'] ) );
-	if ( isset( $_POST['author'] ) )
-		update_post_meta( $post_id, 'author', esc_attr( $_POST['author'] ) );
-}
-add_action( 'save_post', 'miscellanynews_meta_box_save' );
-
-/**
- * Returns the text for the specified title type. Options are 'tiny', 'short', 'normal'. 
- * Defaults to normal.
- */
-function miscellanynews_get_title($length = 'normal') {
-  if ($length == 'short' and $short = get_post_meta(get_the_ID(), 'short_title', true))
-    return $short;
-  else if ($length == 'tiny' and $tiny = get_post_meta(get_the_ID(), 'short_title', true))
-    return $tiny;
-  else
-    return get_the_title();
-}
-
-function miscellanynews_get_category_list($category) { ?>
-    <section class="category-list">
-      <?php 
-      $category_link = get_category_link($category);
-      $the_loop = new WP_Query(array('posts_per_page' => 4, 'offset' => 0, 'cat' => $category));?>
-      <h2 class="section-heading">
-        <a href="<?php echo $category_link; ?>"><?php echo get_cat_name($category); ?></a>
-      </h2>
-      <?php
-      while ($the_loop->have_posts()) : $the_loop->the_post(); // The loop 
-        get_template_part('template-parts/front-category');
-      endwhile; wp_reset_postdata(); ?>
-    </section>
-<?php
-}
+// Include meta boxes
+require_once('inc/meta-boxes.php');
 ?>

@@ -1,63 +1,36 @@
-<?php
+<?php get_header(); ?>
 
-/* Include the header.php file */
-get_header();
-?>
 <main class="container">
-  <div class="row top">
-    <div class="column medium-8">
-      <?php
-      if ( have_posts() ) :
+<div class="row top">
+<div class="column medium-8">
 
-        /* Start the Loop */
-        while ( have_posts() ) : the_post();
-?>
-        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-          <?php if( get_the_title() ) : ?>
-            <header>
-              <h1 class="page-title"><?php the_title();?></h1>
-            </header>
-          <?php endif;?>
-          <div class="post-content">
-            <?php
-            the_content();
-            ?>
-            <?php
-            wp_link_pages( array(
-              'before' => '<nav class="link-pages">',
-              'after'  => '</nav>',
-            ));
-            ?>
-          </div>
-        
-        
-        </article>
 <?php
+// Start the loop.
+while ( have_posts() ) : the_post();
 
-      endwhile;
+// Include the page content template.
+get_template_part( 'template-parts/content', 'page' );
 
-      /*
-      * Show pagination for the posts
-      */
-      the_posts_pagination();
+// If comments are open or we have at least one comment, load up the comment template.
+if ( comments_open() || get_comments_number() ) {
+comments_template();
+}
 
-      else :
+// End of the loop.
+endwhile;
+?>
 
-        /* This page doesn't exist */
-        get_template_part( 'template-parts/content', 'none' );
+</div>
+<aside class="column medium-4">
+<?php
+get_sidebar();
+?>
+</aside>
+</div>
+</main>
 
-      endif;
-      ?></div>
-      <aside class="column medium-4">
-        <?php
-        get_sidebar();
-        ?>
-      </aside>
-    </div>
-  </main>
+<?php
+/* Include the footer.php file */
+get_footer();
 
-  <?php
-  /* Include the footer.php file */
-  get_footer();
-
-  ?>
+?>
