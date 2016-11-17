@@ -40,6 +40,12 @@ function themiscellanynews_register_required_plugins() {
 			'slug'      => 'search-everything',
 			'required'  => false,
 		),
+		
+		array(
+			'name'			=> 'Regenerate Thumbnails',
+			'slug'      => 'regenerate-thumbnails',
+			'required'  => false,
+		),
 
 	);
 
