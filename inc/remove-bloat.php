@@ -4,7 +4,7 @@
 /*
  * Remove some bloat from the <head> tag
  */
-function themiscellanynews_cleanup_head() {
+function miscellanynews_cleanup_head() {
   remove_action( 'wp_head', 'rsd_link' ); // EditURI link
   remove_action( 'wp_head', 'feed_links_extra', 3 ); // Category feed links
   remove_action( 'wp_head', 'feed_links', 2 ); // Post and comment feed links
@@ -12,17 +12,17 @@ function themiscellanynews_cleanup_head() {
   remove_action( 'wp_head', 'index_rel_link' ); // Index link
   remove_action( 'wp_head', 'parent_post_rel_link', 10, 0 ); // Previous link
   remove_action( 'wp_head', 'start_post_rel_link', 10, 0 ); // Start link
-  remove_action('wp_head', 'rel_canonical', 10, 0 ); // Canonical
+  remove_action( 'wp_head', 'rel_canonical', 10, 0 ); // Canonical
   remove_action( 'wp_head', 'wp_shortlink_wp_head', 10, 0 ); // Shortlink
   remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 ); // Links for adjacent posts
   remove_action( 'wp_head', 'wp_generator' ); // WP version
 
 }
-function themiscellanynews_start_cleanup() {
+function miscellanynews_start_cleanup() {
   // Initialize the cleanup
-  add_action('init', 'themiscellanynews_cleanup_head');
+  add_action('init', 'miscellanynews_cleanup_head');
 }
-add_action('after_setup_theme','themiscellanynews_start_cleanup');
+add_action('after_setup_theme','miscellanynews_start_cleanup');
 
 
 

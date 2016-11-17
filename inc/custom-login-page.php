@@ -1,7 +1,7 @@
 <?php
-add_action("login_head", "themiscellanynews_login_head");
+add_action("login_head", "miscellanynews_login_head");
 
-function themiscellanynews_login_head() {
+function miscellanynews_login_head() {
 	echo "
 	<style>
 	body.login #login h1 a {
@@ -18,9 +18,9 @@ function themiscellanynews_login_head() {
 	";
 }
 
-function themiscellanynews_login_logo_url() {
+function miscellanynews_login_logo_url() {
     return home_url();
 }
-add_filter( 'login_headerurl', 'themiscellanynews_login_logo_url' );
+add_filter( 'login_headerurl', 'miscellanynews_login_logo_url' );
 
 ?>

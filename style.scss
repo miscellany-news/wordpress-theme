@@ -7,31 +7,62 @@ Description: This is the official theme for Vassar's student newspaper, The Misc
 Version: 0.1.0
 License: GNU General Public License v3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Text Domain: themiscellanynews
+Text Domain: miscellanynews
 */
 
-@import "css/global-variables";
+/* GLOBAL VARIABLES */
+
+// Widths
+$min-width: 20rem;
+$mobile: 30rem;
+$tablet: 48rem;
+$desktop: 58rem;
+//$max-width: 64rem;
+$max-width: $desktop;
+// Breakpoints
+$larger-than-mobile : "min-width: " + $mobile;    
+$larger-than-tablet : "min-width: " + $tablet;    
+$larger-than-desktop: "min-width: " + $desktop; 
+
+$smaller-than-mobile : "max-width: " + $mobile;    
+$smaller-than-tablet : "max-width: " + $tablet;    
+$smaller-than-desktop: "max-width: " + $desktop; 
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+@import url('https://fonts.googleapis.com/css?family=Gentium+Basic:400,400i,700,700i');
+// Fonts
+$serif: Palatino, serif;
+$body: 'Gentium Basic', serif;
+$sans-serif: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$monospace: monospace; 
+
+$base-font-size: 1em;
+$base-line-height: 1.6em;
+
+// Colors
+//$vc-burgundy: #8C0309;
+$vc-burgundy: #820202;
+$accent: $vc-burgundy;
+
+$font-color: #111;
+$font-color-lighter: #555;
+
+//$link-color: #326891;
+$link-color: $vc-burgundy;
+$link-visited: $link-color;
+
+/* ----------------------------- */
+
+/* INCLUDES */
 
 /* Framework */
 @import "css/foundation";
 
-/* Header styles */
-@import "css/parts/header";
-
-/* Footer styles */
-@import "css/parts/footer";
-
-/* Search styles */
-@import "css/parts/search";
-
-/* Menu styles */
-@import "css/parts/menu";
-
-/* Article styles */
-@import "css/parts/article";
+/* Part styles */
+@import "css/parts";
 
 /* Import widgets */
 @import "css/widgets";
 
-/* Import special page styles */
+/* Import specific page styles */
 @import "css/pages";

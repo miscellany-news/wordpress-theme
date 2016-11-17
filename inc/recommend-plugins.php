@@ -1,10 +1,10 @@
 <?php
 
-require_once get_template_directory() . '/functions/class-tgm-plugin-activation.php';
+require_once('class-tgm-plugin-activation.php');
 
-add_action( 'tgmpa_register', 'themiscellanynews_register_required_plugins' );
+add_action( 'tgmpa_register', 'miscellanynews_register_required_plugins' );
 
-function themiscellanynews_register_required_plugins() {
+function miscellanynews_register_required_plugins() {
 	/*
 	 * Array of plugin arrays. Required keys are name and slug.
 	 * If the source is NOT from the .org repo, then source is also required.
@@ -50,7 +50,7 @@ function themiscellanynews_register_required_plugins() {
 	);
 
 	$config = array(
-		'id'           => 'themiscellanynews',     // Unique ID for hashing notices for multiple instances of TGMPA.
+		'id'           => 'miscellanynews',     // Unique ID for hashing notices for multiple instances of TGMPA.
 		'default_path' => '',                      // Default absolute path to bundled plugins.
 		'menu'         => 'tgmpa-install-plugins', // Menu slug.
 		'parent_slug'  => 'themes.php',            // Parent menu slug.

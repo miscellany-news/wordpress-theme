@@ -9,7 +9,7 @@ function the_excerpt_limit($limit, $read_more = false) {
   echo '</p>';
 }
 
-function themiscellanynews_widgets_init() {
+function miscellanynews_widgets_init() {
 	register_sidebar( array( 
 		'id'            => 'primary',
 		'name'          => __( 'Primary Sidebar' ),
@@ -26,7 +26,7 @@ function themiscellanynews_widgets_init() {
     'after_widget' => '',
 	));
 }
-add_action( 'widgets_init', 'themiscellanynews_widgets_init' );
+add_action( 'widgets_init', 'miscellanynews_widgets_init' );
 
 require_once('widgets/breaking-news.php');
 ?>
