@@ -68,7 +68,7 @@ $main_4 = $options['miscellanynews_main_category_4'];
     while ($the_loop->have_posts()) : $the_loop->the_post(); // The loop ?>
     <article class="column small-6 medium-3">
       <a href="<?php the_permalink(); ?>">
-        <?php the_post_thumbnail('featured-image-large')?>
+        <?php the_post_thumbnail('medium')?>
       </a>
       <h3 class="title">
         <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark" class="title">
