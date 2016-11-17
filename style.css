@@ -1108,6 +1108,12 @@ footer.main-footer {
   width: 100%;
   margin: 1em 0; }
 
+.share-links {
+  float: right; }
+  .share-links .share-image {
+    width: 1.5em;
+    height: 1.5em; }
+
 /* Import widgets */
 .textwidget p {
   font-size: .9em;

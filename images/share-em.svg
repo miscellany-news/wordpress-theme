@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60px" height="60px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41 (35326) - http://www.bohemiancoding.com/sketch -->
+    <title>Telegram_Color</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-192.000000, -117.000000)">
+            <g id="Telegram" transform="translate(192.000000, 117.000000)">
+                <circle id="Oval" fill="#278CB9" cx="30" cy="30" r="30"></circle>
+                <path d="M17,39.080031 L43.8406349,39.080031 L43.8406349,21 L17,21 L17,39.080031 Z M14,19.9910566 C14,18.8914264 14.8954396,18 16.0048928,18 L44.8357421,18 C45.9430138,18 46.8406349,18.8855792 46.8406349,19.9910566 L46.8406349,40.0889744 C46.8406349,41.1886046 45.9451952,42.080031 44.8357421,42.080031 L16.0048928,42.080031 C14.8976211,42.080031 14,41.1944518 14,40.0889744 L14,19.9910566 Z" id="Rectangle-2" fill="#FFFFFF"></path>
+                <path d="M14.2208155,21.4972788 L26.9889036,30.3798316 C28.8595276,31.6811945 31.7455289,31.7066736 33.644612,30.4349636 L46.5988389,21.7602404 L44.9296034,19.2675204 L31.9753765,27.9422437 C31.1024337,28.5268047 29.5588966,28.5131776 28.7021496,27.9171525 L15.9340616,19.0345998 L14.2208155,21.4972788 Z" id="Path-9" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>

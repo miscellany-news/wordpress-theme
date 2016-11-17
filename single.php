@@ -17,6 +17,15 @@ get_header();
         <?php if( get_the_title() ) : ?>
           <h1 class="title"><a href="<?php urlencode(the_permalink());?>" rel="bookmark"><?php the_title();?></a></h1>
         <?php endif;?>
+        
+          <div class="share-links">
+            <a href="http://www.facebook.com/sharer/sharer.php?u=<?php print(urlencode(get_permalink())); ?> &title=<?php print(urlencode(the_title())); print(urlencode(" - The Miscellany News")); ?>" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/share-fb.svg" class="share-image"></a>
+            <a href="http://twitter.com/intent/tweet?status=<?php print(urlencode(the_title())); print(urlencode(" - The Miscellany News")); ?>+<?php print(urlencode(get_permalink())); ?>" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/share-tw.svg" class="share-image"></a>
+            <a href="mailto:?subject=<?php print(urlencode(the_title())); print(urlencode(" - The Miscellany News")); ?>&body=Check out this site I came across <?php print(urlencode(the_permalink())); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/share-em.svg" class="share-image"></a>
+            <!--<a href="http://www.reddit.com/submit?url=<?php print(urlencode(get_permalink())); ?>&title=<?php print(urlencode(the_title())); print(urlencode(" - The Miscellany News")); ?>">Reddit</a>
+            -->
+          </div>
+        
         <div class="post-meta">
           By 
           <span class="meta-author">
@@ -38,12 +47,7 @@ get_header();
         </div>
       </header>
 
-          <div class="share-links">
-            <a href="http://twitter.com/intent/tweet?status=<?php print(urlencode(the_title())); ?>+<?php print(urlencode(get_permalink())); ?>">Tweet</a>
-            <a href="http://www.facebook.com/sharer/sharer.php?u=<?php print(urlencode(get_permalink())); ?> &title=<?php print(urlencode(the_title())); ?>">Facebook</a>
-            <a href="http://www.reddit.com/submit?url=<?php print(urlencode(get_permalink())); ?>&title=<?php print(urlencode(the_title())); ?>">Reddit</a>
-            <a href="mailto:?subject=<?php print(urlencode(the_title())); ?>&body=Check out this site I came across <?php print(urlencode(the_permalink())); ?>">Email</a>
-          </div>
+
           <?php
           get_template_part( 'template-parts/featured-image', get_post_format() );
           ?>
