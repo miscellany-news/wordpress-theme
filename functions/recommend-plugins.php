@@ -34,6 +34,12 @@ function themiscellanynews_register_required_plugins() {
 			'slug'      => 'perfect-pullquotes',
 			'required'  => false,
 		),
+		
+		array(
+			'name'			=> 'Search Everything',
+			'slug'      => 'search-everything',
+			'required'  => false,
+		),
 
 	);
 
