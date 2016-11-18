@@ -8,13 +8,16 @@ if (has_post_thumbnail()) : ?>
     <?php
     $media_credit = get_media_credit(get_post_thumbnail_id($post));
 
-    if($media_credit != " " || $media_credit != "") :
+    if( !empty( $media_credit) ) :
     ?>
       <span class="media-credit">
       Photo by <?php the_media_credit_html(get_post_thumbnail_id($post)); ?>
-      </span></div>
+      </span>
+    
     <?php
-    endif;
+    endif;?>
+  </div>
+    <?php
 
     $thumbnail_caption = get_post(get_post_thumbnail_id())->post_excerpt;
 
