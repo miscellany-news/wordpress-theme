@@ -1,43 +1,9 @@
-/* ARTICLE */
-.post {
-  .title {
-    font-weight: normal;
-    font-size: 2.2em;
-    margin-bottom: .1em;
-    a {
-      text-decoration: none;
-    }
-  }
-
-  .post-meta {
-    color: #999;
-    font-size: .9em;
-   /* font-family: $sans-serif;*/
-  
-    .meta-author {
-      font-size: 1em;
-    }
-  }
-
-  .featured-image {
-    width: 100%;
-    margin: 1em 0;
-  }
-}
-
-.share-links {
-  float: right;
-  .share-image {
-    width: 1.5em;
-    height: 1.5em;
-  }
-}
-
 /* HEADER */
 .header-main {
 	background-color: $vc-burgundy;
   padding-bottom: .6em;
   text-align: center;
+  position: relative;
 	
 	.under-logo {
 		display: none;
@@ -58,7 +24,7 @@
   }
 }
 
-@media ($larger-than-mobile) {
+@media ($larger-than-tablet) {
 	.header-main {
   	background-image: url("images/seal.svg");
   	background-size: 225px 225px;
@@ -152,7 +118,7 @@
 
 .main-navigation .menu {
   height: 100vh;
-  position: fixed;
+  position: absolute;
   margin: 0;
   top: 0;
   left: 0;
@@ -247,7 +213,8 @@
   }
 }
 
-@media ($larger-than-mobile) {
+
+@media ($larger-than-tablet) {
   .navigation-active #hamburger-page-background {
     display: none;
   }
@@ -387,61 +354,8 @@
 	}
 }
 
-@media ($larger-than-mobile) {
+@media ($larger-than-tablet) {
 	.search-form {
 		padding: 0;
 	}
-}
-
-/* FOOTER */
-$footer-text-color: #999;
-
-footer.main-footer {
-  margin-top: 1em;
-  border-top: 1px solid #ddd;
-  font-size: .7em;
-  color: $footer-text-color;
-  font-family: $sans-serif;
-  padding: 1em;
-  text-align: center;
-  
-  nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    
-    li {
-      border-left: 1px solid #ddd;
-      padding-left: .5rem;
-      padding-right: .5rem;
-      display: inline-block;
-      
-      &:first-child {
-        border: none;
-      }
-      
-      &:last-child {
-        padding-right: 0;
-      };
-      
-      a {
-        font-size: .7rem;
-        color: $footer-text-color;
-      }
-    }
-  }
-}
-
-.copyright {
-  margin-bottom: 1em;
-}
-
-@media ($larger-than-mobile) {
-  .copyright {
-    float: left;
-  }
-  
-  .footer-menu-small {
-    text-align: right;
-  }
 }

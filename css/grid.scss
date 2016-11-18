@@ -41,6 +41,7 @@ $grid-columns: 12;
 }
 
 @media screen and ($larger-than-mobile) {
+
 	@for $i from 1 through $grid-columns {      
 		.small-#{$i} {         
 			flex-basis: ($i / $grid-columns)*100%;
@@ -49,6 +50,11 @@ $grid-columns: 12;
 }
 
 @media screen and ($larger-than-tablet) {
+  .container {
+    max-width: $tablet;
+    width: $tablet;
+  }
+  
 	@for $i from 1 through $grid-columns {      
 		.medium-#{$i} {         
 			flex-basis: ($i / $grid-columns)*100%;
@@ -58,10 +64,13 @@ $grid-columns: 12;
 }
 
 @media screen and ($larger-than-desktop) {
+  .container {
+    max-width: $desktop;
+    width: $desktop;
+  }
 	@for $i from 1 through $grid-columns {      
 		.large-#{$i} {         
 			flex-basis: ($i / $grid-columns)*100%; 
 		}
 	}	
 }
-

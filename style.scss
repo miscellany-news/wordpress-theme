@@ -13,24 +13,21 @@ Text Domain: miscellanynews
 /* GLOBAL VARIABLES */
 
 // Widths
-$min-width: 20rem;
-$mobile: 30rem;
-$tablet: 48rem;
+$min-width: 20rem; // 16 * 20 = 320px
+$mobile: 32rem;
+$tablet: 39rem;
 $desktop: 58rem;
-//$max-width: 64rem;
-$max-width: $desktop;
+$max-width: 58rem;
+
 // Breakpoints
-$larger-than-mobile : "min-width: " + $mobile;    
-$larger-than-tablet : "min-width: " + $tablet;    
+$larger-than-mobile: "min-width: " + $mobile;    
+$larger-than-tablet: "min-width: " + $tablet;    
 $larger-than-desktop: "min-width: " + $desktop; 
 
-$smaller-than-mobile : "max-width: " + $mobile;    
-$smaller-than-tablet : "max-width: " + $tablet;    
-$smaller-than-desktop: "max-width: " + $desktop; 
-
+// Fonts
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
 @import url('https://fonts.googleapis.com/css?family=Gentium+Basic:400,400i,700,700i');
-// Fonts
+
 $serif: Palatino, serif;
 $body: 'Gentium Basic', serif;
 $sans-serif: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -40,14 +37,12 @@ $base-font-size: 1em;
 $base-line-height: 1.6em;
 
 // Colors
-//$vc-burgundy: #8C0309;
 $vc-burgundy: #820202;
 $accent: $vc-burgundy;
 
 $font-color: #111;
 $font-color-lighter: #555;
 
-//$link-color: #326891;
 $link-color: $vc-burgundy;
 $link-visited: $link-color;
 
@@ -56,13 +51,14 @@ $link-visited: $link-color;
 /* INCLUDES */
 
 /* Framework */
-@import "css/foundation";
+@import "css/base";
 
-/* Part styles */
-@import "css/parts";
+@import "css/general";
 
-/* Import widgets */
-@import "css/widgets";
+@import "css/header";
 
-/* Import specific page styles */
-@import "css/pages";
+@import "css/footer";
+
+@import "css/front-page";
+
+@import "css/single";

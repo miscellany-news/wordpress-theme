@@ -123,6 +123,17 @@ function miscellanynews_login_logo_url() {
 }
 add_filter( 'login_headerurl', 'miscellanynews_login_logo_url' );
 
+add_filter( 'get_the_archive_title', function ($title) {
+  if ( is_category() ) {
+    $title = single_cat_title( '', false );
+  } elseif ( is_tag() ) {
+    $title = single_tag_title( '', false );
+  } elseif ( is_author() ) {
+    $title = '<span class="vcard">' . get_the_author() . '</span>' ;
+  }
+  return $title;
+});
+
 // Template Tags (custom theme functions that output small html
 require_once('inc/template-tags.php');
 

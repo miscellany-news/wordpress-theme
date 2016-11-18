@@ -1,0 +1,46 @@
+.article {
+  margin-top: 1em;
+}
+
+.article-title {
+  margin: 0;
+}
+
+.article-excerpt {
+  margin: 0;
+  line-height: 1.4;
+  font-size: .95em;
+}
+
+.article-author {
+  color: #999;
+  margin: 0;
+  font-size: .8em;
+  
+  a { color: #999 }
+}
+
+.article-title-link {
+  color: $font-color;
+}
+
+// EXTRA LARGE
+
+.article-x-lg-title {
+  font-size: 1.9em;
+}
+
+// LARGE
+.article-large {
+  font-size: .9em;
+}
+
+// LIST
+.article-list {
+  font-size: .85em;
+}
+
+.article-list-title {
+  font-size: 1.3em;
+}
+
