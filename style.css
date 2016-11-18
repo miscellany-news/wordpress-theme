@@ -703,6 +703,15 @@ img {
   .section-heading a, .widgettitle a {
     color: #111; }
 
+.widgettitle {
+  font-size: 1em; }
+
+.textwidget {
+  font-size: .85em; }
+
+.textwidget p {
+  line-height: 1.4; }
+
 .clear {
   clear: both;
   display: block; }
@@ -719,6 +728,9 @@ img {
 .section-divider {
   padding: 1px;
   border-top: 2px solid #ddd; }
+
+.media-credit {
+  max-width: 100%; }
 
 /* HEADER */
 .header-main {

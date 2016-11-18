@@ -29,6 +29,15 @@
 
 .widgettitle {
   @extend .section-heading;
+  font-size: 1em;
+}
+
+.textwidget {
+  font-size: .85em;
+}
+
+.textwidget p {
+  line-height: 1.4;
 }
 
 .clear {
@@ -50,4 +59,8 @@
 .section-divider {
   padding: 1px;
   border-top: 2px solid #ddd;
+}
+
+.media-credit {
+  max-width: 100%
 }
