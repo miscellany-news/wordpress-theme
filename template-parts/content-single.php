@@ -2,7 +2,7 @@
   <header class="post-header">
 
     <?php if( get_the_title() ) : ?>
-      <h1 class="title"><a href="<?php urlencode(the_permalink());?>" rel="bookmark"><?php the_title();?></a></h1>
+      <h1 class="post-title"><a href="<?php urlencode(the_permalink());?>" rel="bookmark"><?php the_title();?></a></h1>
     <?php endif;?>
 
     <div class="share-links">

@@ -1,8 +1,8 @@
 <?php get_header();  ?>
 
-<main class="container section-post">
+<main class="container">
   <div class="row">
-  <div class="column medium-8">
+  <div class="column medium-8 section-post">
   <?php 
   // Start the loop.
   while ( have_posts() ) : the_post();
