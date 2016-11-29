@@ -56,11 +56,9 @@
   </div>
   
   <div class="column large-4 sidebar-column">
- <?php //if ( is_active_sidebar( 'primary' ) ) : ?>
-        <?php //dynamic_sidebar( 'primary' ); ?>
-    <?php //else : ?>
-        <!-- Time to add some widgets! -->
-    <?php // endif; ?>
+    <?php if ( is_active_sidebar( 'post-sidebar' ) ) : ?>
+      <?php dynamic_sidebar( 'post-sidebar' ); ?>
+    <?php endif; ?>
   </div>
   
   </div>

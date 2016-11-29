@@ -25,10 +25,14 @@
   margin: 0;
   margin-bottom: 1em;
   background-color: #f9f9f9;
-  border: 1px solid #eee;
+  border: 1px solid #f3f3f3;
   min-height: 150px;
   position: relative;
   border-radius: 2px;
+}
+
+.archive-post:hover {
+  background-color: #f3f3f3;
 }
 
 .archive-meta {

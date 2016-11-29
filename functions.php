@@ -86,6 +86,14 @@ function miscellanynews_widgets_init() {
     'before_widget' => '',
     'after_widget' => '',
 	));
+	
+	register_sidebar( array( 
+		'id'            => 'post-sidebar',
+		'name'          => __( 'Post Sidebar' ),
+		'description'   => __( 'Appears on all of the individual posts' ),
+    'before_widget' => '',
+    'after_widget' => '',
+	));
   
 	register_sidebar( array( 
 		'id'            => 'home-featured',
