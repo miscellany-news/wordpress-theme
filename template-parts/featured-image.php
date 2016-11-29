@@ -9,7 +9,7 @@ if (has_post_thumbnail()) : ?>
     $thumbnail_caption = get_post(get_post_thumbnail_id())->post_excerpt;
     if ($thumbnail_caption) : ?>
     
-    <figcaption>
+    <figcaption class="featured-caption">
       <?php echo $thumbnail_caption; ?>
     </figcaption>
     

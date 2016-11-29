@@ -1,7 +1,9 @@
 .post-header {
-  border-bottom: 1px dotted #ddd;
-  padding-bottom: 1.5em;
+  //border-bottom: 1px dotted #ddd;
+  //padding-bottom: 1.5em;
   margin-bottom: 1.5em;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .post-title {
@@ -28,11 +30,8 @@
 
 .share-links {
   display: block;
-  text-align: center;
   line-height: 0;
-  margin-top: 1em;
-  display: none;
-  
+  margin-top: 1em;  
   
   a {
     padding: 0 2px;
@@ -40,19 +39,11 @@
   }
   
   img {
-    width: 1.5em;
-    height: 1.5em;
+    width: 1.7em;
+    height: 1.7em;
     display: block;
     
   }
-}
-
-.share-box {
-  border: 1px solid #ddd;
-  display: inline-block;
-  position: relative;
-  padding: 6px 10px;
-  border-radius: 4px;
 }
 
 
@@ -60,6 +51,10 @@
   padding: 0;
   margin: 0;
   margin-top: 0;
+}
+
+.featured-caption {
+  padding: .5rem 1rem;
 }
 
 .post-category {
@@ -87,22 +82,11 @@
 
 .post-content {
   max-width: $tablet;
-  margin: 0 auto;
+  margin: 0 1rem;
   font-size: 1.1em;
   margin-top: 1.5em;
 }
 
 @media ($larger-than-mobile) {
   .post-content { font-size: 1em }
-}
-
-@media ($larger-than-desktop) {
-  .post-column {
-    padding-right: 1.5em;
-    border-right: 1px dotted #ddd;
-  }
-
-  .sidebar-column {
-    padding-left: 1.5em;
-  }
 }

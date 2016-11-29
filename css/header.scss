@@ -24,7 +24,7 @@
   }
 }
 
-@media ($larger-than-tablet) {
+@media ($larger-than-desktop) {
 	.header-main {
   	background-image: url("images/seal.svg");
   	background-size: 225px 225px;
@@ -214,7 +214,7 @@
 }
 
 
-@media ($larger-than-tablet) {
+@media ($larger-than-desktop) {
   .navigation-active #hamburger-page-background {
     display: none;
   }
@@ -354,7 +354,7 @@
 	}
 }
 
-@media ($larger-than-tablet) {
+@media ($larger-than-desktop) {
 	.search-form {
 		padding: 0;
 	}

@@ -1,13 +1,19 @@
 <?php get_header();  ?>
 
-<main class="container">
+<main class="single">
   <?php 
   // Start the loop.
   while ( have_posts() ) : the_post(); ?>
 
-    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+    <article id="post-<?php the_ID(); ?>" <?php post_class('single-post'); ?>>
   <header class="post-header">
-
+<div class="share-links">
+        <div class="share-box">
+        <a href="http://www.facebook.com/sharer/sharer.php?u=<?php print(urlencode(get_permalink())); ?> &title=<?php print(urlencode(the_title())); print(urlencode(" - The Miscellany News")); ?>" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/share-fb.svg" class="share-image"></a>
+        <a href="http://twitter.com/intent/tweet?status=<?php print(urlencode(the_title())); print(urlencode(" - The Miscellany News")); ?>+<?php print(urlencode(get_permalink())); ?>" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/share-tw.svg" class="share-image"></a>
+        <a href="mailto:?subject=<?php print(urlencode(the_title())); print(urlencode(" - The Miscellany News")); ?>&body=Check out this article from The Miscellany News <?php print(urlencode(the_permalink())); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/share-em.svg" class="share-image"></a>
+      </div>
+      </div>
     <?php foreach(get_the_category() as $category) : ?>
     <div class="post-category"><a href="<?php echo get_category_link($category->term_id); ?>"><?php echo $category->name; ?></a></div>
     <?php endforeach; ?>
@@ -28,19 +34,12 @@
     
      
   </header>
-  <div class="row">
-  <div class="column large-8 post-column">
+  <div class="post-left">
   <?php
   get_template_part( 'template-parts/featured-image', get_post_format() );
   ?>
   
-<div class="share-links">
-        <div class="share-box">
-        <a href="http://www.facebook.com/sharer/sharer.php?u=<?php print(urlencode(get_permalink())); ?> &title=<?php print(urlencode(the_title())); print(urlencode(" - The Miscellany News")); ?>" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/share-fb.svg" class="share-image"></a>
-        <a href="http://twitter.com/intent/tweet?status=<?php print(urlencode(the_title())); print(urlencode(" - The Miscellany News")); ?>+<?php print(urlencode(get_permalink())); ?>" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/share-tw.svg" class="share-image"></a>
-        <a href="mailto:?subject=<?php print(urlencode(the_title())); print(urlencode(" - The Miscellany News")); ?>&body=Check out this article from The Miscellany News <?php print(urlencode(the_permalink())); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/share-em.svg" class="share-image"></a>
-      </div>
-      </div>
+
   
     
     
@@ -52,10 +51,10 @@
 
   wp_link_pages(array( 'before' => '<nav class="link-pages">', 'after'  => '</nav>'));
   ?>
-  </div>
+
   </div>
   
-  <div class="column large-4 sidebar-column">
+  <div class="single-sidebar">
     <?php if ( is_active_sidebar( 'post-sidebar' ) ) : ?>
       <?php dynamic_sidebar( 'post-sidebar' ); ?>
     <?php endif; ?>
