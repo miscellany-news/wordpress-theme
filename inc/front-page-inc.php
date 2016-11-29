@@ -38,6 +38,7 @@ function miscellanynews_get_article_list($category, $params=array()) { ?>
           <p class="article-author article-list-author">By <?php miscellanynews_get_author_link(); ?></p>
           
           <p class="article-excerpt article-list-excerpt"><?php miscellanynews_the_excerpt_limit(15); ?></p>
+          <a href="<?php the_permalink();?>"class="link-overlay"></a>
         </article>
       <?php endwhile; wp_reset_postdata(); ?>
 <?php
@@ -84,7 +85,7 @@ function miscellanynews_get_article_large($category, $params=array()) { ?>
           <p class="article-author article-lg-excerpt">By <?php miscellanynews_get_author_link(); ?></p>
 
           <p class="article-excerpt article-lg-excerpt"><?php miscellanynews_the_excerpt_limit(30); ?></p>
-         
+         <a href="<?php the_permalink();?>"class="link-overlay"></a>
         </article>
       <?php endwhile; wp_reset_postdata(); ?>
 <?php
@@ -137,7 +138,7 @@ function miscellanynews_get_article_x_large($category, $params=array()) { ?>
             <?php miscellanynews_the_excerpt_limit(30); ?>
           </p>
           
-          
+          <a href="<?php the_permalink();?>"class="link-overlay"></a>
         </article>
       <?php endwhile; wp_reset_postdata(); ?>
 <?php

@@ -5,17 +5,21 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(array('archive-post', 'row')); ?>>
+  <?php if (has_post_thumbnail()) : ?>
 <div class="column large-3 show-large">
 
-  <?php 
-  if (has_post_thumbnail()) :
-    the_post_thumbnail('thumbnail', array( 'class' => 'archive-image' ));
-  endif;
-  ?>
+
+    <?php the_post_thumbnail('thumbnail', array( 'class' => 'archive-image' ));?>
+  
 
 </div>
-
 <div class="column large-9">
+
+<?php else : ?>
+<div class="column small-12">
+<?php endif; ?>
+
+
   <?php if( get_the_title() ) : ?>
     <h2 class="archive-post-title"><a href="<?php the_permalink();?>" rel="bookmark"><?php the_title();?></a></h2>
   <?php else : ?>
@@ -35,5 +39,6 @@
     <?php miscellanynews_the_excerpt_limit(30); ?>
   </p>
 </div>
-<a href="<?php the_permalink();?>" rel="bookmark" class="archive-link-overlay"></a>
+
+<a href="<?php the_permalink();?>" rel="bookmark" class="link-overlay"></a>
 </article>

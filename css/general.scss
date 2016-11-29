@@ -1,3 +1,4 @@
+
 .tag {
   display: inline-block;
   font-size: .75em;
@@ -100,5 +101,53 @@ figure {
         text-decoration: underline;
       }
     }
+  }
+}
+
+a {
+  z-index: 1;
+  position: relative;
+}
+
+a.link-overlay {
+  position: absolute;
+  z-index: 0;
+  opacity: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  text-indent: 200%;
+  white-space: nowrap;
+  background: transparent;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+ul.page-numbers {
+  font-size: .9em;
+  font-family: $sans-serif;
+  text-align:center;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+ul.page-numbers li {
+  display: inline-block;
+}
+
+li > .page-numbers {
+  padding: 2px 4px;
+  margin:0;
+  border: 1px solid #eee;
+  border-radius: 2px;
+  text-decoration: none;
+  line-height: 1;
+  
+  &:hover {
+    background: #f9f9f9;
+
   }
 }

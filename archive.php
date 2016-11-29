@@ -24,7 +24,7 @@ get_header(); ?>
 			endwhile;
 
 			// Previous/next page navigation.
-			the_posts_pagination();
+			the_posts_pagination(array('type' => 'list'));
 
 		// If no content, include the "No posts found" template.
 		else :

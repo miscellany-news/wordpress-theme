@@ -74,6 +74,7 @@ function miscellanynews_get_featured_list($category, $params=array()) { ?>
           <p class="post-author featured-post-author featured-large-post-author">
             By <?php miscellanynews_get_author_link(); ?>
           </p>
+          
         </article>
       <?php endwhile; wp_reset_postdata();
       
@@ -102,6 +103,7 @@ function miscellanynews_get_featured_list($category, $params=array()) { ?>
             <?php miscellanynews_get_author_link(); ?>
           </p>
           <div class="clear"></div>
+          
         </article>
       <?php endwhile; wp_reset_postdata(); ?>
     </section>
