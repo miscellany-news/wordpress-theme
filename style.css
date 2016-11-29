@@ -1247,9 +1247,11 @@ li > .page-numbers {
     padding-left: 1.5em; } }
 
 .archive-title {
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
-  color: #820202; }
+  font-size: 2em;
+  margin: 0;
+  margin-top: .5em;
+  margin-bottom: .25em;
+  color: #111; }
 
 .archive-post-title {
   font-size: 1.4em;
@@ -1261,11 +1263,13 @@ li > .page-numbers {
     font-weight: bold; }
 
 .archive-post {
-  border-bottom: 1px dotted #ddd;
-  padding-bottom: 1.5em;
+  padding: 1em .5em;
   margin-bottom: 1.5em;
+  background-color: #f9f9f9;
+  border: 1px solid #eee;
   min-height: 150px;
-  position: relative; }
+  position: relative;
+  border-radius: 2px; }
 
 .archive-meta {
   color: #666;

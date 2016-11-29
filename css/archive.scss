@@ -1,7 +1,9 @@
 .archive-title {
-  font-family: $sans-serif;
-  text-transform: uppercase;
-  color: $vc-burgundy;
+  font-size: 2em;
+  margin: 0;
+  margin-top: .5em;
+  margin-bottom: .25em;
+  color: $font-color;
 }
 
 .archive-post-title {
@@ -17,11 +19,13 @@
 }
 
 .archive-post {
-  border-bottom: 1px dotted #ddd;
-  padding-bottom: 1.5em;
+  padding: 1em .5em;
   margin-bottom: 1.5em;
+  background-color: #f9f9f9;
+  border: 1px solid #eee;
   min-height: 150px;
   position: relative;
+  border-radius: 2px;
 }
 
 .archive-meta {
