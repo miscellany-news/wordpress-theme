@@ -25,9 +25,13 @@
       <div class="post-author">
         <span class="fw-normal">By</span> <?php miscellanynews_get_author_link(); ?>
       </div>
-    
+      <?php 
+      $archive_year  = get_the_time('Y'); 
+      $archive_month = get_the_time('m'); 
+      $archive_day   = get_the_time('d'); 
+      ?>
       <div class="post-date">
-        <time datetime="<?php the_date('Y-m-d');?>"><?php the_time('F j, Y');?></time>
+        <time datetime="<?php the_date('Y-m-d');?>"><a href="<?php echo get_day_link( $archive_year, $archive_month, $archive_day); ?>"><?php the_time('F j, Y');?></a></time>
       </div>
       
       
