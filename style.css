@@ -1254,9 +1254,11 @@ li > .page-numbers {
   color: #111; }
 
 .archive-post-title {
-  font-size: 1.4em;
+  font-size: 1.3em;
   margin: 0;
-  margin-bottom: .2em; }
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin-bottom: .1em;
+  line-height: 1.2; }
   .archive-post-title a {
     color: #111;
     text-decoration: none;
@@ -1275,7 +1277,8 @@ li > .page-numbers {
 .archive-meta {
   color: #666;
   margin-bottom: .5em;
-  font-size: .9em; }
+  font-size: .87em;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 .archive-image {
   float: left;
