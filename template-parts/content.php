@@ -33,7 +33,7 @@
       $archive_month = get_the_time('m'); 
       $archive_day   = get_the_time('d'); 
       ?>
-    </span> | <time datetime="<?php the_date('Y-m-d');?>"><a href="<?php echo get_day_link( $archive_year, $archive_month, $archive_day); ?>"><?php the_time('F j, Y');?></a></time>
+    </span> on <time datetime="<?php the_date('Y-m-d');?>"><a href="<?php echo get_day_link( $archive_year, $archive_month, $archive_day); ?>"><?php the_time('F j, Y');?></a></time>
   </div>
   <p class="archive-post-content">
     <?php miscellanynews_the_excerpt_limit(30); ?>
