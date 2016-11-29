@@ -16,7 +16,15 @@
       <h1 class="post-title"><a href="<?php urlencode(the_permalink());?>" rel="bookmark"><?php the_title();?></a></h1>
     <?php endif;?>
   
-    
+    <div class="post-meta">
+      <?php 
+      $archive_year  = get_the_time('Y'); 
+      $archive_month = get_the_time('m'); 
+      $archive_day   = get_the_time('d'); 
+      ?>
+        By <span class="post-author"><?php miscellanynews_get_author_link(); ?></span> on <time datetime="<?php the_date('Y-m-d');?>" class="post-date"><a href="<?php echo get_day_link( $archive_year, $archive_month, $archive_day); ?>"><?php the_time('F j, Y');?></a></time>
+      
+    </div>
     
      
   </header>
@@ -26,28 +34,17 @@
   get_template_part( 'template-parts/featured-image', get_post_format() );
   ?>
   
-  
-  
-  <div class="meta-block">
-      <div class="share-links">
+<div class="share-links">
+        <div class="share-box">
         <a href="http://www.facebook.com/sharer/sharer.php?u=<?php print(urlencode(get_permalink())); ?> &title=<?php print(urlencode(the_title())); print(urlencode(" - The Miscellany News")); ?>" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/share-fb.svg" class="share-image"></a>
         <a href="http://twitter.com/intent/tweet?status=<?php print(urlencode(the_title())); print(urlencode(" - The Miscellany News")); ?>+<?php print(urlencode(get_permalink())); ?>" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/share-tw.svg" class="share-image"></a>
         <a href="mailto:?subject=<?php print(urlencode(the_title())); print(urlencode(" - The Miscellany News")); ?>&body=Check out this article from The Miscellany News <?php print(urlencode(the_permalink())); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/share-em.svg" class="share-image"></a>
       </div>
-      <div class="post-author">
-        <span class="fw-normal">By</span> <?php miscellanynews_get_author_link(); ?>
       </div>
-      <?php 
-      $archive_year  = get_the_time('Y'); 
-      $archive_month = get_the_time('m'); 
-      $archive_day   = get_the_time('d'); 
-      ?>
-      <div class="post-date">
-        <time datetime="<?php the_date('Y-m-d');?>"><a href="<?php echo get_day_link( $archive_year, $archive_month, $archive_day); ?>"><?php the_time('F j, Y');?></a></time>
-      </div>
+  
+    
+    
       
-      
-    </div>
 
   <div class="post-content">
   <?php
@@ -59,11 +56,11 @@
   </div>
   
   <div class="column large-4 sidebar-column">
- <?php if ( is_active_sidebar( 'primary' ) ) : ?>
-        <?php dynamic_sidebar( 'primary' ); ?>
-    <?php else : ?>
+ <?php //if ( is_active_sidebar( 'primary' ) ) : ?>
+        <?php //dynamic_sidebar( 'primary' ); ?>
+    <?php //else : ?>
         <!-- Time to add some widgets! -->
-    <?php endif; ?>
+    <?php // endif; ?>
   </div>
   
   </div>

@@ -1162,11 +1162,14 @@ li > .page-numbers {
 .article-list-title {
   font-size: 1.3em; }
 
-.post-title {
-  font-size: 2.5em;
-  margin: .5rem 0 1rem;
+.post-header {
   border-bottom: 1px dotted #ddd;
-  padding-bottom: 1rem; }
+  padding-bottom: 1.5em;
+  margin-bottom: 1.5em; }
+
+.post-title {
+  font-size: 2em;
+  margin: .2em 0 .4em; }
   .post-title a {
     color: #111;
     text-decoration: none;
@@ -1174,24 +1177,39 @@ li > .page-numbers {
     display: block;
     width: 100%; }
 
+@media (min-width: 39rem) {
+  .post-title {
+    font-size: 2.2em; } }
+
+@media (min-width: 58rem) {
+  .post-title {
+    font-size: 2.5em; } }
+
 .share-links {
-  float: right;
+  display: block;
+  text-align: center;
+  line-height: 0;
+  margin-top: 1em;
   display: none; }
   .share-links a {
+    padding: 0 2px;
     display: inline-block; }
   .share-links img {
-    width: 2.5em;
-    height: 2.5em;
+    width: 1.5em;
+    height: 1.5em;
     display: block; }
 
-@media (min-width: 32rem) {
-  .share-links {
-    display: block; } }
+.share-box {
+  border: 1px solid #ddd;
+  display: inline-block;
+  position: relative;
+  padding: 6px 10px;
+  border-radius: 4px; }
 
 .featured-image {
   padding: 0;
   margin: 0;
-  margin-top: .75rem; }
+  margin-top: 0; }
 
 .post-category {
   margin-top: 1em;
@@ -1204,20 +1222,9 @@ li > .page-numbers {
     color: inherit;
     text-decoration: none; }
 
-.meta-block {
-  padding: .75em 0;
-  margin: 1em 0;
-  border-bottom: 1px dotted #ddd;
-  border-top: 1px dotted #ddd; }
-  .meta-block a {
-    color: inherit; }
-
 .post-author {
   font-weight: bold;
-  margin-bottom: .5em; }
-
-.fw-normal {
-  font-weight: normal; }
+  text-transform: uppercase; }
 
 .comment-respond {
   display: none; }
@@ -1225,13 +1232,19 @@ li > .page-numbers {
 .post-content {
   max-width: 39rem;
   margin: 0 auto;
-  font-size: 1.1em; }
+  font-size: 1.1em;
+  margin-top: 1.5em; }
+
+@media (min-width: 32rem) {
+  .post-content {
+    font-size: 1em; } }
 
 @media (min-width: 58rem) {
   .post-column {
-    padding-right: 1rem; }
+    padding-right: 1.5em;
+    border-right: 1px dotted #ddd; }
   .sidebar-column {
-    padding-left: 1rem; } }
+    padding-left: 1.5em; } }
 
 .archive-title {
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
