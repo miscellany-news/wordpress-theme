@@ -1170,3 +1170,32 @@ figure {
   max-width: 39rem;
   margin: 0 auto;
   font-size: 1.1em; }
+
+.archive-title {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  color: #820202; }
+
+.archive-post-title {
+  font-size: 1.4em;
+  margin: 0;
+  margin-bottom: .2em; }
+  .archive-post-title a {
+    color: #111;
+    text-decoration: none;
+    font-weight: bold; }
+
+.archive-post {
+  border-bottom: 1px dotted #ddd;
+  padding-bottom: 1.5em;
+  margin-bottom: 1.5em;
+  min-height: 150px; }
+
+.archive-meta {
+  color: #666;
+  margin-bottom: .5em;
+  font-size: .9em; }
+
+.archive-image {
+  float: left;
+  width: 100%; }
