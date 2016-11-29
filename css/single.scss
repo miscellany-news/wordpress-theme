@@ -29,11 +29,9 @@
 }
 
 .post-header {
-  //border-bottom: 1px dotted #ddd;
-  //padding-bottom: 1.5em;
   margin-bottom: 1.5em;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
   width: 100%;
 }
 
@@ -46,7 +44,7 @@
 
 .post-title {
   font-size: 2em;
-  margin: .2em 0 .4em;
+  margin: .5em 0 .4em;
   
   a {
     color: $font-color;
@@ -83,7 +81,7 @@
 }
 
 @media ($larger-than-tablet) {
-  .share-links { display: block; }
+  .share-links { display: none; }
 }
 
 .featured-image {
