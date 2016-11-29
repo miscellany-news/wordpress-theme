@@ -40,7 +40,16 @@ $grid-columns: 12;
   border-left: 0;
 }
 
+.hidden-small,
+.hidden-medium,
+.hidden-large {
+  display: none;
+}
+
 @media screen and ($larger-than-mobile) {
+  .hidden-small {
+    display: block;
+  }
 
 	@for $i from 1 through $grid-columns {      
 		.small-#{$i} {         
@@ -50,6 +59,10 @@ $grid-columns: 12;
 }
 
 @media screen and ($larger-than-tablet) {
+  .hidden-middle {
+    display: block;
+  }
+
   .container {
     max-width: $tablet;
     width: $tablet;
@@ -64,6 +77,10 @@ $grid-columns: 12;
 }
 
 @media screen and ($larger-than-desktop) {
+  .hidden-large {
+    display: block;
+  }
+  
   .container {
     max-width: $desktop;
     width: $desktop;

@@ -516,7 +516,14 @@ a img.aligncenter {
 .border-left {
   border-left: 0; }
 
+.hidden-small,
+.hidden-medium,
+.hidden-large {
+  display: none; }
+
 @media screen and (min-width: 32rem) {
+  .hidden-small {
+    display: block; }
   .small-1 {
     flex-basis: 8.33333%; }
   .small-2 {
@@ -543,6 +550,8 @@ a img.aligncenter {
     flex-basis: 100%; } }
 
 @media screen and (min-width: 39rem) {
+  .hidden-middle {
+    display: block; }
   .container {
     max-width: 39rem;
     width: 39rem; }
@@ -572,6 +581,8 @@ a img.aligncenter {
     flex-basis: 100%; } }
 
 @media screen and (min-width: 58rem) {
+  .hidden-large {
+    display: block; }
   .container {
     max-width: 58rem;
     width: 58rem; }
@@ -814,7 +825,7 @@ figure {
   left: 0;
   cursor: pointer;
   z-index: 9999;
-  padding: 1em 0 0 .5em;
+  padding: 1.25em 0 0 1em;
   margin: 0; }
   .hamburger-icon .line {
     background-color: #fff;
@@ -1103,7 +1114,7 @@ figure {
   font-size: 1.3em; }
 
 .post-title {
-  font-size: 2em;
+  font-size: 2.2em;
   margin: 1rem 0 .5rem; }
   .post-title a {
     color: #111;
@@ -1111,17 +1122,50 @@ figure {
     font-weight: 400; }
 
 .share-links {
-  float: right; }
+  float: right;
+  display: none; }
   .share-links img {
-    width: 1.5em;
-    height: 1.5em; }
+    width: 2.5em;
+    height: 2.5em; }
 
-.post-meta {
-  color: #999;
-  font-size: .9em;
-  margin: 0; }
+@media (min-width: 32rem) {
+  .share-links {
+    display: block; } }
 
 .featured-image {
   padding: 0;
   margin: 0;
   margin-top: .75rem; }
+
+.post-category {
+  margin-top: 1em;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding-bottom: 0;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #820202; }
+  .post-category a {
+    color: inherit;
+    text-decoration: none; }
+
+.meta-block {
+  padding: .75em 0;
+  margin: 1em 0;
+  border-bottom: 1px dotted #ddd;
+  border-top: 1px dotted #ddd; }
+  .meta-block a {
+    color: inherit; }
+
+.post-author {
+  font-weight: bold;
+  margin-bottom: .5em; }
+
+.fw-normal {
+  font-weight: normal; }
+
+.comment-respond {
+  display: none; }
+
+.post-content {
+  max-width: 39rem;
+  margin: 0 auto; }
