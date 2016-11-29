@@ -3,14 +3,19 @@
 * Template part for displaying an archive
 */
 ?>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(array('archive-post', 'row')); ?>>
-<div class="column large-3 show-large ">
+<div class="column large-3 show-large">
+
   <?php 
   if (has_post_thumbnail()) :
     the_post_thumbnail('thumbnail', array( 'class' => 'archive-image' ));
-  endif; ?>
-  </div>
-  <div class="column large-9">
+  endif;
+  ?>
+
+</div>
+
+<div class="column large-9">
   <?php if( get_the_title() ) : ?>
     <h2 class="archive-post-title"><a href="<?php the_permalink();?>" rel="bookmark"><?php the_title();?></a></h2>
   <?php else : ?>
@@ -26,8 +31,9 @@
       ?>
     </span> | <time datetime="<?php the_date('Y-m-d');?>"><a href="<?php echo get_day_link( $archive_year, $archive_month, $archive_day); ?>"><?php the_time('F j, Y');?></a></time>
   </div>
-  <div class="archive-post-content">
+  <p class="archive-post-content">
     <?php miscellanynews_the_excerpt_limit(30); ?>
-  </div>
+  </p>
 </div>
+<a href="<?php the_permalink();?>" rel="bookmark" class="archive-link-overlay"></a>
 </article>
