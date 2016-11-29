@@ -804,7 +804,7 @@ ul.page-numbers li {
   display: inline-block; }
 
 li > .page-numbers {
-  padding: 2px 4px;
+  padding: 4px 8px;
   margin: 0;
   border: 1px solid #eee;
   border-radius: 2px;
