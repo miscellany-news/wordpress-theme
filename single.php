@@ -16,7 +16,19 @@
       <h1 class="post-title"><a href="<?php urlencode(the_permalink());?>" rel="bookmark"><?php the_title();?></a></h1>
     <?php endif;?>
   
-    <div class="meta-block">
+    
+    
+     
+  </header>
+  <div class="row">
+  <div class="column large-8 post-column">
+  <?php
+  get_template_part( 'template-parts/featured-image', get_post_format() );
+  ?>
+  
+  
+  
+  <div class="meta-block">
       <div class="share-links">
         <a href="http://www.facebook.com/sharer/sharer.php?u=<?php print(urlencode(get_permalink())); ?> &title=<?php print(urlencode(the_title())); print(urlencode(" - The Miscellany News")); ?>" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/share-fb.svg" class="share-image"></a>
         <a href="http://twitter.com/intent/tweet?status=<?php print(urlencode(the_title())); print(urlencode(" - The Miscellany News")); ?>+<?php print(urlencode(get_permalink())); ?>" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/share-tw.svg" class="share-image"></a>
@@ -36,14 +48,6 @@
       
       
     </div>
-    
-     
-  </header>
-  <div class="row">
-  <div class="column large-8">
-  <?php
-  get_template_part( 'template-parts/featured-image', get_post_format() );
-  ?>
 
   <div class="post-content">
   <?php
@@ -54,7 +58,7 @@
   </div>
   </div>
   
-  <div class="column large-4">
+  <div class="column large-4 sidebar-column">
  <?php if ( is_active_sidebar( 'primary' ) ) : ?>
         <?php dynamic_sidebar( 'primary' ); ?>
     <?php else : ?>

@@ -1,11 +1,13 @@
 .post-title {
-  font-size: 2.2em;
-  margin: 1rem 0 .5rem;
+  font-size: 2.5em;
+  margin: .5rem 0 1rem;
+  border-bottom: 1px dotted #ddd;
+  padding-bottom: 1rem;
   
   a {
     color: $font-color;
     text-decoration: none;
-    font-weight: 400;
+    font-weight: 600;
     display: block;
     width: 100%;
   }
@@ -15,9 +17,12 @@
   float: right;
   display: none;
   
+  a { display: inline-block; }
+  
   img {
     width: 2.5em;
     height: 2.5em;
+    display: block;
   }
 }
 
@@ -77,4 +82,14 @@
   max-width: $tablet;
   margin: 0 auto;
   font-size: 1.1em;
+}
+
+@media ($larger-than-desktop) {
+  .post-column {
+    padding-right: 1rem;
+  }
+
+  .sidebar-column {
+    padding-left: 1rem;
+  }
 }
