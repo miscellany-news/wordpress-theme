@@ -1203,6 +1203,7 @@ figure {
   width: 100%; }
 
 .archive-post-content {
+  margin: 0;
   line-height: 1.3; }
 
 .archive-post a {
