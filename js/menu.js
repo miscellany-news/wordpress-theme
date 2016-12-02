@@ -6,13 +6,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
   addEvent(button, 'click', function(event) {
 		event.preventDefault();
 		toggle(body);
-    toggle(document.documentElement.outerHTML);
   });
 
   addEvent(background, 'click', function(event) {
 		event.preventDefault();
 		toggle(body);
-    toggle(document.documentElement.outerHTML);
   });
 });
 
