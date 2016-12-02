@@ -825,7 +825,11 @@ li > .page-numbers {
   background-color: #820202;
   padding-bottom: .6em;
   text-align: center;
-  position: relative; }
+  position: fixed;
+  margin-top: -54px;
+  z-index: 99999;
+  height: 54px;
+  width: 100%; }
   .header-main .under-logo {
     display: none; }
   .header-main .header-logo {
@@ -839,12 +843,20 @@ li > .page-numbers {
   .header-main .search-form {
     display: none; }
 
+body {
+  margin-top: 54px; }
+
 @media (min-width: 58rem) {
+  body {
+    margin-top: 0; }
   .header-main {
     background-image: url("images/seal.svg");
     background-size: 225px 225px;
     background-repeat: no-repeat;
-    background-position: calc(50% - 300px) 0; }
+    background-position: calc(50% - 300px) 0;
+    height: auto;
+    margin-top: 0;
+    position: static; }
     .header-main .under-logo {
       display: block;
       text-align: center;
@@ -889,8 +901,7 @@ li > .page-numbers {
     width: 15px; }
 
 .navigation-active .hamburger-icon .line {
-  width: 20px;
-  background-color: black; }
+  width: 20px; }
 
 .navigation-active .hamburger-icon .line:nth-child(1) {
   transform: translateY(295%) rotate(45deg); }
@@ -902,21 +913,24 @@ li > .page-numbers {
   transform: translateY(-295%) rotate(-45deg); }
 
 .main-navigation .menu {
-  height: 100vh;
+  height: auto;
+  max-height: 100vh;
   position: absolute;
-  margin: 0;
+  margin: 0 auto;
   top: 0;
   left: 0;
-  width: 19em;
+  right: 0;
+  width: 17em;
   transition: transform 0.55s cubic-bezier(0.19, 1, 0.22, 1);
   background-color: white;
   z-index: 9998;
   display: block;
-  transform: translate3d(-100%, 0, 0);
+  transform: translate3d(0, -100%, 0);
   list-style-type: none;
   padding: 0;
   padding-top: 54px;
-  overflow: auto; }
+  overflow: auto;
+  padding-bottom: 1em; }
   .main-navigation .menu ul {
     display: none; }
   .main-navigation .menu li {
@@ -1018,7 +1032,8 @@ li > .page-numbers {
       margin: 0 auto;
       padding: 0;
       align-items: center;
-      justify-content: center; }
+      justify-content: center;
+      box-shadow: none !important; }
       .main-navigation .menu li {
         transform: none;
         margin: 0;
