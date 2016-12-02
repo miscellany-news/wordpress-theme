@@ -2,15 +2,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
   var body = document.body;
 	var button = document.getElementById("hamburger-main");
   var background = document.getElementById("hamburger-page-background");
-		
+
   addEvent(button, 'click', function(event) {
 		event.preventDefault();
 		toggle(body);
+    toggle(document.documentElement.outerHTML);
   });
-  
+
   addEvent(background, 'click', function(event) {
 		event.preventDefault();
 		toggle(body);
+    toggle(document.documentElement.outerHTML);
   });
 });
 
