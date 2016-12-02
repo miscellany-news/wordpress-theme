@@ -1000,7 +1000,8 @@ body {
   opacity: 1; }
 
 .navigation-active {
-  overflow: hidden; }
+  overflow: hidden;
+  position: relative; }
 
 .aux-menu {
   text-align: center; }
