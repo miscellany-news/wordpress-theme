@@ -844,7 +844,9 @@ li > .page-numbers {
     display: none; }
 
 body {
-  margin-top: 54px; }
+  margin-top: 54px;
+  position: relative;
+  overflow: auto; }
 
 @media (min-width: 58rem) {
   body {
@@ -1001,7 +1003,8 @@ body {
 
 .navigation-active {
   overflow: hidden;
-  position: relative; }
+  position: relative;
+  height: 100%; }
 
 .aux-menu {
   text-align: center; }

@@ -30,6 +30,8 @@
 
 body {
 	margin-top: 54px;
+	position: relative;
+	overflow: auto;
 }
 
 @media ($larger-than-desktop) {
@@ -68,9 +70,7 @@ body {
 			  width: 500px;
 				padding: 0;
 			}
-
 		}
-
 	}
 }
 
@@ -222,6 +222,7 @@ body {
 .navigation-active {
   overflow: hidden;
 	position: relative;
+	height: 100%;
 }
 
 .aux-menu {
