@@ -25,7 +25,7 @@ function miscellanynews_setup() {
 
   // Add theme support for featured images
   add_theme_support( 'post-thumbnails' );
-  
+
   // Add custom image sizes
   add_image_size( 'featured-image-wide', 2048, 1000, true );
   add_image_size( 'featured-image-large', 2048, 1363, true );
@@ -38,7 +38,7 @@ add_action( 'after_setup_theme', 'miscellanynews_setup' );
 function miscellanynews_register_menu() {
   register_nav_menu( 'primary-menu', 'Primary Menu' );
 	register_nav_menu( 'auxiliary-menu', 'Auxiliary Menu' );
-  register_nav_menu( 'footer-menu-small', 'Small Footer Menu');
+  register_nav_menu( 'footer-small', 'Footer Menu (16 items)');
 }
 add_action( 'init', 'miscellanynews_register_menu' );
 
@@ -79,23 +79,23 @@ add_action('after_setup_theme','miscellanynews_start_cleanup');
  * Register sidebars
  */
 function miscellanynews_widgets_init() {
-	register_sidebar( array( 
+	register_sidebar( array(
 		'id'            => 'primary',
 		'name'          => __( 'Primary Sidebar' ),
 		'description'   => __( 'Main global sidebar' ),
     'before_widget' => '',
     'after_widget' => '',
 	));
-	
-	register_sidebar( array( 
+
+	register_sidebar( array(
 		'id'            => 'post-sidebar',
 		'name'          => __( 'Post Sidebar' ),
 		'description'   => __( 'Appears on all of the individual posts' ),
     'before_widget' => '',
     'after_widget' => '',
 	));
-  
-	register_sidebar( array( 
+
+	register_sidebar( array(
 		'id'            => 'home-featured',
 		'name'          => __( 'Home Featured' ),
 		'description'   => __( 'The content of this widget area will show up at the very top of the homepage underneath the header. It will take up the full width of the page. The main use of this area should be for special one-time content. Nothing will be displayed if it is empty' ),
@@ -109,7 +109,7 @@ add_action( 'widgets_init', 'miscellanynews_widgets_init' );
 /**
  * Custom login page header
  */
-function miscellanynews_login_head() { 
+function miscellanynews_login_head() {
 echo "
 	<style>
 	body.login #login h1 a {

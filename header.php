@@ -19,7 +19,7 @@
 			</div>
 			<span class="clear"></span>
 		</div>
-		
+
 		<div class="container header-image">
       <figure id="hamburger-main" class="hamburger-icon">
         <div class="line"></div>
@@ -39,9 +39,9 @@
 			</span>
 		</div>
 	</header>
-	
+
 	<nav class="navigation main-navigation">
-		<?php 
+		<?php
 		wp_nav_menu( array(
 			'theme_location' => 'primary-menu',
 			'container' => '',
