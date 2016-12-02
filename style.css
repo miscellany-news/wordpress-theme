@@ -915,7 +915,7 @@ body {
 .main-navigation .menu {
   height: auto;
   max-height: 100vh;
-  position: absolute;
+  position: fixed;
   margin: 0 auto;
   top: 0;
   left: 0;
@@ -987,7 +987,7 @@ body {
   left: 0;
   bottom: 0;
   right: 0;
-  position: absolute;
+  position: fixed;
   height: 100vh;
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAHCGzyUAAAAC0lEQVQI12NgaAAAAIMAgR+3QgAAAAAASUVORK5CYII=);
   z-index: 9997;
