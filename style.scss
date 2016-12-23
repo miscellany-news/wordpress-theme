@@ -20,9 +20,9 @@ $desktop: 58rem;
 $max-width: 58rem;
 
 // Breakpoints
-$larger-than-mobile: "min-width: " + $mobile;    
-$larger-than-tablet: "min-width: " + $tablet;    
-$larger-than-desktop: "min-width: " + $desktop; 
+$larger-than-mobile: "min-width: " + $mobile;
+$larger-than-tablet: "min-width: " + $tablet;
+$larger-than-desktop: "min-width: " + $desktop;
 
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
@@ -31,12 +31,13 @@ $larger-than-desktop: "min-width: " + $desktop;
 $serif: Palatino, serif;
 $body: 'Gentium Basic', serif;
 $sans-serif: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$monospace: monospace; 
+$monospace: monospace;
 
 $base-font-size: 1em;
 $base-line-height: 1.6em;
 
 // Colors
+$background-color: #eee;
 $vc-burgundy: #820202;
 $accent: $vc-burgundy;
 

@@ -3,8 +3,6 @@
 	background-color: $vc-burgundy;
   padding-bottom: .6em;
   text-align: center;
-  position: fixed;
-	margin-top: -54px;
 	z-index: 99999;
 	height: 54px;
 	width: 100%;
@@ -29,7 +27,6 @@
 }
 
 body {
-	margin-top: 54px;
 	position: relative;
 	overflow: auto;
 }

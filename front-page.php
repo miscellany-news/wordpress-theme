@@ -1,64 +1,70 @@
 <?php get_header(); ?>
 
+<main class="main-content front-page">
+
+<section class="front-section">
+
 <?php
-// Get theme options
-$options = get_option( 'miscellanynews_settings' );
+$args = array('posts_per_page' => 1, 'offset' => 0, 'category_name' => 'features');
 
-// Move specific options into their own variables
-$featured_category = $options['miscellanynews_featured_category'];
-$main_1 = $options['miscellanynews_main_category_1'];
-$main_2 = $options['miscellanynews_main_category_2'];
-$main_3 = $options['miscellanynews_main_category_3'];
-$main_4 = $options['miscellanynews_main_category_4'];
-?>
+$loop = new WP_Query( $args );
 
-<main class="container container-top front-page">
+while ($loop->have_posts()) : $loop->the_post(); ?>
 
-<div class="row">
+<article class="front-lg-article">
+  <a class="front-lg-image">
+    <?php the_post_thumbnail('large')?>
+  </a>
 
-<div class="column medium-8">
+  <div class="front-lg-content">
+    <h1 class="front-lg-title">
+      <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="front-lg-title-link">
+        <?php echo miscellanynews_get_title('short');?>
+      </a>
+    </h1>
 
-<div class="row">
-<div class="column medium-12 large-8">
-<?php miscellanynews_get_article_x_large($featured_category, array('sticky' => true)); ?>
-</div>
-<div class="column medium-12 large-4">
-<?php miscellanynews_get_article_list($featured_category, array('offset' => 1, 'count' => 3, 'sticky' => true)); ?>
-</div>
+    <p class="front-lg-author">By <?php miscellanynews_get_author_link(); ?></p>
 
-</div>
+    <p class="front-lg-excerpt"><?php miscellanynews_the_excerpt_limit(15); ?></p>
+  </div>
+</article>
 
+<?php endwhile; wp_reset_postdata(); ?>
 
+</section>
 
-<hr class="divider">
+<section class="front-section">
 
-<div class="row">
+  <h1 class="section-title">Features&nbsp;&raquo;</h1>
 
-<div class="column medium-6">
+<?php
+$args = array('posts_per_page' => 3, 'offset' => 1, 'category_name' => 'features');
 
-<?php miscellanynews_get_article_list($featured_category, array('offset' => 5, 'count' => 3, 'sticky' => true)); ?>
+$loop = new WP_Query( $args );
 
-</div> <!-- end .medium-3 -->
+while ($loop->have_posts()) : $loop->the_post(); ?>
 
-<div class="column medium-6">
-<?php miscellanynews_get_article_large($featured_category, array('offset' => 4, 'sticky' => true)); ?>
+<article class="front-article">
 
-</div> <!-- end .medium-3 -->
+  <div class="front-content">
+    <h1 class="front-title">
+      <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="front-title-link">
+        <?php echo miscellanynews_get_title('short');?>
+      </a>
+    </h1>
 
+    <p class="front-author">By <?php miscellanynews_get_author_link(); ?></p>
 
+    <p class="front-excerpt"><?php miscellanynews_the_excerpt_limit(15); ?></p>
+  </div>
+  <a class="front-image">
+    <?php the_post_thumbnail('medium')?>
+  </a>
+</article>
 
-</div> <!-- end .row -->
+<?php endwhile; wp_reset_postdata(); ?>
 
-
-</div> <!-- end .large-8 -->
-
-<div class="column medium-4">
-<?php if(is_active_sidebar('primary')) dynamic_sidebar('primary');?>
-</div> <!-- end .large-4 -->
-
-</div> <!-- end .row -->
-
-
+</section>
 
 </main>
 
