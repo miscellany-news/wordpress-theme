@@ -489,6 +489,12 @@ a img.aligncenter {
   /* Above WP toolbar. */ }
 
 /* Global */
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
 body {
   color: #333;
   font-family: "Gentium Basic", serif;
