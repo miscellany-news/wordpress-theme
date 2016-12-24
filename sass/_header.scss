@@ -106,7 +106,7 @@
   height: auto;
   top: 2.875rem;
   width: 100%;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #999;
   z-index: 99;
   opacity: 0;
   display: block;
@@ -119,7 +119,7 @@
 }
 
 .navigation-active .site-nav {
-  width: auto;
+  width: 100%;
   opacity: 1;
   transition: opacity 0.3s ease-in-out;
 }
