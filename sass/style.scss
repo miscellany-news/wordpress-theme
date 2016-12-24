@@ -1,0 +1,85 @@
+/*!
+Theme Name: The Miscellany News
+Theme URI: http://www.miscellanynews.org/
+Author: George Witteman & The Miscellany News
+Author URI: http://www.georgewitteman.me/
+Description: This is the official theme for Vassar's student newspaper, The Miscellany News.
+Version: 0.1.0
+License: GNU General Public License v3
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Text Domain: miscellanynews
+*/
+
+/* GLOBAL VARIABLES */
+
+/* Widths */
+$min-width: 20rem; /* 320px / 16px = 20 */
+$max-width: 70rem; /* 1120px / 16px = 80 */
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i');
+$sans-serif: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+@import url('https://fonts.googleapis.com/css?family=Vollkorn:400,400i,700,700i');
+$serif: Vollkorn, serif;
+
+$base-line-height: 1.6;
+
+/* Colors */
+$color-page-background: #eee;
+$color-burgundy: #820202;
+
+$color-font: #333;
+
+$color-link: rgb(0, 117, 205);
+$color-visited-link: $color-link;
+
+/* STYLES */
+
+/* Normalize */
+@import "normalize";
+
+/* Default Wordpress styles */
+@import "wordpress";
+
+/* Global */
+
+body {
+  color: $color-font;
+  font-family: $serif;
+  line-height: $base-line-height;
+}
+
+a {
+  color: $color-link;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $sans-serif;
+}
+h1, h2 { line-height: 1.1; }
+h3, h4 { line-height: 1.3; }
+h1 { font-size: 2em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1em; }
+h5 { font-size: .825em; }
+h6 { font-size: .75em; }
+
+/* Helpers */
+
+.container {
+  min-width: $min-width;
+  max-width: $max-width;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
+/* Header */
+@import "header";
+
+/* Footer */
+@import "footer";
+
+/* Front Page */
+@import "front-page";

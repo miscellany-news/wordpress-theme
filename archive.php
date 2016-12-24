@@ -1,41 +1,32 @@
-<?php
+<?php get_header(); ?>
 
-get_header(); ?>
+<!-- Main content -->
+<main class="site-main">
+  <?php if ( have_posts() ) : ?>
 
-<div class="container container-top">
-<div class="row">
-  <main class="column medium-8 archive">
-		<?php if ( have_posts() ) : ?>
-      
-			<header class="archive-header">
-				<?php
-					the_archive_title('<h1 class="archive-title">','</h1>');
-					the_archive_description('<p class="archive-description">','</p>');
-				?>
-			</header>
+    <header class="archive-header">
+      <?php
+      the_archive_title('<h1 class="archive-title">','</h1>');
+      the_archive_description('<p class="archive-description">','</p>');
+      ?>
+    </header>
 
-			<?php
-			// Start the Loop.
-			while ( have_posts() ) : the_post();
+    <?php
+    while ( have_posts() ) : the_post();
 
-				get_template_part( 'template-parts/content', get_post_format() );
+      get_template_part( 'template-parts/content', get_post_format() );
 
-			// End the loop.
-			endwhile;
+    endwhile; // End loop
 
-			// Previous/next page navigation.
-			the_posts_pagination(array('type' => 'list'));
+    // Previous/next page navigation.
+    the_posts_pagination(array('type' => 'list'));
 
-		// If no content, include the "No posts found" template.
-		else :
-			get_template_part( 'template-parts/content', 'none' );
+  else: // No content found
+    get_template_part( 'template-parts/content', 'none' );
 
-		endif;
-		?>
+  endif;
+  ?>
 
 </main>
-<div class="column medium-4">
-<?php get_sidebar(); ?>
-</div>
-</div>
+
 <?php get_footer(); ?>

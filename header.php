@@ -6,47 +6,49 @@
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-	<header class="header-main">
-		<div class="aux-menu">
-			<div class="container">
-				<?php wp_nav_menu( array(
-				'theme_location' => 'auxiliary-menu',
-				'container' => 'nav',
-				'menu_id' => 'aux-nav-1',
-				'container_class' => 'aux-navigation'
-				)); ?>
-				<?php get_search_form() ?>
-			</div>
-			<span class="clear"></span>
-		</div>
+<div id="hamburger-page-background" class="hamburger-background"></div>
+  <!-- Site header -->
+  <header class="site-header">
 
-		<div class="container header-image">
-      <figure id="hamburger-main" class="hamburger-icon">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-      </figure>
-			<a class="header-logo" href="<?php echo esc_url( home_url( '/' ) );?>">
-				<img src="<?php echo get_template_directory_uri() . '/images/logo.svg'?>">
-			</a>
-			<span class="under-logo">
-        <?php
-        date_default_timezone_set('America/New_York');
-        $day = date('l',time());
-        $date = date('F j, Y', time());
-        ?>
-				Since 1866 | <em><?php echo $day; ?>,</em> <?php echo $date; ?>
-			</span>
-		</div>
-	</header>
+    <!-- Hamburger icon -->
+    <figure id="hamburger-main" class="hamburger-icon">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </figure>
 
-	<nav class="navigation main-navigation">
-		<?php
-		wp_nav_menu( array(
-			'theme_location' => 'primary-menu',
-			'container' => '',
-      'menu_class' => 'menu',
-			'menu_id' => 'main-nav-1'
-			)); ?>
-	</nav>
-  <div id="hamburger-page-background"></div>
+    <!-- Search icon -->
+    <a href="#">
+      <img src="<?php echo get_template_directory_uri() . '/img/search.svg'?>" class="search-icon" id="search-main">
+    </a>
+
+    <!-- The Miscellany News logo -->
+    <a class="site-title" href="<?php echo esc_url( home_url( '/' ) );?>">
+      <img src="<?php echo get_template_directory_uri() . '/img/logo.svg'?>" class="site-logo">
+    </a>
+
+    <!-- Subtitle -->
+    <span class="site-subtitle">
+      <?php
+      date_default_timezone_set('America/New_York');
+      $day = date('l',time());
+      $date = date('F j, Y', time());
+      ?>
+      Since 1866 | <em><?php echo $day; ?>,</em> <?php echo $date; ?>
+    </span>
+
+    <!-- Main navigation bar -->
+    <nav class="site-nav" id="site-nav">
+      <span class="nav-section">Sections</span>
+      <?php
+      wp_nav_menu( array(
+        'theme_location' => 'primary-menu',
+        'container' => '',
+        'menu_class' => 'site-menu',
+        'link_before' => '<span>',
+        'link_after' => '</span>',
+        'menu_id' => 'site-menu'
+      )); ?>
+    </nav>
+
+  </header>

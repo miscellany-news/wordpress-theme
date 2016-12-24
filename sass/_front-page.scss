@@ -9,10 +9,10 @@
 .section-title {
   padding: 1rem;
   margin: 0;
-  font-size: .95em;
-  font-family: $sans-serif;
   border-bottom: 1px solid #ccc;
   text-transform: uppercase;
+  line-height: 1;
+  font-size: 1em;
 }
 
 /* Large Article */
@@ -29,7 +29,7 @@
 
 .front-lg-title {
   padding: 0 1rem;
-  margin:0;
+  margin: 0;
 }
 
 .front-lg-title-link {
@@ -70,8 +70,8 @@
 }
 
 .front-title {
-  margin:0;
-  font-size: 1.5em;
+  margin: 0;
+  font-size: 1.4em;
 }
 
 .front-title-link {
@@ -82,7 +82,6 @@
 .front-author {
   margin: 0;
   color: #666;
-  font-size: .9em;
 }
 
 .front-excerpt {
