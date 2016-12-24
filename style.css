@@ -14,8 +14,8 @@ Text Domain: miscellanynews
 /* 320px / 16px = 20 */
 /* 1120px / 16px = 80 */
 /* Fonts */
-@import url("https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i");
-@import url("https://fonts.googleapis.com/css?family=Vollkorn:400,400i,700,700i");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i");
+@import url("https://fonts.googleapis.com/css?family=Gentium+Basic:400,400i,700,700i");
 /* Colors */
 /* STYLES */
 /* Normalize */
@@ -491,14 +491,14 @@ a img.aligncenter {
 /* Global */
 body {
   color: #333;
-  font-family: Vollkorn, serif;
+  font-family: "Gentium Basic", serif;
   line-height: 1.6; }
 
 a {
   color: #0075cd; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 h1, h2 {
   line-height: 1.1; }
@@ -639,7 +639,7 @@ h6 {
   display: flex;
   flex-wrap: wrap;
   text-align: left;
-  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; }
   .site-menu .menu-item {
     flex-basis: 50%; }
     .site-menu .menu-item a {
@@ -658,12 +658,12 @@ h6 {
 .nav-section {
   text-transform: uppercase;
   display: block;
-  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: bold; }
 
 /* Footer */
 .site-footer {
-  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: .8em;
   padding: 1rem 0; }
 
