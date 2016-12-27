@@ -16,16 +16,10 @@ function miscellanynews_register_required_plugins() {
 			'slug'      => 'disable-emojis',
 			'required'  => false,
 		),
-		
+
 		array(
 			'name'      => 'Co-Authors Plus',
 			'slug'      => 'co-authors-plus',
-			'required'  => false,
-		),
-		
-		array(
-			'name'      => 'Media Credit',
-			'slug'      => 'media-credit',
 			'required'  => false,
 		),
 
@@ -34,13 +28,13 @@ function miscellanynews_register_required_plugins() {
 			'slug'      => 'perfect-pullquotes',
 			'required'  => false,
 		),
-		
+
 		array(
 			'name'			=> 'Search Everything',
 			'slug'      => 'search-everything',
 			'required'  => false,
 		),
-		
+
 		array(
 			'name'			=> 'Regenerate Thumbnails',
 			'slug'      => 'regenerate-thumbnails',

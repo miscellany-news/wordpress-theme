@@ -55,6 +55,11 @@ body {
   color: $color-font;
   font-family: $serif;
   line-height: $base-line-height;
+  background-color: $color-page-background;
+}
+
+.site-container {
+  position: relative;
 }
 
 a {
@@ -87,6 +92,9 @@ h6 { font-size: .75em; }
 
 /* Footer */
 @import "footer";
+
+/* Site Navigation */
+@import "site-navigation";
 
 /* Front Page */
 @import "front-page";

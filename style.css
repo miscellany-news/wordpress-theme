@@ -498,7 +498,11 @@ html {
 body {
   color: #333;
   font-family: "Gentium Basic", serif;
-  line-height: 1.6; }
+  line-height: 1.6;
+  background-color: #eee; }
+
+.site-container {
+  position: relative; }
 
 a {
   color: #0075cd; }
@@ -614,36 +618,36 @@ h6 {
   -webkit-transform: translateZ(0);
   transform: translateZ(0); }
 
+/* Footer */
+.site-footer {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: .8em;
+  padding: 1rem 0; }
+
+/* Site Navigation */
 .navigation-active .hamburger-background {
   opacity: 1;
-  width: auto;
-  transition: opacity 0.3s ease-in-out; }
+  width: auto; }
 
 .site-nav {
-  width: 0;
+  display: none;
   position: absolute;
-  height: auto;
   top: 2.875rem;
   width: 100%;
   border-bottom: 1px solid #999;
   z-index: 99;
-  opacity: 0;
-  display: block;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
   background: #eee;
   padding: 1.5rem;
   text-align: left;
   line-height: 2.5; }
 
 .navigation-active .site-nav {
-  width: 100%;
-  opacity: 1;
-  transition: opacity 0.3s ease-in-out; }
+  display: block; }
 
 .site-menu {
   margin: 0;
   padding: 0;
+  margin-bottom: 1rem;
   list-style: none;
   display: flex;
   flex-wrap: wrap;
@@ -669,12 +673,6 @@ h6 {
   display: block;
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: bold; }
-
-/* Footer */
-.site-footer {
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: .8em;
-  padding: 1rem 0; }
 
 /* Front Page */
 .front-section {

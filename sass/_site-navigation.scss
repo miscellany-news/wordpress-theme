@@ -1,0 +1,59 @@
+.navigation-active .hamburger-background {
+  opacity: 1;
+  width: auto;
+}
+
+.site-nav {
+  display: none;
+  position: absolute;
+  top: 2.875rem;
+  width: 100%;
+  border-bottom: 1px solid #999;
+  z-index: 99;
+  background: #eee;
+  padding: 1.5rem;
+  text-align: left;
+  line-height: 2.5;
+}
+
+.navigation-active .site-nav {
+  display: block;
+}
+
+.site-menu {
+  margin: 0;
+  padding:0;
+  margin-bottom: 1rem;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: left;
+  font-family: $sans-serif;
+
+  .menu-item {
+    flex-basis: 50%;
+
+    a {
+      text-decoration: none;
+      font-weight: bold;
+      display: block;
+    }
+  }
+}
+
+.current-menu-parent a,
+.current-menu-item a {
+  color: #000;
+  text-decoration: underline;
+
+  span {
+    border-bottom: 1px dotted #333;
+  }
+}
+
+.nav-section {
+  text-transform: uppercase;
+  display: block;
+  font-family: $sans-serif;
+  font-weight: bold;
+}

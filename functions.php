@@ -36,9 +36,8 @@ add_action( 'after_setup_theme', 'miscellanynews_setup' );
  * Add menu support
  */
 function miscellanynews_register_menu() {
-  register_nav_menu( 'primary-menu', 'Primary Menu' );
-	register_nav_menu( 'auxiliary-menu', 'Auxiliary Menu' );
-  register_nav_menu( 'footer-small', 'Footer Menu (16 items)');
+  register_nav_menu( 'site-sections', 'Sections Navigation' );
+	register_nav_menu( 'site-blogs', 'Blogs Navigation' );
 }
 add_action( 'init', 'miscellanynews_register_menu' );
 

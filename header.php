@@ -6,6 +6,7 @@
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+<div class="site-container">
 <div id="hamburger-page-background" class="hamburger-background"></div>
   <!-- Site header -->
   <header class="site-header">
@@ -36,19 +37,5 @@
       ?>
       Since 1866 | <em><?php echo $day; ?>,</em> <?php echo $date; ?>
     </span>
-
-    <!-- Main navigation bar -->
-    <nav class="site-nav" id="site-nav">
-      <span class="nav-section">Sections</span>
-      <?php
-      wp_nav_menu( array(
-        'theme_location' => 'primary-menu',
-        'container' => '',
-        'menu_class' => 'site-menu',
-        'link_before' => '<span>',
-        'link_after' => '</span>',
-        'menu_id' => 'site-menu'
-      )); ?>
-    </nav>
 
   </header>
