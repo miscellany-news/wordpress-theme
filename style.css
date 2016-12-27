@@ -690,59 +690,56 @@ h6 {
   line-height: 1;
   font-size: 1em; }
 
-/* Large Article */
-.front-lg-article {
-  text-align: center;
-  padding-bottom: 1rem; }
-
-.front-lg-image {
-  display: block;
-  margin-bottom: 1rem; }
-
-.front-lg-title {
-  padding: 0 1rem;
-  margin: 0; }
-
-.front-lg-title-link {
-  color: black;
-  text-decoration: none; }
-
-.front-lg-author {
-  color: #666;
-  margin: 0 1rem; }
-
-.front-lg-excerpt {
-  margin: 0 1rem; }
-
 /* Regular Article */
-.front-article {
+.front-article, .front-lg-article {
   display: flex;
   margin: 1rem;
   border-bottom: 1px solid #ccc;
-  padding-bottom: 1rem; }
+  padding-bottom: 1rem;
+  position: relative; }
 
-.front-article:last-child {
+.front-article:last-child, .front-lg-article:last-child {
   border-bottom: 0;
   padding-bottom: 0; }
 
-.front-content {
-  width: 65%; }
+.front-content, .front-lg-content {
+  width: 65%;
+  order: 1; }
 
-.front-image {
+.front-image, .front-lg-image {
+  order: 2;
   width: 35%;
   padding-left: 1rem; }
+  .front-image img, .front-lg-image img {
+    max-width: 100%;
+    height: auto; }
 
-.front-title {
+.front-title, .front-lg-title {
   margin: 0;
   font-size: 1.4em; }
 
-.front-title-link {
+.front-title-link, .front-lg-title-link {
   color: black;
   text-decoration: none; }
 
-.front-author {
+.front-author, .front-lg-author {
   margin: 0;
   color: #666; }
 
-.front-excerpt {
+.front-excerpt, .front-lg-excerpt {
   margin: 0; }
+
+/* Large Article */
+.front-lg-article {
+  flex-wrap: wrap;
+  text-align: center;
+  font-size: 1.1em; }
+
+.front-lg-content {
+  order: 2;
+  width: 100%; }
+
+.front-lg-image {
+  order: 1;
+  width: 100%;
+  padding: 0; }
