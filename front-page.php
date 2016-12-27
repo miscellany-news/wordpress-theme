@@ -9,11 +9,9 @@
 
     $loop = new WP_Query( $args );
     $count = 0;
-    ?>
 
-    <?php while ($loop->have_posts()) : $loop->the_post(); ?>
+    while ($loop->have_posts()) : $loop->the_post();
 
-    <?php
     $count++;
     $class_prefix = "front";
 
@@ -22,10 +20,8 @@
     } else {
       get_template_part('template-parts/front');
     }
-    ?>
 
-
-  <?php endwhile; wp_reset_postdata(); ?>
+    endwhile; wp_reset_postdata(); ?>
 
   </section>
 
