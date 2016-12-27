@@ -66,11 +66,9 @@ function miscellanynews_cleanup_head() {
   remove_action( 'wp_head', 'wp_shortlink_wp_head', 10, 0 ); // Shortlink
   remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 ); // Links for adjacent posts
   remove_action( 'wp_head', 'wp_generator' ); // WP version
-
 }
 function miscellanynews_start_cleanup() {
-  // Initialize the cleanup
-  add_action('init', 'miscellanynews_cleanup_head');
+  add_action('init', 'miscellanynews_cleanup_head'); // Initialize the cleanup
 }
 add_action('after_setup_theme','miscellanynews_start_cleanup');
 
@@ -78,32 +76,15 @@ add_action('after_setup_theme','miscellanynews_start_cleanup');
  * Register sidebars
  */
 function miscellanynews_widgets_init() {
-	register_sidebar( array(
-		'id'            => 'primary',
-		'name'          => __( 'Primary Sidebar' ),
-		'description'   => __( 'Main global sidebar' ),
-    'before_widget' => '',
-    'after_widget' => '',
-	));
-
-	register_sidebar( array(
-		'id'            => 'post-sidebar',
-		'name'          => __( 'Post Sidebar' ),
-		'description'   => __( 'Appears on all of the individual posts' ),
-    'before_widget' => '',
-    'after_widget' => '',
-	));
-
-	register_sidebar( array(
-		'id'            => 'home-featured',
-		'name'          => __( 'Home Featured' ),
-		'description'   => __( 'The content of this widget area will show up at the very top of the homepage underneath the header. It will take up the full width of the page. The main use of this area should be for special one-time content. Nothing will be displayed if it is empty' ),
-    'before_widget' => '',
-    'after_widget' => '',
-	));
+	// register_sidebar( array(
+	// 	'id'            => 'primary',
+	// 	'name'          => __( 'Primary Sidebar' ),
+	// 	'description'   => __( 'Main global sidebar' ),
+  //   'before_widget' => '',
+  //   'after_widget' => '',
+	// ));
 }
 add_action( 'widgets_init', 'miscellanynews_widgets_init' );
-
 
 /**
  * Custom login page header
@@ -124,12 +105,14 @@ echo "
 	</style>";
 }
 add_action("login_head", "miscellanynews_login_head");
-
 function miscellanynews_login_logo_url() {
     return home_url();
 }
 add_filter( 'login_headerurl', 'miscellanynews_login_logo_url' );
 
+/**
+ * Removes bloat ("Tag: ...") from archive title
+ */
 add_filter( 'get_the_archive_title', function ($title) {
   if ( is_category() ) {
     $title = single_cat_title( '', false );
@@ -141,18 +124,27 @@ add_filter( 'get_the_archive_title', function ($title) {
   return $title;
 });
 
-// Template Tags (custom theme functions that output small html
+/**
+ * Template Tags (custom theme functions that output small html
+ */
 require_once('inc/template-tags.php');
 
-// Add theme options page
+/**
+ * Add theme options page
+ */
 require_once('inc/options.php');
 
-// Recommended plugins
+/**
+ * Recommended plugins
+ */
 require_once('inc/recommend-plugins.php');
 
-// Include custom widgets
+/**
+ * Include custom widgets
+ */
 require_once('inc/widgets/breaking-news.php');
 
-// Include meta boxes
+/**
+ * Include meta boxes
+ */
 require_once('inc/meta-boxes.php');
-?>
