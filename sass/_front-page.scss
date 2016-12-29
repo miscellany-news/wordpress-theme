@@ -36,6 +36,15 @@
   border-bottom: 1px solid #ccc;
   padding: 1rem 0;
   position: relative;
+
+  &:after {
+    visibility: hidden;
+display: block;
+font-size: 0;
+content: " ";
+clear: both;
+height: 0;
+  }
 }
 
 .front-article:last-child {
