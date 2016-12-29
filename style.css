@@ -497,7 +497,7 @@ html {
 
 body {
   color: #333;
-  font-family: "Gentium Basic", serif;
+  font-family: Georgia, serif;
   line-height: 1.6;
   background-color: #eee; }
 
@@ -690,9 +690,22 @@ h6 {
   line-height: 1;
   font-size: 1em; }
 
+.link-overlay {
+  position: absolute;
+  display: block;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  text-indent: 200%;
+  white-space: nowrap;
+  background: transparent;
+  z-index: 0; }
+
 /* Regular Article */
 .front-article, .front-lg-article {
-  display: flex;
+  display: block;
   margin: 1rem;
   border-bottom: 1px solid #ccc;
   padding-bottom: 1rem;
@@ -702,33 +715,39 @@ h6 {
   border-bottom: 0;
   padding-bottom: 0; }
 
-.front-content, .front-lg-content {
-  width: 70%;
-  order: 1; }
-
 .front-image, .front-lg-image {
-  order: 2;
+  display: block;
+  float: right;
   width: 30%;
-  padding-left: 1rem; }
+  padding-left: 1rem;
+  padding-bottom: 1rem; }
   .front-image img, .front-lg-image img {
     max-width: 100%;
     height: auto; }
 
 .front-title, .front-lg-title {
   margin: 0;
-  font-family: "Gentium Basic", serif;
+  font-family: 'Gentium Basic';
   font-size: 1.4em; }
 
 .front-title-link, .front-lg-title-link {
   color: black;
-  text-decoration: none; }
+  text-decoration: none;
+  position: relative;
+  z-index: 1; }
+  .front-title-link:hover, .front-lg-title-link:hover {
+    text-decoration: underline; }
 
 .front-author, .front-lg-author {
   margin: 0;
-  color: #666; }
+  color: #666;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: .9em; }
 
 .front-excerpt, .front-lg-excerpt {
-  margin: 0; }
+  margin: 0;
+  padding: .25em 0;
+  line-height: 1.4; }
 
 /* Large Article */
 .front-lg-article {
@@ -743,6 +762,9 @@ h6 {
 .front-lg-image {
   order: 1;
   width: 100%;
+  padding: 0; }
+
+.front-lg-excerpt {
   padding: 0; }
 
 /* Single Page */
@@ -772,7 +794,7 @@ h6 {
   margin: 0; }
 
 .post-title-link {
-  font-family: "Gentium Basic", serif;
+  font-family: 'Gentium Basic';
   display: block;
   color: black;
   text-decoration: none;

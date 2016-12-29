@@ -11,9 +11,10 @@
       </a>
     </h1>
 
-    <p class="front-author">By <?php miscellanynews_get_author_link(); ?></p>
-
     <p class="front-excerpt"><?php miscellanynews_the_excerpt_limit(15); ?></p>
+
+    <p class="front-author">By <?php miscellanynews_get_author_link(); ?></p>
   </div>
 
+  <a href="<?php the_permalink(); ?>" class="link-overlay"></a>
 </article>
