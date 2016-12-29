@@ -679,8 +679,7 @@ h6 {
   margin: 1rem 0;
   background: #fff;
   border-top: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
-  padding: 0; }
+  border-bottom: 1px solid #ccc; }
 
 .section-title {
   padding: 1rem;
@@ -705,15 +704,14 @@ h6 {
 
 /* Regular Article */
 .front-article, .front-lg-article {
+  margin: 0 1rem;
   display: block;
-  margin: 1rem;
   border-bottom: 1px solid #ccc;
-  padding-bottom: 1rem;
+  padding: 1rem 0;
   position: relative; }
 
 .front-article:last-child, .front-lg-article:last-child {
-  border-bottom: 0;
-  padding-bottom: 0; }
+  border-bottom: 0; }
 
 .front-image, .front-lg-image {
   display: block;
