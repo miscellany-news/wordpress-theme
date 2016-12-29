@@ -747,7 +747,8 @@ h6 {
 /* Single Page */
 .page-single {
   padding: 0;
-  background: white; }
+  background: white;
+  font-size: 1.125em; }
 
 .post-featured-image-figure {
   margin: 0; }
