@@ -31,13 +31,13 @@
 }
 
 .front-content {
-  width: 65%;
+  width: 70%;
   order: 1;
 }
 
 .front-image {
   order: 2;
-  width: 35%;
+  width: 30%;
   padding-left: 1rem;
   img {
     max-width: 100%;
@@ -47,6 +47,7 @@
 
 .front-title {
   margin: 0;
+  font-family: $serif;
   font-size: 1.4em;
 }
 

@@ -703,12 +703,12 @@ h6 {
   padding-bottom: 0; }
 
 .front-content, .front-lg-content {
-  width: 65%;
+  width: 70%;
   order: 1; }
 
 .front-image, .front-lg-image {
   order: 2;
-  width: 35%;
+  width: 30%;
   padding-left: 1rem; }
   .front-image img, .front-lg-image img {
     max-width: 100%;
@@ -716,6 +716,7 @@ h6 {
 
 .front-title, .front-lg-title {
   margin: 0;
+  font-family: "Gentium Basic", serif;
   font-size: 1.4em; }
 
 .front-title-link, .front-lg-title-link {
