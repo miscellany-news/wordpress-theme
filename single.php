@@ -47,9 +47,7 @@
           &#8226;
           <span class="post-category">
             <?php foreach(get_the_category() as $category) : ?>
-            <a href="<?php echo get_category_link($category->term_id); ?>">
-              <?php echo $category->name; ?>
-            </a>
+            <a href="<?php echo get_category_link($category->term_id); ?>" class="post-category-link"><?php echo $category->name; ?></a><span class="pcl-comma">,</span>
             <?php endforeach; ?>
           </span>
 

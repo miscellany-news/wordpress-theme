@@ -810,11 +810,13 @@ h6 {
     .post-meta a:hover {
       text-decoration: underline; }
 
+.pcl-comma:last-child {
+  display: none; }
+
 .post-content {
   margin: 1rem 0;
   padding: 0 1rem;
-  font-family: Georgia; }
-  .post-content p:first-child:first-letter {
+  /*p:first-child:first-letter {
     display: block;
     float: left;
     font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Arial, sans-serif;
@@ -823,7 +825,8 @@ h6 {
     height: 1em;
     line-height: 1em;
     position: relative;
-    padding-right: .1em; }
+    padding-right: .1em;
+  }*/ }
 
 /* Comments */
 .comments-section {

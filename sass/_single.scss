@@ -54,11 +54,14 @@
   }
 }
 
+.pcl-comma:last-child {
+  display: none;
+}
+
 .post-content {
   margin: 1rem 0;
   padding: 0 1rem;
-  font-family: Georgia;
-  p:first-child:first-letter {
+  /*p:first-child:first-letter {
     display: block;
     float: left;
     font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Arial, sans-serif;
@@ -68,7 +71,7 @@
     line-height: 1em;
     position: relative;
     padding-right: .1em;
-  }
+  }*/
 }
 
 /* Comments */
