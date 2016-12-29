@@ -93,7 +93,7 @@ function miscellanynews_login_head() {
 echo "
 	<style>
 	body.login #login h1 a {
-		background: url('".get_bloginfo('template_url')."/images/logo-icon.png') no-repeat scroll center top transparent;
+		background: url('".get_bloginfo('template_url')."/img/logo-icon.png') no-repeat scroll center top transparent;
     background-size: 90px 90px;
     border-radius: 10px;
 		height: 90px;
@@ -128,11 +128,6 @@ add_filter( 'get_the_archive_title', function ($title) {
  * Template Tags (custom theme functions that output small html
  */
 require_once('inc/template-tags.php');
-
-/**
- * Add theme options page
- */
-require_once('inc/options.php');
 
 /**
  * Recommended plugins

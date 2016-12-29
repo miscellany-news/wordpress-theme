@@ -1,0 +1,59 @@
+.page-single {
+  @extend .container;
+  padding: 0;
+  background: white;
+}
+
+
+.post-featured-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.post-title {
+  margin: 0;
+}
+
+.post-title-link {
+  font-family: $serif;
+  display: block;
+  color: black;
+  text-decoration: none;
+  padding: 1rem;
+}
+
+.post-meta {
+  margin: 1rem 0;
+  padding: 0 1rem;
+  font-family: $sans-serif;
+  font-weight: bold;
+  font-size: .8em;
+
+  a {
+    color: $color-link;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.post-content {
+  margin: 1rem 0;
+  padding: 0 1rem;
+}
+
+
+/* Comments */
+
+.comments-section {
+  @extend .container;
+  padding-bottom: 1rem;
+}
+
+.comment-form-comment {
+  textarea {
+    max-width: 100%;
+  }
+}

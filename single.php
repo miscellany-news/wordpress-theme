@@ -1,7 +1,7 @@
 <?php get_header();  ?>
 
 <!-- Main content -->
-<main class="site-main">
+<main class="site-main page-single">
   <?php while ( have_posts() ) : the_post(); ?>
 
     <!-- Post -->
@@ -10,15 +10,17 @@
       <!-- Post header -->
       <header class="post-header">
 
-        <!-- List of entry categories -->
-        <?php foreach(get_the_category() as $category) : ?>
-          <div class="post-category"><a href="<?php echo get_category_link($category->term_id); ?>"><?php echo $category->name; ?></a></div>
-        <?php endforeach; ?>
-
         <!-- Post title -->
         <?php if( get_the_title() ) : ?>
-          <h1 class="post-title"><a href="<?php urlencode(the_permalink());?>" rel="bookmark"><?php the_title();?></a></h1>
+          <h1 class="post-title"><a href="<?php urlencode(the_permalink());?>" rel="bookmark" class="post-title-link"><?php the_title();?></a></h1>
         <?php endif;?>
+
+        <!-- Featured image -->
+        <?php
+        if ( has_post_thumbnail() ) {
+        	the_post_thumbnail('full', array('class' => 'post-featured-image'));
+        }
+        ?>
 
         <!-- Post author and published date -->
         <div class="post-meta">
@@ -27,19 +29,33 @@
           $archive_month = get_the_time('m');
           $archive_day   = get_the_time('d');
           ?>
-          By <span class="post-author"><?php miscellanynews_get_author_link(); ?></span> on <time datetime="<?php the_date('Y-m-d');?>" class="post-date"><a href="<?php echo get_day_link( $archive_year, $archive_month, $archive_day); ?>"><?php the_time('F j, Y');?></a></time>
+          By
+          <span class="post-author">
+            <?php miscellanynews_get_author_link(); ?>
+          </span>
+          &#8226;
+          <time datetime="<?php the_date('Y-m-d');?>" class="post-date">
+            <a href="<?php echo get_day_link( $archive_year, $archive_month, $archive_day); ?>">
+              <?php the_time('F j, Y');?>
+            </a>
+          </time>
+          &#8226;
+          <span class="post-category">
+            <?php foreach(get_the_category() as $category) : ?>
+            <a href="<?php echo get_category_link($category->term_id); ?>">
+              <?php echo $category->name; ?>
+            </a>
+            <?php endforeach; ?>
+          </span>
 
         </div>
 
       </header>
 
-      <!-- Featured image -->
-      <?php
-      get_template_part( 'template-parts/featured-image', get_post_format() );
-      ?>
-
       <!-- Post content -->
-      <?php the_content();?>
+      <div class="post-content">
+        <?php the_content();?>
+      </div>
 
       <!-- Post pagination -->
       <?php wp_link_pages(array( 'before' => '<nav class="link-pages">', 'after'  => '</nav>')); ?>
