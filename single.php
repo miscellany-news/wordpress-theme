@@ -18,7 +18,12 @@
         <!-- Featured image -->
         <?php
         if ( has_post_thumbnail() ) {
+          echo '<figure class="post-featured-image-figure">';
         	the_post_thumbnail('full', array('class' => 'post-featured-image'));
+          echo '<figcaption class="post-featured-image-figcaption">';
+          echo get_post(get_post_thumbnail_id())->post_excerpt;
+          echo '</figcaption>';
+          echo '</figure>';
         }
         ?>
 
