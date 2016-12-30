@@ -1,7 +1,7 @@
 <?php get_header();  ?>
 
 <!-- Main content -->
-<main class="site-main page-single">
+<main class="main-content page-single">
   <?php while ( have_posts() ) : the_post(); ?>
 
     <!-- Post -->
@@ -14,18 +14,6 @@
         <?php if( get_the_title() ) : ?>
           <h1 class="post-title"><a href="<?php urlencode(the_permalink());?>" rel="bookmark" class="post-title-link"><?php the_title();?></a></h1>
         <?php endif;?>
-
-        <!-- Featured image -->
-        <?php
-        if ( has_post_thumbnail() ) {
-          echo '<figure class="post-featured-image-figure">';
-        	the_post_thumbnail('large', array('class' => 'post-featured-image'));
-          echo '<figcaption class="post-featured-image-figcaption">';
-          echo get_post(get_post_thumbnail_id())->post_excerpt;
-          echo '</figcaption>';
-          echo '</figure>';
-        }
-        ?>
 
         <!-- Post author and published date -->
         <div class="post-meta">
@@ -54,6 +42,18 @@
         </div>
 
       </header>
+      
+      <!-- Featured image -->
+      <?php
+      if ( has_post_thumbnail() ) {
+        echo '<figure class="post-featured-image-figure">';
+        the_post_thumbnail('large', array('class' => 'post-featured-image'));
+        echo '<figcaption class="post-featured-image-figcaption">';
+        echo get_post(get_post_thumbnail_id())->post_excerpt;
+        echo '</figcaption>';
+        echo '</figure>';
+      }
+      ?>
 
       <!-- Post content -->
       <div class="post-content">
@@ -71,5 +71,7 @@
 
   <?php endwhile; // end loop ?>
 </main>
+
+<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>

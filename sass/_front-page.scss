@@ -37,6 +37,8 @@
   @media (max-width: 50rem) {
     width: 100%;
     padding: 0 0;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 1rem;
 
     &:nth-child(3n+1) {
       margin-left: 0;
@@ -70,6 +72,10 @@
 }
 
 .front-image {
+  display: block;
+  img {
+    display: block;
+  }
   @media (max-width: 50rem) {
     float: right;
     width: 6rem;
@@ -190,4 +196,5 @@
   float: none;
   padding:0;
   margin:0;
+  width: 100%;
 }
