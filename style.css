@@ -572,7 +572,8 @@ h6 {
   z-index: 1;
   margin: 0 0 1.25rem 0;
   box-sizing: content-box;
-  position: relative; }
+  position: relative;
+  overflow: hidden; }
 
 .hn-search {
   position: absolute;
@@ -632,7 +633,6 @@ h6 {
   background: linear-gradient(white, whitesmoke);
   border-left: 1px solid #d5d5d5;
   z-index: 1;
-  border-radius: 3px;
   overflow: hidden;
   transition: all .5s ease; }
   .hn-search-container .search-form .search-input {
@@ -644,6 +644,22 @@ h6 {
 
 .search-active .hn-search-container .search-form {
   left: 65%; }
+
+.hn-search-overlay {
+  opacity: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  background: black;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  transition: opacity .5s ease; }
+
+.search-active .hn-search-overlay {
+  z-index: 1;
+  opacity: .5; }
 
 /* Footer */
 .site-footer {

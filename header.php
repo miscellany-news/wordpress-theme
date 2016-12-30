@@ -21,6 +21,7 @@
 
     <nav class="hn">
       <div class="hn-container">
+        <div class="hn-search-overlay" id="hn-search-overlay"></div>
         <div class="hn-search-container">
           <a href="#" class="hn-search" id="hn-search"><img src="<?php echo get_template_directory_uri() . '/img/search_black.svg'?>"></a>
           <?php get_search_form(); ?>
@@ -35,7 +36,8 @@
           'menu_id' => 'hn-menu'
         ));
         ?>
+
       </div>
-      <div class="hn-search-overlay"></div>
+
     </nav>
   </header>

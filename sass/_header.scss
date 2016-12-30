@@ -33,6 +33,7 @@
   margin: 0 0 1.25rem 0;
   box-sizing: content-box;
   position: relative;
+  overflow: hidden;
 }
 
 .hn-search {
@@ -110,7 +111,6 @@
     background: linear-gradient(rgba(255,255,255,1), rgba(245,245,245,1));
     border-left: 1px solid #d5d5d5;
     z-index: 1;
-    border-radius: 3px;
     overflow: hidden;
     transition: all .5s ease;
 
@@ -131,5 +131,19 @@
 }
 
 .hn-search-overlay {
-  
+  opacity: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  background: rgba(0, 0, 0, 1);
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  transition: opacity .5s ease;
+}
+
+.search-active .hn-search-overlay {
+  z-index: 1;
+  opacity: .5;
 }
