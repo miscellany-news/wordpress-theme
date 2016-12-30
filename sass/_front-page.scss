@@ -122,6 +122,10 @@
 .small-article {
   border-bottom: 1px solid #ccc;
   padding-bottom: 1.3rem;
+  @media (max-width: 50rem) {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+  }
 }
 
 .fs-title {
@@ -136,6 +140,10 @@
   border-bottom: 1px solid #ccc;
   padding-bottom: 1.3rem;
   margin-bottom: 1.3rem;
+  @media (max-width: 50rem) {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+  }
 }
 
 .fm-image {
@@ -167,6 +175,10 @@
   margin-bottom: 1.3rem;
   padding-bottom: 1.3rem;
   border-bottom: 1px solid #ccc;
+  @media (max-width: 50rem) {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+  }
 }
 
 .fl-title {

@@ -547,12 +547,15 @@ img {
   display: flex;
   flex-wrap: wrap;
   align-content: flex-start; }
+  @media (max-width: 45rem) {
+    .content-container {
+      max-width: 36rem; } }
 
 .main-content {
   padding-right: 1.3rem;
   width: calc(100% - 20rem);
   border-right: 1px solid #ccc; }
-  @media (max-width: 40rem) {
+  @media (max-width: 45rem) {
     .main-content {
       width: 100%;
       border-right: 0;
@@ -561,7 +564,7 @@ img {
 .main-sidebar {
   width: 20rem;
   padding-left: 1.3rem; }
-  @media (max-width: 40rem) {
+  @media (max-width: 45rem) {
     .main-sidebar {
       width: 100%;
       border-right: 0;
@@ -872,6 +875,10 @@ img {
 .small-article {
   border-bottom: 1px solid #ccc;
   padding-bottom: 1.3rem; }
+  @media (max-width: 50rem) {
+    .small-article {
+      margin-bottom: 1rem;
+      padding-bottom: 1rem; } }
 
 .fs-title {
   font-size: 1em; }
@@ -884,6 +891,10 @@ img {
   border-bottom: 1px solid #ccc;
   padding-bottom: 1.3rem;
   margin-bottom: 1.3rem; }
+  @media (max-width: 50rem) {
+    .medium-article {
+      margin-bottom: 1rem;
+      padding-bottom: 1rem; } }
 
 .fm-image {
   width: 40%;
@@ -909,6 +920,10 @@ img {
   margin-bottom: 1.3rem;
   padding-bottom: 1.3rem;
   border-bottom: 1px solid #ccc; }
+  @media (max-width: 50rem) {
+    .large-article {
+      margin-bottom: 1rem;
+      padding-bottom: 1rem; } }
 
 .fl-title {
   font-size: 2em;
