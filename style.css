@@ -659,7 +659,7 @@ h6 {
 .hn-menu {
   margin: 0;
   padding: 0;
-  padding-left: 1rem;
+  padding-left: .5rem;
   list-style: none;
   display: flex;
   height: 2.25rem;
@@ -675,6 +675,8 @@ h6 {
   padding-right: 0.625rem; }
   .hn-menu li:first-child {
     padding-left: 0; }
+  .hn-menu li:last-child {
+    padding-right: 3rem; }
 
 .hn-menu li a:hover {
   text-decoration: underline; }
@@ -686,7 +688,6 @@ h6 {
   background-position: center center;
   color: transparent;
   width: 2.5rem;
-  background-color: #4D0101;
   display: block; }
 
 .hn-search {

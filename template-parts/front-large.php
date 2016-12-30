@@ -1,6 +1,6 @@
 <article class="front-lg-article">
   <a class="front-lg-image">
-    <?php the_post_thumbnail('large')?>
+    <?php the_post_thumbnail('full')?>
   </a>
 
   <div class="front-lg-content">

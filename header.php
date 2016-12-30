@@ -19,9 +19,6 @@
         <div class="line"></div>
       </figure>
 
-      <!-- Search icon -->
-
-
       <!-- The Miscellany News logo -->
       <a class="site-title" href="<?php echo esc_url( home_url( '/' ) );?>">
         <img src="<?php echo get_template_directory_uri() . '/img/logo.svg'?>" class="site-logo">
@@ -42,7 +39,7 @@
   </header>
   <nav class="hn">
     <div class="hn-container">
-      <span class="hn-home">Home</span>
+      <a href="#" class="hn-home"></a>
       <a href="#" class="hn-search">
         <img src="<?php echo get_template_directory_uri() . '/img/search.svg'?>" class="search-icon" id="search-main">
       </a>
