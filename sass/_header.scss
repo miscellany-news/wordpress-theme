@@ -83,8 +83,9 @@
   background: rgb(245,245,245);
   background: linear-gradient(rgba(255,255,255,1), rgba(245,245,245,1));
   background: url('img/search-close.svg'), linear-gradient(rgba(255,255,255,1), rgba(245,245,245,1));
+  background-size: 6rem 2.6875rem;
   background-repeat: no-repeat;
-  background-position: 1rem center;
+  background-position: 0 center;
   border-left: 1px solid #d5d5d5;
   height: 100%;
   display: flex;
@@ -97,7 +98,7 @@
   &:hover {
     background: url('img/search-close.svg'), #fff;
     background-repeat: no-repeat;
-    background-position: 1rem center;
+    background-position: 0 center;
   }
 
   img {
@@ -106,8 +107,7 @@
 }
 
 .search-active .hn-search {
-  z-index: 2;
-  background-position: -4.7rem center;
+  background-position: -3rem center;
 }
 
 .hn-search-container {
@@ -149,7 +149,8 @@
       border: 0;
       background: url('img/search-close.svg');
       background-repeat: no-repeat;
-      background-position: 1rem center;
+      background-position: 0 center;
+      background-size: 6rem 2.6875rem;
       width: 3rem;
       font-size: 0;
       padding:0;
