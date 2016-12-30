@@ -5,7 +5,7 @@
   <div class="main-row">
     <div class="main-left">
 
-      <h2 class="col-full col-title">Featured Articles</h2>
+      <h2 class="col-full col-title col-big-title">Featured Articles</h2>
 
       <div class="col-left">
         <?php
