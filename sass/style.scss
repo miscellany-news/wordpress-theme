@@ -14,7 +14,7 @@ Text Domain: miscellanynews
 
 /* Widths */
 $min-width: 20rem; /* 320px / 16px = 20 */
-$max-width: 70rem; /* 1120px / 16px = 80 */
+$max-width: 65rem; /* 1040px / 16px = 80 */
 
 /* Fonts */
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i');
@@ -26,7 +26,7 @@ $serif: Georgia, serif;
 $base-line-height: 1.6;
 
 /* Colors */
-$color-page-background: #eee;
+$color-page-background: #fff;
 $color-burgundy: #820202;
 
 $color-font: #333;
@@ -85,6 +85,10 @@ h6 { font-size: .75em; }
   max-width: $max-width;
   padding: 0 1rem;
   margin: 0 auto;
+}
+
+.main-content {
+  @extend .container;
 }
 
 /* Header */

@@ -1,7 +1,7 @@
 <article class="front-article">
 
   <a class="front-image">
-    <?php the_post_thumbnail('medium')?>
+    <?php the_post_thumbnail(array(1440,860))?>
   </a>
 
   <div class="front-content">
@@ -11,7 +11,7 @@
       </a>
     </h1>
 
-    <p class="front-excerpt"><?php miscellanynews_the_excerpt_limit(15); ?></p>
+    <p class="front-excerpt"><?php miscellanynews_the_excerpt_limit(20); ?></p>
 
     <p class="front-author">By <?php miscellanynews_get_author_link(); ?></p>
   </div>

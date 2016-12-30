@@ -27,8 +27,7 @@ function miscellanynews_setup() {
   add_theme_support( 'post-thumbnails' );
 
   // Add custom image sizes
-  add_image_size( 'featured-image-wide', 2048, 1000, true );
-  add_image_size( 'featured-image-large', 2048, 1363, true );
+  add_image_size( 'featured-image-wide', 1440, 860, true );
 }
 add_action( 'after_setup_theme', 'miscellanynews_setup' );
 
