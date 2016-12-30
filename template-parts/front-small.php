@@ -2,10 +2,6 @@
 
   <div class="front-content fs-content">
 
-    <a class="front-image fs-image" href="<?php the_permalink(); ?>">
-      <?php the_post_thumbnail('thumbnail')?>
-    </a>
-
     <p class="front-category fs-category">
       <?php
       $categories = get_the_category();
@@ -23,7 +19,7 @@
 
     <p class="front-author fs-author">By <?php miscellanynews_get_author_link(); ?></p>
 
-    <p class="front-excerpt fs-excerpt"><?php miscellanynews_the_excerpt_limit(20); ?></p>
+    <p class="front-excerpt fs-excerpt"><?php miscellanynews_the_excerpt_limit(15); ?></p>
 
   </div>
 

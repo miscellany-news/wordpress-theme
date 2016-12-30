@@ -17,11 +17,11 @@
         endwhile; wp_reset_postdata();
         ?>
         <?php
-        $args = array('posts_per_page' => 1, 'offset' => 2, 'tag' => 'slider');
+        $args = array('posts_per_page' => 2, 'offset' => 2, 'tag' => 'slider');
         $loop = new WP_Query( $args );
 
         while ($loop->have_posts()) : $loop->the_post();
-          get_template_part('template-parts/front', 'medium');
+          get_template_part('template-parts/front', 'small');
         endwhile; wp_reset_postdata();
         ?>
       </div>
@@ -38,21 +38,21 @@
         <div class="split-wrap">
           <div class="col-split-left">
             <?php
-            $args = array('posts_per_page' => 1, 'offset' => 3, 'tag' => 'slider');
+            $args = array('posts_per_page' => 1, 'offset' => 4, 'tag' => 'slider');
             $loop = new WP_Query( $args );
 
             while ($loop->have_posts()) : $loop->the_post();
-              get_template_part('template-parts/front', 'small');
+              get_template_part('template-parts/front', 'small-img');
             endwhile; wp_reset_postdata();
             ?>
           </div>
           <div class="col-split-right">
             <?php
-            $args = array('posts_per_page' => 1, 'offset' => 4, 'tag' => 'slider');
+            $args = array('posts_per_page' => 1, 'offset' => 5, 'tag' => 'slider');
             $loop = new WP_Query( $args );
 
             while ($loop->have_posts()) : $loop->the_post();
-              get_template_part('template-parts/front', 'small');
+              get_template_part('template-parts/front', 'small-img');
             endwhile; wp_reset_postdata();
             ?>
           </div>
@@ -66,15 +66,25 @@
 
       <div class="col-split-left">
         <?php
-        $args = array('posts_per_page' => 3, 'offset' => 0);
+        $args = array('posts_per_page' => 1, 'offset' => 0);
         $loop = new WP_Query( $args );
 
         while ($loop->have_posts()) : $loop->the_post();
-          get_template_part('template-parts/front', 'small');
+          get_template_part('template-parts/front', 'small-img');
         endwhile; wp_reset_postdata();
         ?>
       </div>
       <div class="col-split-right">
+        <?php
+        $args = array('posts_per_page' => 1, 'offset' => 1);
+        $loop = new WP_Query( $args );
+
+        while ($loop->have_posts()) : $loop->the_post();
+          get_template_part('template-parts/front', 'small-img');
+        endwhile; wp_reset_postdata();
+        ?>
+      </div>
+      <div class="col-split-left">
         <?php
         $args = array('posts_per_page' => 3, 'offset' => 3);
         $loop = new WP_Query( $args );
@@ -84,29 +94,15 @@
         endwhile; wp_reset_postdata();
         ?>
       </div>
+      <div class="col-split-right">
+        <?php
+        $args = array('posts_per_page' => 3, 'offset' => 6);
+        $loop = new WP_Query( $args );
 
-    </div>
-  </div> <!-- /.main-row -->
-
-  <div class="main-row">
-    <div class="main-left">
-
-      <div class="col-small">
-        Col small.
-      </div>
-      <div class="col-big">
-        Col big.
-      </div>
-
-    </div>
-
-    <div class="main-right">
-
-      <div class="col-split">
-        Col split.
-      </div>
-      <div class="col-split">
-        Col split.
+        while ($loop->have_posts()) : $loop->the_post();
+          get_template_part('template-parts/front', 'small');
+        endwhile; wp_reset_postdata();
+        ?>
       </div>
 
     </div>
@@ -114,14 +110,4 @@
 
 </main>
 
-<!--
-<?php
-$args = array('posts_per_page' => 1, 'offset' => 0, 'tag' => 'slider');
-$loop = new WP_Query( $args );
-
-while ($loop->have_posts()) : $loop->the_post();
-  get_template_part('template-parts/front', 'large');
-endwhile; wp_reset_postdata();
-?>
--->
 <?php get_footer(); ?>
