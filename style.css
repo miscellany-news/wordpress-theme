@@ -808,6 +808,13 @@ img {
 /* front-___.php */
 .front-article {
   margin-bottom: 1rem; }
+  .front-article:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0; }
 
 .front-category {
   font-size: 0.625em;
@@ -825,7 +832,8 @@ img {
 
 .front-title-link {
   color: black;
-  text-decoration: none; }
+  text-decoration: none;
+  display: block; }
   .front-title-link:hover {
     text-decoration: underline; }
 
@@ -859,6 +867,10 @@ img {
   width: 25%;
   margin: .375rem 0 .375rem .375rem; }
 
+/*
+ 384 x 229
+ 768 x 458
+ */
 /* Single Page */
 .page-single {
   padding: 0;

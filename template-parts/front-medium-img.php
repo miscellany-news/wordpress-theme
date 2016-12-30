@@ -1,6 +1,6 @@
 <article class="front-article medium-article">
 
-  <a class="front-image fm-image">
+  <a class="front-image fm-image" href="<?php the_permalink(); ?>">
     <?php the_post_thumbnail(array(1440,860))?>
   </a>
 

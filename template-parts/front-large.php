@@ -1,6 +1,6 @@
 <article class="front-article large-article">
 
-  <a class="front-image fl-image">
+  <a class="front-image fl-image" href="<?php the_permalink(); ?>">
     <?php the_post_thumbnail(array(1440,860))?>
   </a>
 

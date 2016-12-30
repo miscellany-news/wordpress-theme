@@ -103,6 +103,14 @@
 /* front-___.php */
 .front-article {
   margin-bottom: 1rem;
+  &:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+  }
 }
 
 .front-category {
@@ -124,6 +132,7 @@
 .front-title-link {
   color: black;
   text-decoration: none;
+  display: block;
 
   &:hover {
     text-decoration: underline;
@@ -166,3 +175,8 @@
   width: 25%;
   margin: .375rem 0 .375rem .375rem;
 }
+
+/*
+ 384 x 229
+ 768 x 458
+ */
