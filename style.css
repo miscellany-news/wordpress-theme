@@ -634,7 +634,9 @@ h6 {
   border-left: 1px solid #d5d5d5;
   z-index: 1;
   overflow: hidden;
-  transition: all .5s ease; }
+  transition: all .5s ease;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: .9em; }
   .hn-search-container .search-form .search-input {
     background: transparent;
     border: 0;
@@ -647,19 +649,20 @@ h6 {
 
 .hn-search-overlay {
   opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s, visibility 0s 0.5s;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
   position: absolute;
-  background: black;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  transition: opacity .5s ease; }
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAHCGzyUAAAAC0lEQVQI12NgaAAAAIMAgR+3QgAAAAAASUVORK5CYII=);
+  z-index: 1; }
 
 .search-active .hn-search-overlay {
-  z-index: 1;
-  opacity: .5; }
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s; }
 
 /* Footer */
 .site-footer {
