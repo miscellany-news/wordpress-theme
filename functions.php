@@ -75,13 +75,13 @@ add_action('after_setup_theme','miscellanynews_start_cleanup');
  * Register sidebars
  */
 function miscellanynews_widgets_init() {
-	// register_sidebar( array(
-	// 	'id'            => 'primary',
-	// 	'name'          => __( 'Primary Sidebar' ),
-	// 	'description'   => __( 'Main global sidebar' ),
-  //   'before_widget' => '',
-  //   'after_widget' => '',
-	// ));
+	register_sidebar( array(
+		'id'            => 'primary',
+		'name'          => __( 'Primary Sidebar' ),
+		'description'   => __( 'Main global sidebar' ),
+    'before_widget' => '',
+    'after_widget' => '',
+	));
 }
 add_action( 'widgets_init', 'miscellanynews_widgets_init' );
 
