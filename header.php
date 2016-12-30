@@ -23,7 +23,7 @@
       <div class="hn-container">
         <div class="hn-search-overlay" id="hn-search-overlay"></div>
         <div class="hn-search-container">
-          <a href="#" class="hn-search" id="hn-search"><img src="<?php echo get_template_directory_uri() . '/img/search_black.svg'?>"></a>
+          <a href="#" class="hn-search" id="hn-search"></a>
           <?php get_search_form(); ?>
         </div>
         <?php

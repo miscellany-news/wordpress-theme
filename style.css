@@ -579,24 +579,6 @@ img {
   position: relative;
   overflow: hidden; }
 
-.hn-search {
-  position: absolute;
-  top: 0;
-  right: 0;
-  background: #fdfdfd;
-  background: linear-gradient(white, whitesmoke);
-  border-left: 1px solid #d5d5d5;
-  height: 100%;
-  display: flex;
-  z-index: 2;
-  align-items: center;
-  justify-content: center;
-  width: 3rem; }
-  .hn-search:hover {
-    background: #fff; }
-  .hn-search img {
-    display: block; }
-
 .hn-menu {
   margin: 0;
   padding: 0;
@@ -626,41 +608,92 @@ img {
       .hn-menu li a:hover {
         background: #fff; }
 
-.hn-search-container .search-form {
-  display: block;
+.hn-search {
   position: absolute;
   top: 0;
+  right: 0;
+  background: whitesmoke;
+  background: linear-gradient(white, whitesmoke);
+  background: url("img/search-close.svg"), linear-gradient(white, whitesmoke);
+  background-repeat: no-repeat;
+  background-position: 1rem center;
+  border-left: 1px solid #d5d5d5;
+  height: 100%;
+  display: flex;
+  z-index: 2;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  transition: background-position .3s ease; }
+  .hn-search:hover {
+    background: url("img/search-close.svg"), #fff;
+    background-repeat: no-repeat;
+    background-position: 1rem center; }
+  .hn-search img {
+    display: block; }
+
+.search-active .hn-search {
+  z-index: 2;
+  background-position: -4.7rem center; }
+
+.hn-search-container .search-form {
+  display: flex;
+  flex-wrap: nowrap;
+  position: absolute;
+  right: 0;
+  top: 0;
   bottom: 0;
-  right: 3rem;
-  left: 100%;
   background: #fdfdfd;
   background: linear-gradient(white, whitesmoke);
   border-left: 1px solid #d5d5d5;
   z-index: 1;
   overflow: hidden;
-  transition: all .5s ease;
+  transition: all .3s ease;
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: .9em; }
+  font-size: .9em;
+  transform: translate(130%, 0);
+  min-width: 15rem;
+  width: 40%;
+  padding-right: 3rem; }
   .hn-search-container .search-form .search-input {
     background: transparent;
     border: 0;
     height: 100%;
+    padding-left: 1rem;
     width: 100%;
-    padding-left: 1rem; }
+    padding-right: 4rem;
+    outline: none; }
+  .hn-search-container .search-form .search-submit {
+    position: absolute;
+    right: 3rem;
+    top: 0;
+    bottom: 0;
+    border: 0;
+    background: url("img/search-close.svg");
+    background-repeat: no-repeat;
+    background-position: 1rem center;
+    width: 3rem;
+    font-size: 0;
+    padding: 0;
+    margin: 0;
+    border-left: 1px solid #d5d5d5; }
+    .hn-search-container .search-form .search-submit:hover {
+      background-color: #fff;
+      cursor: pointer; }
 
 .search-active .hn-search-container .search-form {
-  left: 65%; }
+  transform: translate(0, 0); }
 
 .hn-search-overlay {
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.5s, visibility 0s 0.5s;
+  transition: opacity 0.3s, visibility 0s 0.3s;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
   position: absolute;
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAHCGzyUAAAAC0lEQVQI12NgaAAAAIMAgR+3QgAAAAAASUVORK5CYII=);
+  background: rgba(0, 0, 0, 0.6);
   z-index: 1; }
 
 .search-active .hn-search-overlay {
@@ -673,56 +706,6 @@ img {
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: .8em;
   padding: 1rem 0; }
-
-/* Site Navigation */
-.navigation-active .hamburger-background {
-  opacity: 1;
-  width: auto; }
-
-.site-nav {
-  display: none;
-  position: absolute;
-  top: 2.875rem;
-  width: 100%;
-  border-bottom: 1px solid #999;
-  z-index: 99;
-  background: #eee;
-  padding: 1.5rem;
-  text-align: left;
-  line-height: 2.5; }
-
-.navigation-active .site-nav {
-  display: block; }
-
-.site-menu {
-  margin: 0;
-  padding: 0;
-  margin-bottom: 1rem;
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  text-align: left;
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; }
-  .site-menu .menu-item {
-    flex-basis: 50%; }
-    .site-menu .menu-item a {
-      text-decoration: none;
-      font-weight: bold;
-      display: block; }
-
-.current-menu-parent a,
-.current-menu-item a {
-  color: #000;
-  text-decoration: underline; }
-  .current-menu-parent a span,
-  .current-menu-item a span {
-    border-bottom: 1px dotted #333; }
-
-.nav-section {
-  text-transform: uppercase;
-  display: block;
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: bold; }
 
 /* Front Page */
 .main-row {
