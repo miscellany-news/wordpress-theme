@@ -565,6 +565,9 @@ img {
   display: block;
   margin: 0 auto;
   padding: 0 1rem; }
+  @media (max-width: 65rem) {
+    .hn {
+      padding: 0; } }
 
 .hn-container {
   border: 1px solid #d5d5d5;
@@ -578,6 +581,11 @@ img {
   box-sizing: content-box;
   position: relative;
   overflow: hidden; }
+  @media (max-width: 65rem) {
+    .hn-container {
+      border-radius: 0;
+      border-left: 0;
+      border-right: 0; } }
 
 .hn-menu {
   margin: 0;
