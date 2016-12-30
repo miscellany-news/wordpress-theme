@@ -91,6 +91,11 @@ h6 { font-size: .75em; }
   @extend .container;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 /* Header */
 @import "header";
 
