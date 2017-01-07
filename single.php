@@ -22,27 +22,13 @@
           $archive_month = get_the_time('m');
           $archive_day   = get_the_time('d');
           ?>
-          By
-          <span class="post-author">
-            <?php miscellanynews_get_author_link(); ?>
-          </span>
-          &#8226;
-          <time datetime="<?php the_date('Y-m-d');?>" class="post-date">
-            <a href="<?php echo get_day_link( $archive_year, $archive_month, $archive_day); ?>">
-              <?php the_time('F j, Y');?>
-            </a>
-          </time>
-          &#8226;
-          <span class="post-category">
-            <?php foreach(get_the_category() as $category) : ?>
-            <a href="<?php echo get_category_link($category->term_id); ?>" class="post-category-link"><?php echo $category->name; ?></a><span class="pcl-comma">,</span>
-            <?php endforeach; ?>
-          </span>
+          <p><span class="post-author">By <?php miscellanynews_get_author_link(); ?></span></p>
+          <p class="meta-small">Posted on <time datetime="<?php the_date('Y-m-d');?>" class="post-date"><a href="<?php echo get_day_link( $archive_year, $archive_month, $archive_day); ?>"><?php the_time('F j, Y');?></a></time> in <span class="post-category"><?php the_category(', '); ?></span></p>
 
         </div>
 
       </header>
-      
+
       <!-- Featured image -->
       <?php
       if ( has_post_thumbnail() ) {

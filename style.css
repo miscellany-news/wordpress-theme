@@ -15,7 +15,7 @@ Text Domain: miscellanynews
 /* 1024px / 16px */
 /* Fonts */
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i");
-@import url("https://fonts.googleapis.com/css?family=Gentium+Basic:400,400i,700,700i");
+@import url("https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i");
 /* Colors */
 /* STYLES */
 /* Normalize */
@@ -497,7 +497,7 @@ html {
 
 body {
   color: #333;
-  font-family: Georgia, serif;
+  font-family: "Lora", Georgia, serif;
   line-height: 1.6;
   background-color: #fff; }
 
@@ -819,8 +819,8 @@ img {
       text-decoration: underline; }
 
 .front-title {
-  font-family: Georgia, serif;
-  font-weight: normal;
+  font-family: "Lora", Georgia, serif;
+  font-weight: bold;
   margin: 0;
   letter-spacing: 0.01em;
   word-spacing: -0.1em;
@@ -869,6 +869,9 @@ img {
   width: 6rem;
   padding: .5rem 0 0 .5rem; }
 
+.fm-title {
+  font-style: italic; }
+
 /* Front Normal */
 .fn-article:not(:last-child) {
   padding-bottom: 1rem;
@@ -880,13 +883,10 @@ img {
   padding: .5rem 0 0 .5rem; }
 
 .fn-title {
-  font-size: 1.2em; }
+  font-size: 1.2em;
+  font-weight: normal; }
 
 /* Single Page */
-.post-single {
-  max-width: 35rem;
-  margin: 0 auto; }
-
 .post-featured-image-figure {
   margin: 0; }
 
@@ -898,13 +898,16 @@ img {
 .post-featured-image-figcaption {
   display: block;
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: .8em;
+  font-size: .75em;
   line-height: 1.3;
   color: #6e6e6e;
   margin-top: .3rem; }
 
 .post-title {
-  margin: 0; }
+  margin: 0;
+  font-family: "Lora", Georgia, serif;
+  font-size: 1.5em;
+  font-weight: bold; }
 
 .post-title-link {
   display: block;
@@ -912,18 +915,24 @@ img {
   text-decoration: none; }
 
 .post-meta {
-  margin: 1rem 0;
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: bold;
+  margin: .5rem 0 1rem 0;
   font-size: .8em; }
+  .post-meta p {
+    margin: 0; }
   .post-meta a {
-    color: #0075cd;
+    color: #999;
     text-decoration: none; }
     .post-meta a:hover {
       text-decoration: underline; }
 
 .pcl-comma:last-child {
   display: none; }
+
+.post-author {
+  font-weight: bold; }
+
+.meta-small {
+  font-size: .9em; }
 
 /* Comments */
 .comments-section {

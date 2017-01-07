@@ -46,7 +46,7 @@
 
 .front-title {
   font-family: $serif;
-  font-weight: normal;
+  font-weight: bold;
   margin: 0;
   letter-spacing: 0.01em;
   word-spacing: -0.1em;
@@ -109,6 +109,10 @@
   padding: .5rem 0 0 .5rem;
 }
 
+.fm-title {
+  font-style: italic;
+}
+
 /* Front Normal */
 .fn-article {
   &:not(:last-child) {
@@ -125,4 +129,5 @@
 
 .fn-title {
   font-size: 1.2em;
+  font-weight: normal;
 }
