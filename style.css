@@ -867,6 +867,9 @@ img {
   float: right;
   padding: .5rem 0 .5rem .5rem; }
 
+.fn-title {
+  font-size: 1.2em; }
+
 /* Single Page */
 .post-single {
   max-width: 35rem;
