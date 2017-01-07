@@ -1,13 +1,7 @@
 <article class="front-article fm-article">
 
   <p class="front-category fs-category">
-    <?php
-    $categories = get_the_category();
-
-    if ( ! empty( $categories ) ) {
-      echo esc_html( $categories[0]->name );
-    }
-    ?>
+    <?php the_category(', '); ?>
   </p>
 
   <h3 class="front-title fm-title">
