@@ -42,11 +42,23 @@
 .widgettitle {
   width: 100%;
   flex: 100%;
-  font-size: 1em;
+  font-size: .9em;
   margin-bottom: 1rem;
-  padding-bottom: .5rem;
-  border-bottom: 1px solid #ccc;
-  font-weight: normal;
-  color: #666;
+  padding-bottom: .6rem;
+  font-weight: bold;
+  color: #000;
   margin-top: 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.section-rule {
+  border-bottom: 1px solid #ccc;
+  border-top: 2px solid #ccc;
+  border-left: 0;
+  border-right: 0;
+  box-sizing: content-box;
+  content: '';
+  display: block;
+  height: 1px;
+  margin: 0 0 .6rem;
 }

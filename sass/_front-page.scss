@@ -2,6 +2,7 @@
 .front-article {
   margin-bottom: 1rem;
   margin-top: 0;
+  width: 100%;
 }
 
 .front-article:after {
@@ -54,6 +55,12 @@
   font-size: .8em;
   color: #999;
   margin: .25rem 0 0;
+
+  a {
+    color: #999;
+    text-decoration: none;
+    &:hover { text-decoration: underline; }
+  }
 }
 
 .front-excerpt {
@@ -65,12 +72,13 @@
 
 /* Front Large */
 .fl-article {
-  padding-bottom: 1rem;
-  border-bottom: 1px solid #ccc;
+  &:not(:last-child) {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #ccc;
+  }
 }
 
 .fl-image {
-  margin: 0 -1rem;
   margin-bottom: .625rem;
 }
 
@@ -80,12 +88,27 @@
 
 /* Front Medium */
 .fm-article {
-  padding-bottom: 1em;
-  border-bottom: 1px solid #ccc;
+  &:not(:last-child) {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #ccc;
+  }
 }
 
 .fm-image {
   float: right;
   width: 6rem;
-  margin: .5rem 0 .5rem .5rem;
+  padding: .5rem 0 .5rem .5rem;
+}
+
+/* Front Normal */
+.fn-article {
+  &:not(:last-child) {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #ccc;
+  }
+}
+.fn-image {
+  width: 6rem;
+  float: right;
+  padding: .5rem 0 .5rem .5rem;
 }
