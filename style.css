@@ -587,7 +587,8 @@ img {
   margin-top: 0;
   border-bottom: 1px solid #ccc; }
 
-.section-rule {
+.section-title::before,
+.widget:not(:first-child)::before {
   border-bottom: 1px solid #ccc;
   border-top: 2px solid #ccc;
   border-left: 0;
@@ -772,7 +773,18 @@ img {
   font-size: .8em;
   padding: 1rem 0; }
 
+/* Sidebar */
+.widget {
+  margin-bottom: 1rem; }
+
 /* Front Page */
+/* Front section */
+.front-section {
+  margin-bottom: 2rem; }
+
+.section-featured {
+  margin-bottom: 3rem; }
+
 /* Front Article */
 .front-article {
   margin-bottom: 1rem;
@@ -855,7 +867,7 @@ img {
 .fm-image {
   float: right;
   width: 6rem;
-  padding: .5rem 0 .5rem .5rem; }
+  padding: .5rem 0 0 .5rem; }
 
 /* Front Normal */
 .fn-article:not(:last-child) {
@@ -865,7 +877,7 @@ img {
 .fn-image {
   width: 6rem;
   float: right;
-  padding: .5rem 0 .5rem .5rem; }
+  padding: .5rem 0 0 .5rem; }
 
 .fn-title {
   font-size: 1.2em; }

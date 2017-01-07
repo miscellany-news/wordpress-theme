@@ -51,7 +51,8 @@
   border-bottom: 1px solid #ccc;
 }
 
-.section-rule {
+.section-title::before,
+.widget:not(:first-child)::before {
   border-bottom: 1px solid #ccc;
   border-top: 2px solid #ccc;
   border-left: 0;

@@ -1,3 +1,12 @@
+/* Front section */
+.front-section {
+  margin-bottom: 2rem;
+}
+
+.section-featured {
+  margin-bottom: 3rem;
+}
+
 /* Front Article */
 .front-article {
   margin-bottom: 1rem;
@@ -97,7 +106,7 @@
 .fm-image {
   float: right;
   width: 6rem;
-  padding: .5rem 0 .5rem .5rem;
+  padding: .5rem 0 0 .5rem;
 }
 
 /* Front Normal */
@@ -111,7 +120,7 @@
 .fn-image {
   width: 6rem;
   float: right;
-  padding: .5rem 0 .5rem .5rem;
+  padding: .5rem 0 0 .5rem;
 }
 
 .fn-title {

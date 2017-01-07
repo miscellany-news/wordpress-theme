@@ -79,8 +79,8 @@ function miscellanynews_widgets_init() {
 		'id'            => 'primary',
 		'name'          => __( 'Primary Sidebar' ),
 		'description'   => __( 'Main global sidebar' ),
-    'before_widget' => '',
-    'after_widget' => '',
+    'before_widget' => '<div class="widget">',
+    'after_widget' => '</div>',
 	));
 }
 add_action( 'widgets_init', 'miscellanynews_widgets_init' );
