@@ -819,7 +819,11 @@ img {
   border-bottom: 1px solid #ccc; }
 
 .fl-image {
-  margin: 0 -1rem; }
+  margin: 0 -1rem;
+  margin-bottom: .625rem; }
+
+.fl-title {
+  font-size: 1.5em; }
 
 /* Front Medium */
 .fm-article {
@@ -828,7 +832,7 @@ img {
 
 .fm-image {
   float: right;
-  width: 5rem;
+  width: 6rem;
   margin: .5rem 0 .5rem .5rem; }
 
 /* Single Page */

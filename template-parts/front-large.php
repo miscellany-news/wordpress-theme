@@ -5,15 +5,6 @@
   </a>
 
   <div class="front-content fl-content">
-    <p class="front-category fl-category">
-      <?php
-      $categories = get_the_category();
-
-      if ( ! empty( $categories ) ) {
-        echo esc_html( $categories[0]->name );
-      }
-      ?>
-    </p>
     <h3 class="front-title fl-title">
       <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="front-title-link fl-title-link">
         <?php the_title();?>
