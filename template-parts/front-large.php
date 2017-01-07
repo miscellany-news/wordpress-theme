@@ -1,11 +1,11 @@
-<article class="front-article large-article">
+<article class="front-article fl-article">
 
   <a class="front-image fl-image" href="<?php the_permalink(); ?>">
     <?php the_post_thumbnail(array(1440,860))?>
   </a>
 
   <div class="front-content fl-content">
-    <p class="front-category fs-category">
+    <p class="front-category fl-category">
       <?php
       $categories = get_the_category();
 

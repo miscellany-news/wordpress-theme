@@ -32,32 +32,6 @@
   }
 }
 
-.grid-lr {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: flex-start;
-}
-
-.col-l {
-  width: 72%;
-  padding-right: 1.3rem;
-  border-right: 1px solid #ccc;
-  @media (max-width: 55rem) {
-    width: 100%;
-    padding-right: 0;
-    border-right: 0;
-  }
-}
-
-.col-r {
-  width: 28%;
-  padding-left: 1.3rem;
-  @media (max-width: 55rem) {
-    width: 100%;
-    padding-left: 0;
-  }
-}
-
 .grid {
   display: flex;
   flex-wrap: wrap;
