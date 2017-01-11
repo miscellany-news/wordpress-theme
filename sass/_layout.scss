@@ -2,9 +2,11 @@
   max-width: $max-width;
   margin: 0 auto;
   padding: 0 1rem;
+  padding-top: 1rem;
   display: flex;
   flex-wrap: wrap;
   align-content: flex-start;
+  background-color: white;
   @media (max-width: 47rem) {
     max-width: 36rem;
   }
