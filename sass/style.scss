@@ -25,11 +25,18 @@ $serif: 'Lora', Georgia, serif;
 
 $base-line-height: 1.6;
 
+/* Breakpoints */
+$break-tiny: 26rem;
+$break-small: 47rem;
+$break-small-medium: 50rem;
+$break-medium: 55rem;
+$break-large: 60rem;
+
 /* Colors */
 $color-page-background: #fff;
 $color-burgundy: #820202;
 
-$color-font: #333;
+$text-color: #222;
 
 $color-link: rgb(0, 117, 205);
 $color-visited-link: $color-link;
@@ -52,7 +59,7 @@ html {
 }
 
 body {
-  color: $color-font;
+  color: $text-color;
   font-family: $serif;
   line-height: $base-line-height;
   background-color: $color-page-background;
@@ -68,7 +75,7 @@ a {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: $sans-serif;
+  font-family: $serif;
 }
 h1, h2 { line-height: 1.1; }
 h3, h4 { line-height: 1.3; }
@@ -98,6 +105,9 @@ img {
 
 /* Front Page */
 @import "front-page";
+
+/* Archive Pages */
+@import "archive";
 
 /* Single Page */
 @import "single";

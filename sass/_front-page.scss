@@ -20,12 +20,12 @@
 
 .front-article::after,
 .front-wrap::after {
-     visibility: hidden;
-     display: block;
-     font-size: 0;
-     content: " ";
-     clear: both;
-     height: 0;
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
 }
 
 .front-image {
@@ -55,13 +55,17 @@
   margin: 0;
   letter-spacing: 0.01em;
   word-spacing: -0.1em;
-  color: black;
+  color: $text-color;
 }
 
 .front-title-link {
-  color: black;
+  color: $text-color;
   text-decoration: none;
   display: block;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .front-author {
@@ -73,6 +77,7 @@
   a {
     color: #999;
     text-decoration: none;
+    text-transform: uppercase;
     &:hover { text-decoration: underline; }
   }
 }
@@ -102,21 +107,25 @@
 .fl-image {
   margin-bottom: .625rem;
 
-  @media (min-width: 55rem) {
+  @media (min-width: $break-medium) {
     padding-left: 1rem;
     order: 2;
-    width: 60%;
+    flex-basis: 60%;
+    flex-grow: 0;
+    flex-shrink: 0;
   }
 }
 
 .fl-content {
-  @media (min-width: 55rem) {
-    width: 40%;
-  }
 }
 
 .fl-title {
   font-size: 1.5em;
+
+  @media (min-width: $max-width) {
+    font-size: 2em;
+    line-height: 1.2;
+  }
 }
 
 /* Front Medium */
@@ -126,7 +135,7 @@
     border-bottom: 1px solid #ccc;
   }
 
-  @media (min-width: 55rem) {
+  @media (min-width: $break-medium) {
     width: 50%;
     margin-bottom: 1rem;
     border-bottom: 1px solid #ccc;
@@ -151,7 +160,12 @@
 .fm-image {
   float: right;
   width: 6rem;
-  padding: .5rem 0 0 .5rem;
+  padding: .5rem 0 .25rem .5rem;
+
+  @media (max-width: $break-medium) {
+    width: 8rem;
+    padding-bottom: 0;
+  }
 }
 
 .fm-title {
@@ -173,11 +187,15 @@
 }
 
 .fn-title {
-  font-size: 1.2em;
-  font-weight: normal;
+  font-size: 1.125em;
+  font-weight: bold;
+
+  @media (min-width: $max-width) {
+    font-size: 1.3em;
+  }
 }
 
-@media (min-width: 55rem) {
+@media (min-width: $break-medium) {
   .grid {
     margin: 0 -1rem 0 -1rem;
   }

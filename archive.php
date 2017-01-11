@@ -6,7 +6,7 @@
 
     <header class="archive-header">
       <?php
-      the_archive_title('<h2 class="archive-title">','</h2>');
+      the_archive_title('<h2>','</h2>');
       the_archive_description('<p class="archive-description">','</p>');
       ?>
     </header>
@@ -14,7 +14,7 @@
     <?php
     while ( have_posts() ) : the_post();
 
-      get_template_part( 'template-parts/content' );
+      get_template_part( 'template-parts/content', 'archive' );
 
     endwhile; // End loop
 

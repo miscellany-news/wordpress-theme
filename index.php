@@ -1,33 +1,26 @@
 <?php get_header(); ?>
 
 <!-- Main content -->
-<main class="site-main">
-  <?php
-  if ( have_posts() ) :
+<main class="main-content">
+  <?php if ( have_posts() ) : ?>
+
+    <?php
     while ( have_posts() ) : the_post();
 
-      get_template_part( 'template-parts/content', get_post_format() );
+      get_template_part( 'template-parts/content', 'archive' );
 
     endwhile; // End loop
 
     // Previous/next page navigation.
-    the_posts_pagination( array(
-      'prev_text'          => __( 'Previous page', 'twentysixteen' ),
-      'next_text'          => __( 'Next page', 'twentysixteen' ),
-      'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentysixteen' ) . ' </span>'
-    ));
+    the_posts_pagination(array('type' => 'list'));
 
   else: // No content found
     get_template_part( 'template-parts/content', 'none' );
+
   endif;
   ?>
 
-  <aside>
-    <?php get_sidebar(); ?>
-  </aside>
-
-  <?php the_posts_pagination(); // Show posts pagination ?>
-
 </main>
 
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>

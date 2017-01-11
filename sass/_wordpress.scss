@@ -15,39 +15,47 @@
 }
 
 .aligncenter,
-div.aligncenter {
+div.aligncenter,
+a img.aligncenter {
     display: block;
     margin: 0.3125rem auto 0.3125rem auto;
 }
 
-.alignright {
-    float:right;
-    margin: 0.3125rem 0 1.25rem 1.25rem;
-}
-
-.alignleft {
-    float: left;
-    margin: 0.3125rem 1.25rem 1.25rem 0;
-}
-
+.alignright,
 a img.alignright {
     float: right;
     margin: 0.3125rem 0 1.25rem 1.25rem;
+
+		@media (min-width: $max-width) {
+			margin-right: -3rem;
+		}
+
+		@media (max-width: $break-medium) {
+			float: none;
+			margin: 0 auto;
+			width: 100%;
+		}
 }
 
-a img.alignnone {
-    margin: 0.3125rem 1.25rem 1.25rem 0;
-}
-
+.alignleft,
 a img.alignleft {
     float: left;
     margin: 0.3125rem 1.25rem 1.25rem 0;
+
+		@media (min-width: $max-width) {
+			margin-left: -3rem;
+		}
+
+		@media (max-width: $break-medium) {
+			float: none;
+			margin: 0 auto;
+			width: 100%;
+		}
 }
 
-a img.aligncenter {
-    display: block;
-    margin-left: auto;
-    margin-right: auto
+.alignnone,
+a img.alignnone {
+    margin: 0.3125rem 1.25rem 1.25rem 0;
 }
 
 .wp-caption {
@@ -56,18 +64,6 @@ a img.aligncenter {
     max-width: 100%;
     padding: 0.3125rem 3px 10px;
     text-align: center;
-}
-
-.wp-caption.alignnone {
-    margin: 0.3125rem 1.25rem 1.25rem 0;
-}
-
-.wp-caption.alignleft {
-    margin: 0.3125rem 1.25rem 1.25rem 0;
-}
-
-.wp-caption.alignright {
-    margin: 0.3125rem 0 1.25rem 1.25rem;
 }
 
 .wp-caption img {
@@ -87,23 +83,12 @@ a img.aligncenter {
 .wp-caption-text {
   display: block;
   font-family: $sans-serif;
-  font-size: .7em;
+  font-size: .75em;
   line-height: 1.3;
   color: #6e6e6e;
 	padding: 0.3125rem 0 0.3125rem;
   em {
     font-style: normal;
-  }
-}
-
-@media (min-width: $max-width) {
-  .wp-caption.alignright,
-	img.alignright {
-    margin-right: -3rem;
-  }
-  .wp-caption.alignleft,
-	img.alignleft {
-    margin-left: -3rem;
   }
 }
 

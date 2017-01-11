@@ -1,10 +1,11 @@
 .site-header {
-  background: rgb(133, 6, 11);
-  color: white;
+  color: black;
 }
 
 .toolbar {
-  background-color: rgb(121, 6, 10);
+  background-color: #111;
+  color: white;
+  margin-bottom: 1rem;
 }
 
 .toolbar-container {
@@ -14,74 +15,116 @@
   font-family: $sans-serif;
   font-size: .85em;
   line-height: 1.9rem;
+  height: 1.9rem;
 }
 
 .header-container {
   max-width: $max-width;
   margin: 0 auto;
+  background-image: url('img/seal-burgundy.svg');
+  background-size: 156px 156px;
+  background-repeat: no-repeat;
+  background-position: 42px 0px;
+  margin-top: 1.875rem;
+  margin-bottom: .5rem;
+
+  @media (max-width: $break-medium) {
+    background-image: none;
+  }
+
+  @media (max-width: $break-tiny) {
+    margin-top: 1rem;
+  }
 }
 
 .site-name {
   text-align: center;
   padding: 0;
   margin: 0;
-  padding-top: 2rem;
 }
 
 .site-title {
   display: block;
   margin: 0 auto;
-  width: 547px;
-  height: 55px;
   color: transparent;
-  background-image: url('img/logo-white.png');
-  background-repeat: no-repeat;
-  background-position: center center;
+  position: relative;
+  padding: 0 1rem;
+}
+
+.site-logo {
+  width: 75%;
+  margin: 0 auto;
+  height: auto;
+  display: block;
+  @media (max-width: $break-tiny) {
+    width: 15rem;
+  }
 }
 
 .site-subheading {
-  text-align: center;
+  text-align: right;
   padding: 0;
   margin: 0;
   display: block;
-  font-family: $sans-serif;
-  font-size: .9em;
-  margin-bottom: .75rem;
+  font-family: $serif;
+  font-style: italic;
+  color: rgb(124, 70, 71);
+  font-size: 1.05em;
+  margin-right: 5rem;
+  margin-top: .4rem;
+  padding-bottom: .25rem;
+
+  @media (max-width: $break-medium) {
+    text-align: center;
+    margin-right: 0;
+    font-size: .9em;
+  }
+
+  @media (max-width: $break-tiny) {
+    display: none;
+  }
 }
 
 .hn {
-  background-color: rgb(121, 6, 10);
   margin: 0;
   padding: 0;
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 1rem;
+  @media (max-width: $max-width) {
+    padding: 0;
+  }
 }
 
 .hn-container {
-  max-width: $max-width;
-  padding: 0 1rem;
-  margin: 0 auto;
   text-align: center;
-  background-color: rgb(110, 4, 9);
+  border-top: 1px solid #000;
+  border-bottom: 2px solid #000;
 }
 
 .hn-menu {
   list-style: none;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   flex-wrap: wrap;
   margin: 0;
   padding: 0;
+
+  @media (max-width: $max-width) {
+    padding: 0 1rem;
+  }
 }
 
 .hn-menu {
   a {
-    color: white;
-    font-family: $serif;
-    font-size: 1em;
+    color: $text-color;
+    font-family: $sans-serif;
+    font-size: 0.9em;
     line-height: 1;
     display: inline-block;
     text-decoration: none;
     padding-right: 1.25rem;
-    line-height: 2.25rem;
+    line-height: 2.4rem;
 
     &:hover {
       text-decoration: underline;

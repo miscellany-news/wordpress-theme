@@ -11,19 +11,18 @@
   <!-- Site header -->
   <header class="site-header">
 
-    <div class="toolbar">
-      <div class="toolbar-container">
-        Toolbar
-      </div>
-    </div>
 
     <div class="header-container">
       <!-- The Miscellany News logo -->
       <h1 class="site-name">
-        <a class="site-title" href="<?php echo esc_url( home_url( '/' ) );?>">The Miscellany News</a>
+
+        <a class="site-title" href="<?php echo esc_url( home_url( '/' ) );?>">
+          <span class="screen-reader-text">The Miscellany News</span>
+          <img src="<?php echo get_template_directory_uri() . '/img/logo-black-svg.svg'?>" class="site-logo">
+        </a>
       </h1>
       <p class="site-subheading">
-        Since 1866 | <b>Wednesday,</b> January 11, 2017
+        Vassar College's student newspaper of record since 1866
       </p>
     </div>
 

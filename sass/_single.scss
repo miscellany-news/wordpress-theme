@@ -14,11 +14,23 @@
   font-family: $serif;
   font-size: 1.5em;
   font-weight: bold;
+
+  @media (min-width: $break-small) {
+    font-size: 2em;
+  }
+
+  @media (min-width: $break-medium) {
+    font-size: 2.5em;
+  }
+
+  @media (min-width: $max-width) {
+    font-size: 2.75em;
+  }
 }
 
 .post-title-link {
   display: block;
-  color: black;
+  color: $text-color;
   text-decoration: none;
 }
 
@@ -47,7 +59,7 @@
 .post-author {
   font-weight: bold;
   a {
-    color: black;
+    color: $text-color;
     font-weight: bold;
     text-decoration: none;
     text-transform: uppercase;

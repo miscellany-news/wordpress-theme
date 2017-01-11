@@ -1,8 +1,10 @@
 <article class="front-article fl-article">
 
+  <?php if( has_post_thumbnail() ) : ?>
   <a class="front-image fl-image" href="<?php the_permalink(); ?>">
     <?php the_post_thumbnail(array(1440,860))?>
   </a>
+  <?php endif; ?>
 
   <div class="front-content fl-content">
     <h3 class="front-title fl-title">

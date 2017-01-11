@@ -10,9 +10,11 @@
     </a>
   </h3>
 
+  <?php if( has_post_thumbnail() ) : ?>
   <a class="front-image fm-image" href="<?php the_permalink(); ?>">
     <?php the_post_thumbnail('small')?>
   </a>
+  <?php endif; ?>
 
   <p class="front-author fm-author">By <?php miscellanynews_get_author_link(); ?></p>
 
