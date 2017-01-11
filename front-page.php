@@ -20,23 +20,13 @@
     ?>
   </section>
 
-  <section class="front-section section-news">
-    <h2 class="section-title">News</h2>
-    <div class="grid">
-      <?php
-      $args = array('posts_per_page' => 3, 'offset' => 0, 'category_name' => 'news');
-      $loop = new WP_Query( $args );
-      while ($loop->have_posts()) : $loop->the_post();
-        get_template_part('template-parts/front');
-      endwhile; wp_reset_postdata();
-      ?>
-    </div>
-  </section>
-
-
-
   <section class="front-section section-features">
-    <h2 class="section-title">Features</h2>
+    <?php
+    $idObj = get_category_by_slug('features');
+    $category_id = $idObj->term_id;
+    $category_link = get_category_link( $category_id );
+    ?>
+    <h2 class="section-title"><a href="<?php echo $category_link; ?>">Features</a></h2>
     <div class="grid">
       <?php
       $args = array('posts_per_page' => 6, 'offset' => 0, 'category_name' => 'features');
@@ -48,8 +38,31 @@
     </div>
   </section>
 
+  <section class="front-section section-news">
+    <?php
+    $idObj = get_category_by_slug('news');
+    $category_id = $idObj->term_id;
+    $category_link = get_category_link( $category_id );
+    ?>
+    <h2 class="section-title"><a href="<?php echo $category_link; ?>">News</a></h2>
+    <div class="grid">
+      <?php
+      $args = array('posts_per_page' => 3, 'offset' => 0, 'category_name' => 'news');
+      $loop = new WP_Query( $args );
+      while ($loop->have_posts()) : $loop->the_post();
+        get_template_part('template-parts/front');
+      endwhile; wp_reset_postdata();
+      ?>
+    </div>
+  </section>
+
   <section class="front-section section-arts">
-    <h2 class="section-title">Arts</h2>
+    <?php
+    $idObj = get_category_by_slug('arts');
+    $category_id = $idObj->term_id;
+    $category_link = get_category_link( $category_id );
+    ?>
+    <h2 class="section-title"><a href="<?php echo $category_link; ?>">Arts</a></h2>
     <div class="grid">
       <?php
       $args = array('posts_per_page' => 3, 'offset' => 0, 'category_name' => 'arts');
@@ -64,7 +77,12 @@
 
   <section class="front-section section-sports">
 
-    <h2 class="section-title">Sports</h2>
+    <?php
+    $idObj = get_category_by_slug('sports');
+    $category_id = $idObj->term_id;
+    $category_link = get_category_link( $category_id );
+    ?>
+    <h2 class="section-title"><a href="<?php echo $category_link; ?>">Sports</a></h2>
     <div class="grid">
       <?php
       $args = array('posts_per_page' => 3, 'offset' => 0, 'category_name' => 'sports');
@@ -78,7 +96,12 @@
 
   <section class="front-section section-opinions">
 
-    <h2 class="section-title">Opinions</h2>
+    <?php
+    $idObj = get_category_by_slug('opinions');
+    $category_id = $idObj->term_id;
+    $category_link = get_category_link( $category_id );
+    ?>
+    <h2 class="section-title"><a href="<?php echo $category_link; ?>">Opinions</a></h2>
     <div class="grid">
       <?php
       $args = array('posts_per_page' => 3, 'offset' => 0, 'category_name' => 'opinions');
@@ -92,7 +115,12 @@
 
   <section class="front-section section-humor">
 
-    <h2 class="section-title">Humor & Satire</h2>
+    <?php
+    $idObj = get_category_by_slug('humor');
+    $category_id = $idObj->term_id;
+    $category_link = get_category_link( $category_id );
+    ?>
+    <h2 class="section-title"><a href="<?php echo $category_link; ?>">Humor &amp; Satire</a></h2>
     <div class="grid">
       <?php
       $args = array('posts_per_page' => 3, 'offset' => 0, 'category_name' => 'humor');

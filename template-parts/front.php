@@ -1,5 +1,5 @@
 <article class="front-article fn-article">
-
+<div class="fn-wrap">
   <a class="front-image fn-image" href="<?php the_permalink(); ?>">
     <?php the_post_thumbnail(array(1440,860))?>
   </a>
@@ -15,5 +15,5 @@
     <p class="front-author fn-author">By <?php miscellanynews_get_author_link(); ?></p>
 
   </div>
-
+</div>
 </article>

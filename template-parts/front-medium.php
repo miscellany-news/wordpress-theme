@@ -1,5 +1,5 @@
 <article class="front-article fm-article">
-
+<div class="front-wrap fm-wrap">
   <p class="front-category fs-category">
     <?php the_category(', '); ?>
   </p>
@@ -17,5 +17,5 @@
   <p class="front-author fm-author">By <?php miscellanynews_get_author_link(); ?></p>
 
   <p class="front-excerpt fm-excerpt"><?php miscellanynews_the_excerpt_limit(10); ?></p>
-
+</div>
 </article>

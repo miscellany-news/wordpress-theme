@@ -34,7 +34,7 @@
       if ( has_post_thumbnail() ) {
         echo '<figure class="post-featured-image-figure">';
         the_post_thumbnail('large', array('class' => 'post-featured-image'));
-        echo '<figcaption class="post-featured-image-figcaption">';
+        echo '<figcaption class="wp-caption-text">';
         echo get_post(get_post_thumbnail_id())->post_excerpt;
         echo '</figcaption>';
         echo '</figure>';

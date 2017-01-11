@@ -10,11 +10,11 @@
  * enabled then it will use that function to get the authors link.
  * Otherwise, it will use the built in the_authors_link() function.
  */
-function miscellanynews_get_author_link() {
+function miscellanynews_get_author_link( $author_page = false ) {
   // Get the "author" custom field
   $custom_author = get_post_meta(get_the_ID(), 'author', true);
 
-  if($custom_author) {
+  if($custom_author && !$author_page) {
     echo $custom_author; // Has "author" custom field
   } elseif (function_exists('coauthors_posts_links')) {
     coauthors_posts_links(); // "Co-Authors Plus" plugin

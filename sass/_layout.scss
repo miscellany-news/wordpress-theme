@@ -49,6 +49,10 @@
   color: #000;
   margin-top: 0;
   border-bottom: 1px solid #ccc;
+  a {
+    color: #000;
+    text-decoration: none;
+  }
 }
 
 .section-title::before,

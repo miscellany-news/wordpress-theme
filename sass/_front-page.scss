@@ -1,10 +1,14 @@
 /* Front section */
 .front-section {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .section-featured {
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 /* Front Article */
@@ -14,14 +18,15 @@
   width: 100%;
 }
 
-.front-article:after {
+.front-article::after,
+.front-wrap::after {
      visibility: hidden;
      display: block;
      font-size: 0;
      content: " ";
      clear: both;
      height: 0;
-     }
+}
 
 .front-image {
   display: block;
@@ -81,14 +86,33 @@
 
 /* Front Large */
 .fl-article {
+  width: 100%;
+
   &:not(:last-child) {
     padding-bottom: 1rem;
     border-bottom: 1px solid #ccc;
   }
+
+  @media (min-width: 55rem) {
+    display: flex;
+  }
+
 }
 
 .fl-image {
   margin-bottom: .625rem;
+
+  @media (min-width: 55rem) {
+    padding-left: 1rem;
+    order: 2;
+    width: 60%;
+  }
+}
+
+.fl-content {
+  @media (min-width: 55rem) {
+    width: 40%;
+  }
 }
 
 .fl-title {
@@ -100,6 +124,27 @@
   &:not(:last-child) {
     padding-bottom: 1rem;
     border-bottom: 1px solid #ccc;
+  }
+
+  @media (min-width: 55rem) {
+    width: 50%;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #ccc;
+
+    &:nth-child(2n) {
+      .fm-wrap {
+        padding-right: 1rem;
+        border-right: 1px solid #ccc;
+      }
+    }
+
+    &:nth-child(2n+1) {
+      padding-left: 1rem;
+    }
+
+    &:nth-last-child(-n+2) { /* Last 2 elements */
+      border-bottom: 0;
+    }
   }
 }
 
@@ -130,4 +175,37 @@
 .fn-title {
   font-size: 1.2em;
   font-weight: normal;
+}
+
+@media (min-width: 55rem) {
+  .grid {
+    margin: 0 -1rem 0 -1rem;
+  }
+
+  .fn-article {
+    width: 33.33333333333333%;
+    border-bottom: 1px solid #ccc;
+    .fn-wrap {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    &:nth-child(3n+2) {
+      .fn-wrap {
+        border-left: 1px solid #ccc;
+        border-right: 1px solid #ccc;
+      }
+    }
+
+    &:nth-last-child(-n+3) { /* Last three elements */
+      border-bottom: 0;
+    }
+  }
+
+  .fn-image {
+    float: none;
+    width: 100%;
+    padding: 0;
+    padding-bottom: .3rem;
+  }
 }

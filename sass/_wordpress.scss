@@ -11,37 +11,37 @@
 /* =WordPress Core
 -------------------------------------------------------------- */
 .alignnone {
-    margin: 5px 20px 20px 0;
+    margin: 0.3125rem 1.25rem 1.25rem 0;
 }
 
 .aligncenter,
 div.aligncenter {
     display: block;
-    margin: 5px auto 5px auto;
+    margin: 0.3125rem auto 0.3125rem auto;
 }
 
 .alignright {
     float:right;
-    margin: 5px 0 20px 20px;
+    margin: 0.3125rem 0 1.25rem 1.25rem;
 }
 
 .alignleft {
     float: left;
-    margin: 5px 20px 20px 0;
+    margin: 0.3125rem 1.25rem 1.25rem 0;
 }
 
 a img.alignright {
     float: right;
-    margin: 5px 0 20px 20px;
+    margin: 0.3125rem 0 1.25rem 1.25rem;
 }
 
 a img.alignnone {
-    margin: 5px 20px 20px 0;
+    margin: 0.3125rem 1.25rem 1.25rem 0;
 }
 
 a img.alignleft {
     float: left;
-    margin: 5px 20px 20px 0;
+    margin: 0.3125rem 1.25rem 1.25rem 0;
 }
 
 a img.aligncenter {
@@ -53,37 +53,58 @@ a img.aligncenter {
 .wp-caption {
     background: #fff;
     border: 1px solid #f0f0f0;
-    max-width: 96%; /* Image does not overflow the content area */
-    padding: 5px 3px 10px;
+    max-width: 100%;
+    padding: 0.3125rem 3px 10px;
     text-align: center;
 }
 
 .wp-caption.alignnone {
-    margin: 5px 20px 20px 0;
+    margin: 0.3125rem 1.25rem 1.25rem 0;
 }
 
 .wp-caption.alignleft {
-    margin: 5px 20px 20px 0;
+    margin: 0.3125rem 1.25rem 1.25rem 0;
 }
 
 .wp-caption.alignright {
-    margin: 5px 0 20px 20px;
+    margin: 0.3125rem 0 1.25rem 1.25rem;
 }
 
 .wp-caption img {
     border: 0 none;
     height: auto;
     margin: 0;
-    max-width: 98.5%;
+    max-width: 100%;
     padding: 0;
     width: auto;
+		display: block;
 }
 
-.wp-caption p.wp-caption-text {
-    font-size: 11px;
-    line-height: 17px;
-    margin: 0;
-    padding: 0 4px 5px;
+.wp-caption a {
+	display: block;
+}
+
+.wp-caption-text {
+  display: block;
+  font-family: $sans-serif;
+  font-size: .7em;
+  line-height: 1.3;
+  color: #6e6e6e;
+	padding: 0.3125rem 0 0.3125rem;
+  em {
+    font-style: normal;
+  }
+}
+
+@media (min-width: $max-width) {
+  .wp-caption.alignright,
+	img.alignright {
+    margin-right: -3rem;
+  }
+  .wp-caption.alignleft,
+	img.alignleft {
+    margin-left: -3rem;
+  }
 }
 
 /* Text meant only for screen readers. */
@@ -106,11 +127,11 @@ a img.aligncenter {
 	font-size: 0.875rem;
 	font-weight: bold;
 	height: auto;
-	left: 5px;
+	left: 0.3125rem;
 	line-height: normal;
-	padding: 15px 23px 14px;
+	padding: 10.3125rem 23px 14px;
 	text-decoration: none;
-	top: 5px;
+	top: 0.3125rem;
 	width: auto;
 	z-index: 100000; /* Above WP toolbar. */
 }
