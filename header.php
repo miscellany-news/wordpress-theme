@@ -35,7 +35,7 @@
         </div>-->
         <?php
         wp_nav_menu( array(
-          'theme_location' => 'site-sections',
+          'theme_location' => 'site-navigation',
           'container' => '',
           'menu_class' => 'hn-menu',
           //'link_before' => '<span>',

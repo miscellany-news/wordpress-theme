@@ -12,10 +12,6 @@ Text Domain: miscellanynews
 
 /* GLOBAL VARIABLES */
 
-/* Widths */
-$min-width: 20rem; /* 320px / 16px */
-$max-width: 64rem; /* 1024px / 16px */
-
 /* Fonts */
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i');
 $sans-serif: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -24,6 +20,10 @@ $sans-serif: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $serif: 'Lora', Georgia, serif;
 
 $base-line-height: 1.6;
+
+/* Widths */
+$min-width: 20rem; /* 320px / 16px */
+$max-width: 63.5rem; /* 1024px / 16px */
 
 /* Breakpoints */
 $break-tiny: 26rem;

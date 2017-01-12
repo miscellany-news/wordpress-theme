@@ -1,3 +1,12 @@
+.archive-page-title {
+  text-align: center;
+  font-size: 2.3em;
+  margin-top: 0;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #000;
+}
+
 .archive-post {
   border-bottom: 1px solid #ccc;
   padding-bottom: 1rem;
@@ -15,6 +24,32 @@
     content: " ";
     clear: both;
     height: 0;
+  }
+}
+
+.archive-post:first-child {
+  display: flex;
+
+  @media (max-width: $max-width) {
+    flex-wrap: wrap;
+  }
+
+  .archive-featured {
+    order: 0;
+    margin-left: 0;
+    margin-right: 1rem;
+    flex-basis: 17rem;
+    flex-shrink: 0;
+    flex-grow: 0;
+
+    @media (max-width: $max-width) {
+      flex-basis: 100%;
+      margin-bottom: .25rem;
+    }
+  }
+
+  .archive-title {
+    font-size: 1.7em;
   }
 }
 

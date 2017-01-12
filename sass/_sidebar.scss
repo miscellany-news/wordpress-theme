@@ -1,3 +1,19 @@
 .widget {
   margin-bottom: 1rem;
 }
+
+/* Search */
+
+.search-form {
+  margin: 0;
+  padding: 0;
+  font-family: $sans-serif;
+}
+
+.search-input {
+  border: 1px solid rgb(224, 224, 224);
+  color: rgb(79, 79, 79);
+  width: 100%;
+  padding: 0.625rem;
+  font-size: .8em;
+}

@@ -37,6 +37,8 @@ add_action( 'after_setup_theme', 'miscellanynews_setup' );
 function miscellanynews_register_menu() {
   register_nav_menu( 'site-sections', 'Sections Navigation' );
 	register_nav_menu( 'site-blogs', 'Blogs Navigation' );
+  register_nav_menu( 'site-navigation', 'Main Navigation' );
+  register_nav_menu( 'copyright-menu', 'Copyright Navigation' );
 }
 add_action( 'init', 'miscellanynews_register_menu' );
 
