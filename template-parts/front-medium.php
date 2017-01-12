@@ -12,7 +12,7 @@
 
   <?php if( has_post_thumbnail() ) : ?>
   <a class="front-image fm-image" href="<?php the_permalink(); ?>">
-    <?php the_post_thumbnail('small')?>
+    <?php the_post_thumbnail('feat-small'); ?>
   </a>
   <?php endif; ?>
 

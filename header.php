@@ -18,21 +18,18 @@
 
         <a class="site-title" href="<?php echo esc_url( home_url( '/' ) );?>">
           <span class="screen-reader-text">The Miscellany News</span>
-          <img src="<?php echo get_template_directory_uri() . '/img/logo-black-svg.svg'?>" class="site-logo">
+          <img src="<?php echo get_template_directory_uri() . '/img/logo.svg'?>" class="site-logo">
         </a>
       </h1>
       <p class="site-subheading">
         Vassar College's student newspaper of record since 1866
       </p>
+      <a href="#footer-search-form" class="head-search-button"></a>
     </div>
 
     <nav class="hn">
       <div class="hn-container">
-        <!--<div class="hn-search-overlay" id="hn-search-overlay"></div>
-        <div class="hn-search-container">
-          <a href="#" class="hn-search" id="hn-search"></a>
-          <?php get_search_form(); ?>
-        </div>-->
+        <a href="#footer-navigation" class="hn-mobile-show" id="hn-mobile-show">Menu</a>
         <?php
         wp_nav_menu( array(
           'theme_location' => 'site-navigation',
@@ -43,9 +40,7 @@
           'menu_id' => 'hn-menu'
         ));
         ?>
-
       </div>
-
     </nav>
   </header>
 

@@ -27,7 +27,9 @@ function miscellanynews_setup() {
   add_theme_support( 'post-thumbnails' );
 
   // Add custom image sizes
-  add_image_size( 'featured-image-wide', 1440, 860, true );
+  add_image_size( 'feat-large', 1440, 860, true );
+  add_image_size( 'feat-medium', 800, 478, true );
+  add_image_size( 'feat-small', 400, 239, true );
 }
 add_action( 'after_setup_theme', 'miscellanynews_setup' );
 
@@ -39,6 +41,8 @@ function miscellanynews_register_menu() {
 	register_nav_menu( 'site-blogs', 'Blogs Navigation' );
   register_nav_menu( 'site-navigation', 'Main Navigation' );
   register_nav_menu( 'copyright-menu', 'Copyright Navigation' );
+  register_nav_menu( 'site-social', 'Social Media Navigation' );
+  register_nav_menu( 'site-other', 'Other Navigation (Footer)' );
 }
 add_action( 'init', 'miscellanynews_register_menu' );
 

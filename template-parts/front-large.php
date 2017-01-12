@@ -2,7 +2,7 @@
 
   <?php if( has_post_thumbnail() ) : ?>
   <a class="front-image fl-image" href="<?php the_permalink(); ?>">
-    <?php the_post_thumbnail(array(1440,860))?>
+    <?php the_post_thumbnail( 'feat-medium' ); ?>
   </a>
   <?php endif; ?>
 

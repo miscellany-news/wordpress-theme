@@ -1,16 +1,10 @@
 document.addEventListener("DOMContentLoaded", function(event) {
   var body = document.body;
-	var searchButton = document.getElementById("hn-search");
-  var searchOverlay = document.getElementById("hn-search-overlay");
+	var menuButton = document.getElementById("hn-mobile-show");
 
-  addEvent(searchButton, 'click', function(event) {
+  addEvent(menuButton, 'click', function(event) {
 		event.preventDefault();
-		toggle(body, 'search-active');
-  });
-
-  addEvent(searchOverlay, 'click', function(event) {
-		event.preventDefault();
-		toggle(body, 'search-active');
+		toggle(body, 'menu-active');
   });
 
 });

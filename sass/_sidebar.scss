@@ -8,6 +8,7 @@
   margin: 0;
   padding: 0;
   font-family: $sans-serif;
+  position: relative;
 }
 
 .search-input {
@@ -16,4 +17,21 @@
   width: 100%;
   padding: 0.625rem;
   font-size: .8em;
+  padding-right: 2.625rem;
+}
+
+.search-submit {
+  float: right;
+  background-color: transparent;
+  background-image: url('img/search-icon.svg');
+  background-size: 1.125rem 1.125rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 2.625rem;
+  width: 2.625rem;
+  border: 0;
+  cursor: pointer;
 }
