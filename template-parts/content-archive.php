@@ -9,7 +9,7 @@
   <!-- Featured image -->
   <?php if ( has_post_thumbnail() ) : ?>
     <a class="archive-featured" href="<?php the_permalink(); ?>">
-      <?php the_post_thumbnail('large', array('class' => 'post-featured-image')); ?>
+      <?php the_post_thumbnail('feat-medium', array('class' => 'post-featured-image')); ?>
     </a>
   <?php endif; ?>
   <div class="archive-content">

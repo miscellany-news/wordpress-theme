@@ -4,7 +4,7 @@
 <main class="main-content">
   <?php if ( have_posts() ) : ?>
 
-    <header class="archive-header">
+    <header class="archive-page-header">
       <?php
       the_archive_title('<h2 class="archive-page-title">','</h2>');
       the_archive_description('<p class="archive-description">','</p>');

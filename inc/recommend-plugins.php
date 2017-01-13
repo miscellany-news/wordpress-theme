@@ -10,22 +10,10 @@ function miscellanynews_register_required_plugins() {
 	 * If the source is NOT from the .org repo, then source is also required.
 	 */
 	$plugins = array(
-
-		array(
-			'name'      => 'Disable Emojis',
-			'slug'      => 'disable-emojis',
-			'required'  => false,
-		),
-
+		
 		array(
 			'name'      => 'Co-Authors Plus',
 			'slug'      => 'co-authors-plus',
-			'required'  => false,
-		),
-
-		array(
-			'name'			=> 'Perfect Pullquotes',
-			'slug'      => 'perfect-pullquotes',
 			'required'  => false,
 		),
 

@@ -1,11 +1,14 @@
 .site-header {
   color: black;
   background: #7E0308;
-  position: relative;
+  position-color: relative;
 }
 
 .header-container {
   max-width: $max-width;
+  z-index: 3;
+  position: relative;
+  background-color: #7E0308;
   margin: 0 auto;
   background-image: url('img/seal.svg');
   background-size: 14rem 14rem;
@@ -44,10 +47,26 @@
   background-repeat: no-repeat;
   background-position: center;
 
-
   @media (min-width: $break-nav) {
     display: none;
   }
+}
+
+.search-active .head-search-button {
+  background-color: white;
+  background-image: url('img/close.svg');
+  background-size: 1.1rem;
+}
+
+.header-search-form {
+  display: none;
+  position: absolute;
+  width: 100%;
+  z-index: 4;
+}
+
+.search-active .header-search-form {
+  display: block;
 }
 
 .site-name {
@@ -198,4 +217,19 @@
       background-color: #dedede;
     }
   }
+}
+
+.page-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .5);
+  z-index: 2;
+}
+
+.search-active .page-overlay {
+  display: block;
 }

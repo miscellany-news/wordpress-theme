@@ -1,10 +1,22 @@
-.archive-page-title {
-  text-align: center;
-  font-size: 2.3em;
-  margin-top: 0;
+.archive-page-header {
   padding-bottom: 1rem;
   margin-bottom: 1rem;
   border-bottom: 1px solid #000;
+}
+
+.archive-page-title {
+  text-align: center;
+  font-size: 1.9em;
+  margin-top: 0;
+  margin-bottom: 0;
+  @media (min-width: $break-medium) {
+    font-size: 2.3em;
+  }
+}
+
+.archive-description {
+  margin: 0;
+  margin-top: .5rem;
 }
 
 .archive-post {
@@ -26,7 +38,7 @@
     height: 0;
   }
 }
-
+/*
 .archive-post:first-child {
   display: flex;
 
@@ -52,6 +64,7 @@
     font-size: 1.7em;
   }
 }
+*/
 
 .archive-featured {
   float: right;
@@ -73,6 +86,10 @@
   margin: 0;
   color: black;
   font-size: 1.2em;
+
+  @media (min-width: $break-medium) {
+    font-size: 1.5em;
+  }
 }
 
 .archive-link {

@@ -7,7 +7,7 @@
 </head>
 <body <?php body_class(); ?>>
 <div class="site-container">
-<div id="hamburger-page-background" class="hamburger-background"></div>
+<div id="page-overlay" class="page-overlay"></div>
   <!-- Site header -->
   <header class="site-header">
 
@@ -24,7 +24,11 @@
       <p class="site-subheading">
         Vassar College's student newspaper of record since 1866
       </p>
-      <a href="#footer-search-form" class="head-search-button"></a>
+      <a href="#footer-search-form" id="header-search-show" class="head-search-button"></a>
+    </div>
+
+    <div class="header-search-form">
+      <?php get_search_form(); ?>
     </div>
 
     <nav class="hn">

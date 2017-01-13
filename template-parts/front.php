@@ -2,7 +2,7 @@
 <div class="fn-wrap">
   <?php if( has_post_thumbnail() ) : ?>
   <a class="front-image fn-image" href="<?php the_permalink(); ?>">
-    <?php the_post_thumbnail('feat-small'); ?>
+    <?php the_post_thumbnail('feat-medium'); ?>
   </a>
   <?php endif; ?>
 

@@ -27,9 +27,10 @@ function miscellanynews_setup() {
   add_theme_support( 'post-thumbnails' );
 
   // Add custom image sizes
-  add_image_size( 'feat-large', 1440, 860, true );
-  add_image_size( 'feat-medium', 800, 478, true );
-  add_image_size( 'feat-small', 400, 239, true );
+  add_image_size( 'feat-x-large', 1536, 1024, true );
+  add_image_size( 'feat-large', 768, 512, true );
+  add_image_size( 'feat-medium', 384, 256, true );
+  add_image_size( 'feat-small', 192, 128, true );
 }
 add_action( 'after_setup_theme', 'miscellanynews_setup' );
 

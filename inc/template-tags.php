@@ -19,7 +19,7 @@ function miscellanynews_get_author_link( $author_page = false ) {
   } elseif (function_exists('coauthors_posts_links')) {
     coauthors_posts_links(); // "Co-Authors Plus" plugin
   } else {
-    the_author_link();
+    the_author_posts_link();
   }
 }
 
