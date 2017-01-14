@@ -152,12 +152,6 @@ add_filter( 'get_the_archive_title', function ($title) {
 require_once('inc/template-tags.php');
 
 /**
- * Recommended plugins
- */
-require_once('inc/class-tgm-plugin-activation.php');
-require_once('inc/recommend-plugins.php');
-
-/**
  * Include meta boxes
  */
 require_once('inc/meta-boxes.php');
