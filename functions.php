@@ -31,6 +31,8 @@ function miscellanynews_setup() {
   add_image_size( 'feat-large', 768, 512, true );
   add_image_size( 'feat-medium', 384, 256, true );
   add_image_size( 'feat-small', 192, 128, true );
+
+  if ( ! isset( $content_width ) ) $content_width = 1024;
 }
 add_action( 'after_setup_theme', 'miscellanynews_setup' );
 
@@ -115,7 +117,7 @@ function miscellanynews_login_head() {
 echo "
 	<style>
 	body.login #login h1 a {
-		background: url('". esc_url( get_template_directory_uri() ) ."/img/logo-icon.png') no-repeat scroll center top transparent;
+		background: url('". get_theme_file_uri( 'img/logo-icon.png' ) ."') no-repeat scroll center top transparent;
     background-size: 90px 90px;
     border-radius: 10px;
 		height: 90px;
