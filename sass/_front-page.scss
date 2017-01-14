@@ -1,3 +1,7 @@
+.front-ad-area {
+  text-align: center;
+}
+
 /* Front section */
 .front-section {
   margin-bottom: 1rem;
@@ -140,14 +144,14 @@
     margin-bottom: 1rem;
     border-bottom: 1px solid #ccc;
 
-    &:nth-child(2n) {
+    &:nth-child(2n+1) {
       .fm-wrap {
         padding-right: 1rem;
         border-right: 1px solid #ccc;
       }
     }
 
-    &:nth-child(2n+1) {
+    &:nth-child(2n) {
       padding-left: 1rem;
     }
 

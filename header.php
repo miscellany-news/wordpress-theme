@@ -15,7 +15,6 @@
     <div class="header-container">
       <!-- The Miscellany News logo -->
       <h1 class="site-name">
-
         <a class="site-title" href="<?php echo esc_url( home_url( '/' ) );?>">
           <span class="screen-reader-text">The Miscellany News</span>
           <img src="<?php echo get_template_directory_uri() . '/img/logo.svg'?>" class="site-logo">

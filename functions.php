@@ -89,6 +89,22 @@ function miscellanynews_widgets_init() {
     'before_widget' => '<div class="widget">',
     'after_widget' => '</div>',
 	));
+
+  register_sidebar ( array(
+    'id'            => 'front-ad-area',
+    'name'          => __( 'Front Page Ad Area' ),
+    'description'   => __( 'This area is displayed under the featured "slider" posts on the front page, but above the sections' ),
+    'before_widget' => '<div class="widget">',
+    'after_widget' => '</div>',
+  ));
+
+  register_sidebar ( array(
+    'id'            => 'post-ad-area',
+    'name'          => __( 'Article Ad Area' ),
+    'description'   => __( 'This area is displayed underneath the post content on a post page.' ),
+    'before_widget' => '<div class="widget">',
+    'after_widget' => '</div>',
+  ));
 }
 add_action( 'widgets_init', 'miscellanynews_widgets_init' );
 
@@ -139,11 +155,6 @@ require_once('inc/template-tags.php');
  * Recommended plugins
  */
 require_once('inc/recommend-plugins.php');
-
-/**
- * Include custom widgets
- */
-require_once('inc/widgets/breaking-news.php');
 
 /**
  * Include meta boxes

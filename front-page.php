@@ -2,6 +2,7 @@
 <main class="main-content front-main">
 
   <section class="front-section section-featured">
+    <h2 class="section-title screen-reader-text">Featured Articles</h2>
     <?php
     $args = array('posts_per_page' => 1, 'offset' => 0, 'tag' => 'slider');
     $loop = new WP_Query( $args );
@@ -19,6 +20,12 @@
     endwhile; wp_reset_postdata();
     ?>
   </section>
+
+  <?php if ( is_active_sidebar( 'front-ad-area' ) ) : ?>
+    <section class="front-section front-ad-area">
+    	<?php dynamic_sidebar( 'front-ad-area' ); ?>
+    </section>
+  <?php endif; ?>
 
   <section class="front-section section-features">
     <?php

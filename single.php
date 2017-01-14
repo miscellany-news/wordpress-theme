@@ -12,7 +12,7 @@
 
         <!-- Post title -->
         <?php if( get_the_title() ) : ?>
-          <h1 class="post-title"><a href="<?php urlencode(the_permalink());?>" rel="bookmark" class="post-title-link"><?php the_title();?></a></h1>
+          <h2 class="post-title"><a href="<?php urlencode(the_permalink());?>" rel="bookmark" class="post-title-link"><?php the_title();?></a></h2>
         <?php endif;?>
 
         <!-- Post author and published date -->
@@ -45,6 +45,12 @@
       <div class="post-content">
         <?php the_content();?>
       </div>
+
+      <?php if ( is_active_sidebar( 'post-ad-area' ) ) : ?>
+        <section class="post-ad-area">
+        	<?php dynamic_sidebar( 'post-ad-area' ); ?>
+        </section>
+      <?php endif; ?>
 
       <!-- Post pagination -->
       <?php wp_link_pages(array( 'before' => '<nav class="link-pages">', 'after'  => '</nav>')); ?>
