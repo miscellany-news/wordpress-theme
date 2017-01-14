@@ -28,11 +28,9 @@ if ( post_password_required() ) {
     </div>
   <?php endif; ?>
 
-  <div class="comments-reply">
     <?php comment_form(array(
       'title_reply_before' => '<h3 class="section-title reply-title">',
       'title_reply_after' => '</h3>'
     )); ?>
-  </div>
 
 </div>

@@ -4,10 +4,11 @@ Theme URI: http://www.miscellanynews.org/
 Author: George Witteman & The Miscellany News
 Author URI: http://www.georgewitteman.me/
 Description: This is the official theme for Vassar's student newspaper, The Miscellany News.
+Tags: newspaper, Vassar, magazine
 Version: 0.8.1
 License: GNU General Public License v3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Text Domain: miscellanynews
+Text Domain: the-miscellany-news
 */
 /* GLOBAL VARIABLES */
 /* Fonts */
@@ -398,6 +399,9 @@ textarea {
 
 /* =WordPress Core
 -------------------------------------------------------------- */
+.gallery-caption {
+  display: block; }
+
 .alignnone {
   margin: 0.3125rem 1.25rem 1.25rem 0; }
 
@@ -1032,6 +1036,9 @@ table tr td {
 .front-ad-area {
   text-align: center; }
 
+.sticky {
+  display: block; }
+
 /* Front section */
 .front-section {
   margin-bottom: 1rem;
@@ -1442,6 +1449,9 @@ table tr td {
     border-bottom: 0;
     margin-bottom: 0; }
 
+.bypostauthor {
+  background-color: #f9f9f9; }
+
 .comment .children {
   margin-top: 1rem;
   padding-top: 1rem;
@@ -1475,13 +1485,13 @@ table tr td {
   .comment-metadata .edit-link {
     margin-left: .5rem; }
 
-.comment .reply {
+.comment .respond {
   font-size: .8em;
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; }
-  .comment .reply a {
+  .comment .respond a {
     color: #888;
     text-decoration: none; }
-    .comment .reply a:hover {
+    .comment .respond a:hover {
       text-decoration: underline; }
 
 .comment p {

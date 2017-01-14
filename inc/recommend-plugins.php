@@ -1,7 +1,5 @@
 <?php
 
-require_once('class-tgm-plugin-activation.php');
-
 add_action( 'tgmpa_register', 'miscellanynews_register_required_plugins' );
 
 function miscellanynews_register_required_plugins() {
@@ -10,7 +8,7 @@ function miscellanynews_register_required_plugins() {
 	 * If the source is NOT from the .org repo, then source is also required.
 	 */
 	$plugins = array(
-		
+
 		array(
 			'name'      => 'Co-Authors Plus',
 			'slug'      => 'co-authors-plus',

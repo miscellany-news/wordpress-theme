@@ -84,24 +84,24 @@ add_action('after_setup_theme','miscellanynews_start_cleanup');
 function miscellanynews_widgets_init() {
 	register_sidebar( array(
 		'id'            => 'primary',
-		'name'          => __( 'Primary Sidebar' ),
-		'description'   => __( 'Main global sidebar' ),
+		'name'          => 'Primary Sidebar',
+		'description'   => 'Main global sidebar',
     'before_widget' => '<div class="widget">',
     'after_widget' => '</div>',
 	));
 
   register_sidebar ( array(
     'id'            => 'front-ad-area',
-    'name'          => __( 'Front Page Ad Area' ),
-    'description'   => __( 'This area is displayed under the featured "slider" posts on the front page, but above the sections' ),
+    'name'          => 'Front Page Ad Area',
+    'description'   => 'This area is displayed under the featured "slider" posts on the front page, but above the sections',
     'before_widget' => '<div class="widget">',
     'after_widget' => '</div>',
   ));
 
   register_sidebar ( array(
     'id'            => 'post-ad-area',
-    'name'          => __( 'Article Ad Area' ),
-    'description'   => __( 'This area is displayed underneath the post content on a post page.' ),
+    'name'          => 'Article Ad Area',
+    'description'   => 'This area is displayed underneath the post content on a post page.',
     'before_widget' => '<div class="widget">',
     'after_widget' => '</div>',
   ));
@@ -115,7 +115,7 @@ function miscellanynews_login_head() {
 echo "
 	<style>
 	body.login #login h1 a {
-		background: url('".get_bloginfo('template_url')."/img/logo-icon.png') no-repeat scroll center top transparent;
+		background: url('". esc_url( get_template_directory_uri() ) ."/img/logo-icon.png') no-repeat scroll center top transparent;
     background-size: 90px 90px;
     border-radius: 10px;
 		height: 90px;
@@ -154,6 +154,7 @@ require_once('inc/template-tags.php');
 /**
  * Recommended plugins
  */
+require_once('inc/class-tgm-plugin-activation.php');
 require_once('inc/recommend-plugins.php');
 
 /**
