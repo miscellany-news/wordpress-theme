@@ -20,15 +20,19 @@
 
     endwhile; // End loop
 
-    // Previous/next page navigation.
-    the_posts_pagination(array('type' => 'list'));
+    ?>
+    </div>
 
+    <div class="archive-pagination">
+      <?php posts_nav_link( ' ' ); ?>
+    </div>
+  <?php
   else: // No content found
     get_template_part( 'template-parts/content', 'none' );
 
   endif;
   ?>
-  </div>
+
 
 </main>
 

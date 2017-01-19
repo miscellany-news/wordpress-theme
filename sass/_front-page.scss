@@ -138,7 +138,7 @@
 
 /* Front Medium */
 .fm-article {
-  display: flex;
+
 
   &:not(:last-child) {
     padding-bottom: 1rem;
@@ -149,6 +149,7 @@
     width: 50%;
     margin-bottom: 1rem;
     border-bottom: 1px solid #ccc;
+    display: flex;
 
     &:nth-child(2n+1) {
       .fm-wrap {
@@ -188,6 +189,10 @@
     padding-bottom: 1rem;
     border-bottom: 1px solid #ccc;
   }
+}
+
+.fn-wrap {
+  width: 100%;
 }
 
 .fn-image {
