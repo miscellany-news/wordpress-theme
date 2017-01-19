@@ -138,6 +138,8 @@
 
 /* Front Medium */
 .fm-article {
+  display: flex;
+
   &:not(:last-child) {
     padding-bottom: 1rem;
     border-bottom: 1px solid #ccc;
@@ -191,7 +193,7 @@
 .fn-image {
   width: 6rem;
   float: right;
-  padding: .5rem 0 0 .5rem;
+  padding: 0 0 0 .5rem;
 }
 
 .fn-title {
@@ -211,6 +213,9 @@
   .fn-article {
     width: 33.33333333333333%;
     border-bottom: 1px solid #ccc;
+    display: flex;
+    padding-bottom: 1rem;
+
     .fn-wrap {
       padding-left: 1rem;
       padding-right: 1rem;

@@ -2,7 +2,7 @@
 <main class="main-content front-main">
 
   <section class="front-section section-featured">
-    <h2 class="section-title screen-reader-text">Featured Articles</h2>
+    <h2 class="section-title section-title-hidden">Featured Articles</h2>
     <?php
     $args = array('posts_per_page' => 1, 'offset' => 0, 'tag' => 'slider');
     $loop = new WP_Query( $args );

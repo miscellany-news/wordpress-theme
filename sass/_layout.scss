@@ -82,5 +82,13 @@
   margin: 0 0 .6rem;
 }
 
+.section-title-hidden {
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
 /*,
 .widget:not(:first-child)::before */
