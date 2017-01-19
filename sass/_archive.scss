@@ -68,21 +68,43 @@
 */
 
 .archive-pagination {
-  display: flex;
-  justify-content: space-between;
-
-  a {
+  a,
+  .page-numbers {
     padding: .3rem .5rem;
     font-size: .9rem;
     border: 1px solid #ccc;
     text-decoration: none;
     color: $text-color;
-
-    &:hover {
-      border: 1px solid #666;
-      color: #000;
-    }
   }
+
+  a:hover {
+    border: 1px solid #666;
+    color: #000;
+  }
+
+  &:after {
+    content: " "; /* Older browser do not support empty content */
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+  }
+
+  .current {
+    background-color: #eee;
+  }
+}
+
+.pagination-center {
+  text-align: center;
+}
+
+.pagination-left {
+  float: left;
+}
+
+.pagination-right {
+  float: right;
 }
 
 .archive-featured {

@@ -24,7 +24,12 @@
     </div>
 
     <div class="archive-pagination">
-      <?php posts_nav_link( ' ' ); ?>
+      <div class="pagination-left">
+        <?php previous_posts_link( '&laquo; Previous Entries' ); ?>
+      </div>
+      <div class="pagination-right">
+        <?php next_posts_link( 'Next Entries &raquo;', '' ); ?>
+      </div>
     </div>
   <?php
   else: // No content found
