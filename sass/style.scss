@@ -1,11 +1,11 @@
 /*!
 Theme Name: The Miscellany News
 Theme URI: http://www.miscellanynews.org/
-Author: George Witteman & The Miscellany News
+Author: George Witteman
 Author URI: http://www.georgewitteman.me/
 Description: This is the official theme for Vassar's student newspaper, The Miscellany News.
 Tags: news
-Version: 0.8.1
+Version: 0.9.0
 License: GNU General Public License v3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: the-miscellany-news
@@ -14,10 +14,10 @@ Text Domain: the-miscellany-news
 /* GLOBAL VARIABLES */
 
 /* Fonts */
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i');
+@import url('//fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i');
 $sans-serif: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
-@import url('https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i');
+@import url('//fonts.googleapis.com/css?family=Lora:400,400i,700,700i');
 $serif: 'Lora', Georgia, serif;
 
 $base-line-height: 1.6;
