@@ -54,8 +54,8 @@ add_action( 'init', 'miscellanynews_register_menu' );
  */
 function miscellanynews_scripts() {
   /* Add main Stylesheet */
-	wp_enqueue_style("core", get_stylesheet_uri() );
-	wp_enqueue_script("menu", get_template_directory_uri() . '/js/menu.js');
+	wp_enqueue_style('core', get_stylesheet_uri() );
+	wp_enqueue_script('menu', get_template_directory_uri() . '/js/menu.js');
 }
 add_action("wp_enqueue_scripts", "miscellanynews_scripts");
 
@@ -73,7 +73,27 @@ function miscellanynews_cleanup_head() {
   remove_action( 'wp_head', 'rel_canonical', 10, 0 ); // Canonical
   remove_action( 'wp_head', 'wp_shortlink_wp_head', 10, 0 ); // Shortlink
   remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 ); // Links for adjacent posts
-  remove_action( 'wp_head', 'wp_generator' ); // WP version
+  //remove_action( 'wp_head', 'wp_generator' ); // WP version
+
+  // all actions related to emojis
+  remove_action( 'admin_print_styles', 'print_emoji_styles' );
+  remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+  remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+  remove_action( 'wp_print_styles', 'print_emoji_styles' );
+  remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
+  remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
+  remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
+  add_filter( 'emoji_svg_url', '__return_false' ); // DNS Prefetch
+
+  // filter to remove TinyMCE emojis
+  add_filter( 'tiny_mce_plugins', 'disable_emojicons_tinymce' );
+}
+function disable_emojicons_tinymce( $plugins ) {
+  if ( is_array( $plugins ) ) {
+    return array_diff( $plugins, array( 'wpemoji' ) );
+  } else {
+    return array();
+  }
 }
 function miscellanynews_start_cleanup() {
   add_action('init', 'miscellanynews_cleanup_head'); // Initialize the cleanup
@@ -157,3 +177,8 @@ require_once('inc/template-tags.php');
  * Include meta boxes
  */
 require_once('inc/meta-boxes.php');
+
+/**
+ * Theme Options
+ */
+require_once('inc/theme-options.php');
