@@ -4,7 +4,7 @@
 <footer class="site-footer">
   <div class="footer-top-section">
     <a href="#" class="footer-home-link">
-      <img src="<?php echo get_template_directory_uri() . '/img/logo-black.svg'?>" class="footer-logo" alt="The Miscellany News">
+      <img src="<?php echo get_template_directory_uri() . '/img/logo-black.svg'?>" class="footer-logo" alt="The Miscellany News" width="224" height="24">
     </a>
 
     <div id="footer-search-form" class="footer-search-form">

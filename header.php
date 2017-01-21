@@ -19,7 +19,7 @@
       <h1 class="site-name">
         <a class="site-title" href="<?php echo esc_url( home_url( '/' ) );?>">
           <span class="screen-reader-text">The Miscellany News</span>
-          <img src="<?php echo get_template_directory_uri() . '/img/logo-white.svg'?>" class="site-logo" alt="The Misellany News Logo">
+          <img src="<?php echo get_template_directory_uri() . '/img/logo-white.svg'?>" class="site-logo" alt="The Misellany News Logo" width="738" height="81">
         </a>
       </h1>
       <p class="site-subheading">
