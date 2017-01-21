@@ -3,9 +3,6 @@
  * Register support for theme features
  */
 function miscellanynews_setup() {
-  // Add default posts and comments RSS feed links to head.
-  add_theme_support( 'automatic-feed-links' );
-
   // Let WordPress manage the document title. Don't hard code <title> tag.
   add_theme_support( 'title-tag' );
 
@@ -16,11 +13,6 @@ function miscellanynews_setup() {
     'comment-list',
     'gallery',
     'caption',
-  ) );
-
-  // Add support for custom background color and images
-  add_theme_support( 'custom-background', array(
-    'default-color' => 'FFFFFF',
   ) );
 
   // Add theme support for featured images
@@ -45,7 +37,7 @@ function miscellanynews_register_menu() {
   register_nav_menu( 'site-navigation', 'Main Navigation' );
   register_nav_menu( 'copyright-menu', 'Copyright Navigation' );
   register_nav_menu( 'site-social', 'Social Media Navigation' );
-  register_nav_menu( 'site-other', 'Other Navigation (Footer)' );
+  register_nav_menu( 'site-other', 'Footer Navigation' );
 }
 add_action( 'init', 'miscellanynews_register_menu' );
 
@@ -180,5 +172,11 @@ require_once('inc/meta-boxes.php');
 
 /**
  * Theme Options
+ * Now using the customizer
  */
-require_once('inc/theme-options.php');
+//require_once('inc/theme-options.php');
+
+/**
+ * Customizer
+ */
+require_once('inc/customizer.php');

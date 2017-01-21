@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-  <meta charset="<?php bloginfo( 'charset' ); ?>">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
-  <?php wp_head(); ?>
-  <?php $theme_options = get_option( 'miscellanynews_settings' ); ?>
-  <?php echo $theme_options['miscellanynews_analytics_code']; ?>
+<meta charset="<?php bloginfo( 'charset' ); ?>">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
+<?php wp_head(); ?>
+<?php echo get_theme_mod( 'analytics_code', '' ); ?>
+
 </head>
 <body <?php body_class(); ?>>
 <div class="site-container">
@@ -14,17 +14,16 @@
   <!-- Site header -->
   <header class="site-header">
 
-
     <div class="header-container">
       <!-- The Miscellany News logo -->
       <h1 class="site-name">
         <a class="site-title" href="<?php echo esc_url( home_url( '/' ) );?>">
           <span class="screen-reader-text">The Miscellany News</span>
-          <img src="<?php echo get_template_directory_uri() . '/img/logo.svg'?>" class="site-logo" alt="The Misellany News Logo">
+          <img src="<?php echo get_template_directory_uri() . '/img/logo-white.svg'?>" class="site-logo" alt="The Misellany News Logo">
         </a>
       </h1>
       <p class="site-subheading">
-        Vassar College's student newspaper of record since 1866
+        <?php echo get_theme_mod( 'site_subheading', '' ); ?>
       </p>
       <a href="#footer-search-form" id="header-search-show" class="head-search-button"></a>
     </div>

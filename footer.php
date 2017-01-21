@@ -3,7 +3,9 @@
 <!-- Site footer -->
 <footer class="site-footer">
   <div class="footer-top-section">
-    <a href="#" class="footer-home-link"><img src="<?php echo get_template_directory_uri() . '/img/logo-black-svg.svg'?>" class="footer-logo" alt="The Miscellany News"></a>
+    <a href="#" class="footer-home-link">
+      <img src="<?php echo get_template_directory_uri() . '/img/logo-black.svg'?>" class="footer-logo" alt="The Miscellany News">
+    </a>
 
     <div id="footer-search-form" class="footer-search-form">
       <?php get_search_form(); ?>
