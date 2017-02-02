@@ -1,4 +1,41 @@
 <?php
+function miscellanynews_filter_manage_posts_custom_column( $column, $post_id ) {
+  if ($column == 'miscauthors'){
+    global $post;
+  	$custom_author = get_post_meta($post->ID, 'author', TRUE);
+  	if($custom_author)
+  		echo $custom_author;
+  	else {
+    	$authors = get_coauthors( $post->ID );
+    	$count = 1;
+    	foreach ( $authors as $author ) {
+    		$args = array( 'author_name' => $author->user_nicename );
+    		$author_filter_url = add_query_arg( array_map( 'rawurlencode', $args ), admin_url( 'edit.php' ) );
+    		echo '<a href="' . esc_url( $author_filter_url ). '">' . esc_html( $author->display_name ). '</a>';
+        if($count < count($authors)) {
+          echo ', ';
+        }
+    		$count++;
+    	}
+    }
+  }
+}
+add_action( 'manage_posts_custom_column', 'miscellanynews_filter_manage_posts_custom_column');
+
+function add_miscauthors_column($columns) {
+  $new_columns = array();
+
+	foreach ( $columns as $key => $value ) {
+		$new_columns[ $key ] = $value;
+		if ( 'title' === $key ) {
+			$new_columns['miscauthors'] = __( 'Authors' );
+		}
+	}
+  unset($new_columns['coauthors']);
+  
+	return $new_columns;
+}
+add_filter('manage_posts_columns' , 'add_miscauthors_column', 20);
 
 
 /**
