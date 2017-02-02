@@ -1,9 +1,16 @@
+<!--
+Hi, Thanks for checking out the source. The theme for this site was made primarily by George Witteman (www.georgewitteman.me).
+-->
+
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
+
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000">
+
 <?php wp_head(); ?>
 <?php echo get_theme_mod( 'analytics_code', '' ); ?>
 
@@ -40,8 +47,6 @@
           'theme_location' => 'site-navigation',
           'container' => '',
           'menu_class' => 'hn-menu',
-          //'link_before' => '<span>',
-          //'link_after' => '</span>',
           'menu_id' => 'hn-menu'
         ));
         ?>
