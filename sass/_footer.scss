@@ -8,7 +8,7 @@
   width: 100%;
   margin: 0 auto;
 
-  &:before {
+  &::before {
     box-sizing: content-box;
     content: '';
     display: block;
