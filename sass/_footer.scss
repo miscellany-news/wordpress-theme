@@ -1,7 +1,7 @@
 /*
  * Footer Stylesheet
  */
- 
+
 .site-footer {
   padding: 1rem;
   max-width: $max-width;
@@ -19,6 +19,9 @@
     margin-bottom: .5rem;
     background-color: #fff;
     margin-top: 0;
+  }
+  @media (max-width: $break-nav) {
+    max-width: 36rem;
   }
 }
 
