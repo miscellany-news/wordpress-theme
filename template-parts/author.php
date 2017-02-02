@@ -4,7 +4,6 @@ global $curauth; // Use $curauth variable set in author.php
 $author_name = $curauth->display_name;
 $author_description = $curauth->description;
 $author_website = $curauth->website;
-$author_email = $curauth->user_email;
 
 ?>
 
@@ -16,7 +15,7 @@ $author_email = $curauth->user_email;
     </p>
   <?php endif; ?>
 
-<?php if( $author_website || $author_email ) : ?>
+<?php if( $author_website ) : ?>
 
   <ul class="author-links">
   <?php if ( $author_website ) : ?>

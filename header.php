@@ -30,7 +30,7 @@ Hi, Thanks for checking out the source. The theme for this site was made primari
         </a>
       </h1>
       <p class="site-subheading">
-        <?php echo get_theme_mod( 'site_subheading', '' ); ?>
+        <?php echo get_theme_mod( 'site_subheading', 'Vassar College\'s student newspaper of record since 1866' ); ?>
       </p>
       <a href="#footer-search-form" id="header-search-show" class="head-search-button"></a>
     </div>
