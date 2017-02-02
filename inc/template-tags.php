@@ -28,7 +28,7 @@ function add_miscauthors_column($columns) {
 	foreach ( $columns as $key => $value ) {
 		$new_columns[ $key ] = $value;
 		if ( 'title' === $key ) {
-			$new_columns['miscauthors'] = __( 'Authors' );
+			$new_columns['miscauthors'] = __( 'Author(s)' );
 		}
 	}
   unset($new_columns['coauthors']);
