@@ -70,6 +70,10 @@
 
 .post-author {
   font-weight: bold;
+
+  span {
+    text-transform: uppercase;
+  }
   a {
     color: $text-color;
     font-weight: bold;

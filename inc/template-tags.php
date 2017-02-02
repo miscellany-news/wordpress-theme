@@ -54,7 +54,7 @@ function miscellanynews_get_author_link( $author_page = false ) {
   $custom_author = get_post_meta(get_the_ID(), 'author', true);
 
   if($custom_author && !$author_page) {
-    echo $custom_author; // Has "author" custom field
+    echo '<span>' . $custom_author . '</span>'; // Has "author" custom field
   } elseif (function_exists('coauthors_posts_links')) {
     coauthors_posts_links(); // "Co-Authors Plus" plugin
   } else {

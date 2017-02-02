@@ -40,7 +40,7 @@
 
 .archive-pagination {
   margin-bottom: 2rem;
-  
+
   a,
   .page-numbers {
     padding: .3rem .5rem;
@@ -120,6 +120,11 @@
   font-size: .8em;
   color: #999;
   margin: .25rem 0 0;
+
+  span {
+    color: #999;
+    text-transform: uppercase;
+  }
 
   a {
     color: #999;
