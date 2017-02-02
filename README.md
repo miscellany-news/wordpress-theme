@@ -15,3 +15,6 @@ The plugin "WP Pusher" will automatically download from Github any new code push
 
 ## Plugins (recommended usage)
 To be completed...
+
+## Authors
+Authors should be set using co-authors plugin first. If there is no guest author or user, then use "Custom Author Byline" meta-box.

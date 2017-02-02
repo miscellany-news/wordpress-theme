@@ -171,12 +171,6 @@ require_once('inc/template-tags.php');
 require_once('inc/meta-boxes.php');
 
 /**
- * Theme Options
- * Now using the customizer
- */
-//require_once('inc/theme-options.php');
-
-/**
  * Customizer
  */
 require_once('inc/customizer.php');
