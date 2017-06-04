@@ -126,19 +126,19 @@ add_action( 'widgets_init', 'miscellanynews_widgets_init' );
  * Custom login page header
  */
 function miscellanynews_login_head() {
-echo "
-	<style>
-	body.login #login h1 a {
-		background: url('". get_theme_file_uri( 'img/logo-icon.png' ) ."') no-repeat scroll center top transparent;
-    background-size: 90px 90px;
-    border-radius: 10px;
-		height: 90px;
-		width: 90px;
-    outline: none;
-    border: none;
-    box-shadow: none;
-	}
-	</style>";
+  echo "
+    <style>
+    body.login #login h1 a {
+      background: url('". get_theme_file_uri( 'img/logo-icon.png' ) ."') no-repeat scroll center top transparent;
+      background-size: 90px 90px;
+      border-radius: 10px;
+      height: 90px;
+      width: 90px;
+      outline: none;
+      border: none;
+      box-shadow: none;
+    }
+    </style>";
 }
 add_action("login_head", "miscellanynews_login_head");
 function miscellanynews_login_logo_url() {
@@ -164,11 +164,6 @@ add_filter( 'get_the_archive_title', function ($title) {
  * Template Tags (custom theme functions that output small html
  */
 require_once('inc/template-tags.php');
-
-/**
- * Include meta boxes
- */
-require_once('inc/meta-boxes.php');
 
 /**
  * Customizer
