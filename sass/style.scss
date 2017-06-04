@@ -24,7 +24,7 @@ $base-line-height: 1.6;
 
 /* Widths */
 $min-width: 20rem; /* 320px / 16px */
-$max-width: 63.5rem; /* 1024px / 16px */
+$max-width: 61.25rem; /* 1024px / 16px */
 
 /* Breakpoints */
 $break-tiny: 26rem;
@@ -69,8 +69,8 @@ body {
   // Lots of discussion on whether the two following properties are necessary
   // See: https://bugs.chromium.org/p/chromium/issues/detail?id=152304
   // See: http://usabilitypost.com/2012/11/05/stop-fixing-font-smoothing/
-  // -webkit-font-smoothing: antialiased;
-  // -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .site-container {
