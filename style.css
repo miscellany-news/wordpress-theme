@@ -466,7 +466,7 @@ a img.alignnone {
 
 .wp-caption-text {
   display: block;
-  font-family: -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: .75em;
   line-height: 1.3;
   color: #6e6e6e;
@@ -511,13 +511,11 @@ html {
 
 body {
   color: #222;
-  font-family: -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Georgia, serif;
   line-height: 1.6;
   background-color: #fff;
   -ms-word-wrap: break-word;
-  word-wrap: break-word;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
+  word-wrap: break-word; }
 
 .site-container {
   position: relative;
@@ -844,7 +842,7 @@ table tr td {
 
 .hn-menu a {
   color: #222;
-  font-family: -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 0.95em;
   line-height: 1;
   display: inline-block;
@@ -853,14 +851,14 @@ table tr td {
   padding-right: 0.625rem;
   line-height: 2.4rem; }
   .hn-menu a:hover {
-    text-decoration: underline; }
+    background-color: #eee; }
 
 .hn-mobile-show {
   position: relative;
   z-index: 2;
   display: none;
   font-size: .95em;
-  font-family: -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: bold;
   text-transform: uppercase;
   line-height: 2;
@@ -942,7 +940,7 @@ table tr td {
       flex-basis: 100%; } }
 
 .foot-copyright {
-  font-family: -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin-top: 2rem;
   border-top: 1px solid #e2e2e2;
   padding-top: 0.5625rem;
@@ -1002,7 +1000,7 @@ table tr td {
 
 .foot-nav-title {
   font-size: .95em;
-  font-family: -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin-bottom: .5rem;
   margin-top: 0; }
 
@@ -1031,7 +1029,7 @@ table tr td {
 .search-form {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   position: relative; }
 
 .search-input {
@@ -1058,7 +1056,7 @@ table tr td {
   cursor: pointer; }
 
 .textwidget {
-  font-family: -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: .82em;
   line-height: 1.4; }
 
@@ -1104,7 +1102,7 @@ table tr td {
     display: block; }
 
 .front-category {
-  font-family: -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   margin: 0;
   font-size: 0.75em;
@@ -1554,7 +1552,7 @@ table tr td {
 
 .comment .respond {
   font-size: .8em;
-  font-family: -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
   .comment .respond a {
     color: #888;
     text-decoration: none; }
