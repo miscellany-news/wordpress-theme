@@ -515,7 +515,9 @@ body {
   line-height: 1.6;
   background-color: #fff;
   -ms-word-wrap: break-word;
-  word-wrap: break-word; }
+  word-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
 
 .site-container {
   position: relative;

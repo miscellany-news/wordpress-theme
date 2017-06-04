@@ -66,9 +66,11 @@ body {
   background-color: $color-page-background;
   -ms-word-wrap: break-word;
   word-wrap: break-word;
-  // Not sure yet if we need this...
-  // -webkit-font-smoothing: antialiased;
-  // -moz-osx-font-smoothing: grayscale;
+  // Lots of discussion on whether the two following properties are necessary
+  // See: https://bugs.chromium.org/p/chromium/issues/detail?id=152304
+  // See: http://usabilitypost.com/2012/11/05/stop-fixing-font-smoothing/
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .site-container {
