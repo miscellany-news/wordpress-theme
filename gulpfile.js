@@ -17,6 +17,10 @@ gulp.task('dev', function() {
     .pipe(gulp.dest('./'));
 });
 
+gulp.task('devwatch', function() {
+  gulp.watch(['./**/*.scss'], ['dev']);
+});
+
 gulp.task('default',function() {
   gulp.watch(['./**/*.scss'],['sass']);
 });

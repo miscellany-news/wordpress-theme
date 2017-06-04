@@ -7,8 +7,9 @@
     "url": "git+https://github.com/georgewitteman/themiscellanynews.git"
   },
   "scripts": {
-    "gulp": "gulp",
-    "dev": "gulp dev"
+    "sass": "gulp sass",
+    "dev": "gulp dev",
+    "watch": "gulp devwatch"
   },
   "license": "GPL-3.0",
   "author": "George Witteman",
