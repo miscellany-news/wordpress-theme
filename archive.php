@@ -24,12 +24,7 @@
     </div>
 
     <div class="archive-pagination">
-      <div class="pagination-left">
-        <?php previous_posts_link( '&laquo; Previous Page' ); ?>
-      </div>
-      <div class="pagination-right">
-        <?php next_posts_link( 'Next Page &raquo;', '' ); ?>
-      </div>
+      <?php paginate_links() ?>
     </div>
   <?php
   else: // No content found
