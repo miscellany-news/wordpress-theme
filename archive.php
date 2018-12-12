@@ -24,7 +24,7 @@
     </div>
 
     <div class="archive-pagination">
-      <?php paginate_links() ?>
+      <?php echo paginate_links() ?>
     </div>
   <?php
   else: // No content found
