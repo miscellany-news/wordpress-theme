@@ -15,7 +15,7 @@
 
     <p class="front-author fl-author">By <?php miscellanynews_get_author_link(); ?></p>
 
-    <p class="front-excerpt fl-excerpt"><?php miscellanynews_the_excerpt_limit(20); ?></p>
+    <p class="front-excerpt fl-excerpt"><?php miscellanynews_the_excerpt_limit(40); ?></p>
 
   </div>
 
