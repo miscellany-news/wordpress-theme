@@ -73,6 +73,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+// text selection color
+::-moz-selection, ::selection {
+  background-color: #7E0308;
+  color: #ffffff;
+}
+
 .site-container {
   position: relative;
   min-width: $min-width;
