@@ -36,7 +36,7 @@
     <h2 class="section-title"><a href="<?php echo $category_link; ?>">Features</a></h2>
     <div class="grid">
       <?php
-      $args = array('posts_per_page' => 6, 'offset' => 0, 'category_name' => 'features');
+      $args = array('posts_per_page' => 3, 'offset' => 0, 'category_name' => 'features');
       $loop = new WP_Query( $args );
       while ($loop->have_posts()) : $loop->the_post();
         get_template_part('template-parts/front');
