@@ -74,7 +74,12 @@ body {
 }
 
 // text selection color
-::-moz-selection, ::selection {
+::selection {
+  background-color: #7E0308;
+  color: #ffffff;
+}
+
+::-moz-selection {
   background-color: #7E0308;
   color: #ffffff;
 }
