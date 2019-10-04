@@ -13,9 +13,10 @@
   },
   "license": "GPL-3.0",
   "author": "George Witteman",
-  "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-clean-css": "^3.4.1",
-    "gulp-sass": "^3.1.0"
+  "devDependencies": {},
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-sass": "^4.0.2"
   }
 }
