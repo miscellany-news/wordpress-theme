@@ -48,8 +48,13 @@
 
 .side-article {
   width: 100%;
+
+  .fn-wrap {
+    border: none !important;
+  }
 }
 
 .side-image img {
   margin: 0 auto;
+  display: block;
 }
