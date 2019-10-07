@@ -104,6 +104,14 @@ function miscellanynews_widgets_init() {
 		'description'   => 'Main global sidebar',
     'before_widget' => '<div class="widget">',
     'after_widget' => '</div>',
+  ));
+  
+  register_sidebar( array(
+		'id'            => 'above-opinions',
+		'name'          => 'Above Opinions Sidebar',
+		'description'   => 'The portion of sidebar above opinions section',
+    'before_widget' => '<div class="widget">',
+    'after_widget' => '</div>',
 	));
 
   register_sidebar ( array(
