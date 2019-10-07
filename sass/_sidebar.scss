@@ -5,6 +5,12 @@
 .widget {
   margin-bottom: 1rem;
   width: 100%;
+
+  .search-form {
+    @media(max-width: $break-medium) {
+      display: none;
+    }
+  }
 }
 
 /* Search */
