@@ -50,7 +50,7 @@ function miscellanynews_scripts() {
   /* Add main Stylesheet */
 	wp_enqueue_style('main', get_stylesheet_uri() );
   wp_enqueue_script('menu', get_template_directory_uri() . '/js/menu.js');
-  wp_enqueue_script('article-slider', get_template_directory_uri() . '/js/slider.js');
+  wp_enqueue_script('article-slider', get_template_directory_uri() . '/js/article-slider.js');
 }
 add_action("wp_enqueue_scripts", "miscellanynews_scripts");
 

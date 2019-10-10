@@ -1,4 +1,4 @@
-window.onload = function() {
+document.addEventListener("DOMContentLoaded", function() {
   const frontArticles = document.getElementsByClassName("fl-article");
   const sliderDots = [];
   const articleCount = frontArticles.length;
@@ -31,4 +31,4 @@ window.onload = function() {
   setInterval(() => {
     switchTo(currentArticle+1);
   }, 5000);
-}
+});
