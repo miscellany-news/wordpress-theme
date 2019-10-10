@@ -65,8 +65,6 @@
   font-family: $serif;
   font-weight: bold;
   margin: 0;
-  letter-spacing: 0.01em;
-  word-spacing: -0.1em;
   color: $text-color;
 }
 
@@ -114,10 +112,15 @@
     border-bottom: 1px solid #ccc;
   }
 
+  display: none;
+}
+
+.fl-article-visible {
+
+  display: block;
   @media (min-width: 55rem) {
     display: flex;
   }
-
 }
 
 .fl-image {
@@ -130,9 +133,6 @@
     flex-grow: 0;
     flex-shrink: 0;
   }
-}
-
-.fl-content {
 }
 
 .fl-title {
@@ -250,4 +250,21 @@
     padding: 0;
     padding-bottom: .3rem;
   }
+}
+
+.slider-dot-container {
+  display: flex;
+  margin: 0 auto;
+
+  .slider-dot-active {
+    background: #7e0308;
+  }
+}
+
+.slider-dot {
+  background: #000000;
+  width: 1em;
+  height: 1em;
+  margin: 0.25em;
+  border-radius: 50%;
 }

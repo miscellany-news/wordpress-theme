@@ -2,15 +2,28 @@
 <main class="main-content front-main">
 
   <section class="front-section section-featured">
-    <h2 class="section-title section-title-hidden">Featured Articles</h2>
-    <?php
-    $args = array('posts_per_page' => 1, 'offset' => 0, 'tag' => 'slider');
-    $loop = new WP_Query( $args );
+    <article class="front-article fl-article fl-article-visible">
+      <h2 class="section-title section-title-hidden">Featured Articles</h2>
+      <?php
+      $args = array('posts_per_page' => 1, 'offset' => 0, 'tag' => 'slider');
+      $loop = new WP_Query( $args );
 
-    while ($loop->have_posts()) : $loop->the_post();
-      get_template_part('template-parts/front', 'large');
-    endwhile; wp_reset_postdata();
+      while ($loop->have_posts()) : $loop->the_post();
+        get_template_part('template-parts/front', 'large');
+      endwhile; wp_reset_postdata();
     ?>
+    </article>
+    <article class="front-article fl-article">
+      <h2 class="section-title section-title-hidden">Featured Articles</h2>
+      <?php
+      $args = array('posts_per_page' => 4, 'offset' => 1, 'tag' => 'slider');
+      $loop = new WP_Query( $args );
+
+      while ($loop->have_posts()) : $loop->the_post();
+        get_template_part('template-parts/front', 'large');
+      endwhile; wp_reset_postdata();
+    ?>
+    </article>
   </section>
 
   <?php if ( is_active_sidebar( 'front-ad-area' ) ) : ?>
