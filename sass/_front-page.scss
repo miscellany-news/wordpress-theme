@@ -19,7 +19,8 @@
 
 .section-featured {
   margin-bottom: 1rem;
-  display: flex;
+  grid-template-columns: 1rem;
+  display: grid;
   flex-wrap: wrap;
 }
 
@@ -114,16 +115,19 @@
     border-bottom: 1px solid #ccc;
   }
 
-  display: none;
-}
-
-.fl-article-visible {
-
   display: block;
+  opacity: 0;
   @media (min-width: 55rem) {
     display: flex;
   }
+
+  grid-row-start: 1;
+  grid-column-start: 1;
+}
+
+.fl-article-visible {
   animation: fadeIn 1s linear;
+  opacity: 1;
 }
 
 .fl-image {
