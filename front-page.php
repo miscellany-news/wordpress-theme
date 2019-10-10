@@ -13,17 +13,16 @@
       endwhile; wp_reset_postdata();
     ?>
     </article>
-    <article class="front-article fl-article">
-      <h2 class="section-title section-title-hidden">Featured Articles</h2>
       <?php
       $args = array('posts_per_page' => 4, 'offset' => 1, 'tag' => 'slider');
       $loop = new WP_Query( $args );
 
       while ($loop->have_posts()) : $loop->the_post();
+        echo '<article class="front-article fl-article">';
         get_template_part('template-parts/front', 'large');
+        echo '</article>';
       endwhile; wp_reset_postdata();
     ?>
-    </article>
   </section>
 
   <?php if ( is_active_sidebar( 'front-ad-area' ) ) : ?>
