@@ -153,7 +153,7 @@
 
 .hn-menu {
   a {
-    color: $text-color;
+    color: white;
     font-family: $sans-serif;
     font-size: 0.95em;
     line-height: 1;
@@ -178,7 +178,7 @@
   font-weight: bold;
   text-transform: uppercase;
   line-height: 2;
-  color: $text-color;
+  color: $navbar-color;
   text-decoration: none;
 
   @media (max-width: $break-nav) {
@@ -187,7 +187,6 @@
 }
 
 .menu-active .hn-mobile-show {
-  box-shadow: rgb(170, 170, 170) 3px 3px 10px 0px;
   border-bottom: 1px solid #91292d;
 }
 
@@ -207,7 +206,7 @@
       width: 100%;
       line-height: 2rem;
       padding: 0;
-      color: white;
+      color: $navbar-color;
     }
 
     a:hover {

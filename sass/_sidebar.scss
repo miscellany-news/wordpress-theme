@@ -52,11 +52,13 @@
   line-height: 1.4;
 }
 
-.side-article {
-  width: 100%;
+.grid {
+  .side-article {
+    width: 100%;
 
-  .fn-wrap {
-    border: none !important;
+    .fn-wrap {
+      border: none !important;
+    }
   }
 }
 
