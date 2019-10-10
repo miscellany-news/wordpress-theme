@@ -1,4 +1,4 @@
-document.onload = function() {
+window.onload = function() {
   const frontArticles = document.getElementsByClassName("fl-article");
   const sliderDots = [];
   const articleCount = frontArticles.length;
