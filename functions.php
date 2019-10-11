@@ -35,7 +35,7 @@ add_action( 'after_setup_theme', 'miscellanynews_setup' );
  */
 function miscellanynews_register_menu() {
   register_nav_menu( 'site-sections', 'Sections Navigation' );
-	register_nav_menu( 'site-blogs', 'Blogs Navigation' );
+  register_nav_menu( 'site-blogs', 'Blogs Navigation' );
   register_nav_menu( 'site-navigation', 'Main Navigation' );
   register_nav_menu( 'copyright-menu', 'Copyright Navigation' );
   register_nav_menu( 'site-social', 'Social Media Navigation' );
@@ -45,9 +45,10 @@ add_action( 'init', 'miscellanynews_register_menu' );
 
 /**
  * Enqueue scripts and styles.
- */
+ *//
 function miscellanynews_scripts() {
-  /* Add main Stylesheet */
+    /* Add main Stylesheet */
+  wp_enqueue_style('core', get_stylesheet_uri(), array(), filemtime(get_stylesheet_uri()));
   wp_enqueue_script('menu', get_template_directory_uri() . '/js/menu.js');
   wp_enqueue_script('article-slider', get_template_directory_uri() . '/js/article-slider.js');
 }
