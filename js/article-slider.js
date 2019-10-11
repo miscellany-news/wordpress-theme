@@ -2,7 +2,9 @@ document.addEventListener("DOMContentLoaded", function() {
   const frontArticles = document.getElementsByClassName("fl-article");
   const sliderDots = [];
   const articleCount = frontArticles.length;
-  var currentArticle = 0;
+
+  let mouseIn = false;
+  let currentArticle = 0;
 
   function switchTo(n) {
     const nextArticle = n % articleCount;
@@ -17,6 +19,9 @@ document.addEventListener("DOMContentLoaded", function() {
   const dotContainer = document.createElement("div");
   dotContainer.classList.add("slider-dot-container");
 
+  featuredContainer.onmouseover = () => mouseIn = true;
+  featuredContainer.onmouseleave = () => mouseIn = false;
+
   for (let i = 0; i < articleCount; i++) {
     let dot = document.createElement("div");
     dot.classList.add("slider-dot");
@@ -29,6 +34,6 @@ document.addEventListener("DOMContentLoaded", function() {
   featuredContainer.appendChild(dotContainer);
 
   setInterval(() => {
-    switchTo(currentArticle+1);
+    if (!mouseIn) switchTo(currentArticle+1);
   }, 5000);
 });
