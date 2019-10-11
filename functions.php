@@ -45,7 +45,7 @@ add_action( 'init', 'miscellanynews_register_menu' );
 
 /**
  * Enqueue scripts and styles.
- *//
+ */
 function miscellanynews_scripts() {
     /* Add main Stylesheet */
   wp_enqueue_style('core', get_stylesheet_uri(), array(), filemtime(get_stylesheet_uri()));
