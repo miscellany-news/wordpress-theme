@@ -101,6 +101,10 @@
 		padding: 0;
 	}
 
+	textarea, input {
+		width: 100%;
+	}
+
 	.required {
 		color: red;
 		vertical-align: super;
@@ -142,7 +146,12 @@
 	}
 }
 
-.comment-form-cookies-consent label {
-  display: inline;
-  margin: 0.3rem;
+.comment-form-cookies-consent {
+	label {
+  	display: inline;
+  	margin: 0.3rem;
+	}
+	input {
+		width: initial;
+	}
 }

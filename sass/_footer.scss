@@ -108,6 +108,7 @@
 .footer-navigation {
   display: grid;
   grid-auto-flow: column;
+  justify-content: space-between;
 
   @media (max-width: $break-medium) {
     grid-template-rows: 1fr 1fr;
