@@ -87,3 +87,10 @@
   padding-right: 1rem;
 }
 
+@media(min-width: $break-medium) {
+  .sidebar-single {
+    align-self: flex-start;
+    position: sticky;
+    top: 1em;
+  }
+}
