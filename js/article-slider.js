@@ -1,7 +1,15 @@
 document.addEventListener("DOMContentLoaded", function() {
+  const featuredContainer = document.getElementsByClassName("section-featured")[0];
+  const dotContainer = document.createElement("div");
   const frontArticles = document.getElementsByClassName("fl-article");
   const sliderDots = [];
   const articleCount = frontArticles.length;
+
+  if (!featuredContainer) return;
+  featuredContainer.onmouseover = () => mouseIn = true;
+  featuredContainer.onmouseleave = () => mouseIn = false;
+
+  dotContainer.classList.add("slider-dot-container");
 
   let mouseIn = false;
   let currentArticle = 0;
@@ -14,13 +22,6 @@ document.addEventListener("DOMContentLoaded", function() {
     sliderDots[nextArticle].classList.toggle("slider-dot-active")
     currentArticle = nextArticle;
   }
-  
-  const featuredContainer = document.getElementsByClassName("section-featured")[0];
-  const dotContainer = document.createElement("div");
-  dotContainer.classList.add("slider-dot-container");
-
-  featuredContainer.onmouseover = () => mouseIn = true;
-  featuredContainer.onmouseleave = () => mouseIn = false;
 
   for (let i = 0; i < articleCount; i++) {
     let dot = document.createElement("div");
