@@ -1,7 +1,7 @@
-<?php if ( is_single() ) : ?>
-	<aside class="main-sidebar sidebar-single">
-<?php else : ?>
+<?php if ( is_front_page() ) : ?>
 	<aside class="main-sidebar">
+<?php else : ?>
+	<aside class="main-sidebar sidebar-single">
 <?php endif; ?>
 
 

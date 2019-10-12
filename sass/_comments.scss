@@ -115,3 +115,30 @@
 		width: auto;
 	}
 }
+
+.commentform .form-submit {
+	text-align: right;
+
+	input[type=submit] {
+		color: white;
+		background: #7e0308;
+		cursor: pointer;
+		border-radius: 0.5rem;
+		box-shadow: none;
+		border: none;
+		padding: 0.2rem 0.5rem;
+	}
+	
+	input[type=submit]:hover {
+		background: #730105;
+	}
+
+	textarea:focus {
+		border-color: #7e0308;
+	}
+
+	textarea {
+		color: initial;
+		padding: 0.2rem 0.5rem;
+	}
+}
