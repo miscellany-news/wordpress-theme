@@ -101,10 +101,6 @@
 		padding: 0;
 	}
 
-	textarea, input {
-		width: 100%;
-	}
-
 	.required {
 		color: red;
 		vertical-align: super;
@@ -116,8 +112,11 @@
 	}
 }
 
-.commentform .form-submit {
-	text-align: right;
+.comment-form {
+
+	.form-submit {
+		text-align: right;
+	}
 
 	input[type=submit] {
 		color: white;
@@ -133,12 +132,12 @@
 		background: #730105;
 	}
 
-	textarea:focus {
+	textarea:focus, input:focus {
 		border-color: #7e0308;
 	}
 
 	textarea {
 		color: initial;
-		padding: 0.2rem 0.5rem;
+		padding: 0.2rem 0.4rem;
 	}
 }
