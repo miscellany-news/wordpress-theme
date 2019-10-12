@@ -48,10 +48,8 @@
 
 .foot-copyright {
   font-family: $sans-serif;
-  margin-top: 2rem;
   border-top: 1px solid #e2e2e2;
   padding-top: 0.5625rem;
-  margin-bottom: 4rem;
   font-size: 0.6875em;
   line-height: 0.625rem;
   color: rgb(80, 80, 80);
@@ -108,21 +106,18 @@
 }
 
 .footer-navigation {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-auto-flow: column;
+
+  @media (max-width: $break-medium) {
+    grid-template-rows: 1fr 1fr;
+  }
+
 }
 
 .foot-nav-section {
-  width: 25%;
+  width: 100%;
   margin-bottom: 1.5rem;
-
-  @media (max-width: $break-medium) {
-    width: 50%;
-  }
-
-  @media (max-width: $break-small) {
-    width: 100%;
-  }
 }
 
 .foot-nav-title {
