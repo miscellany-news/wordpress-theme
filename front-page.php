@@ -40,7 +40,7 @@
     <h2 class="section-title"><a href="<?php echo $category_link; ?>">News</a></h2>
     <div class="grid">
       <?php
-      $args = array('posts_per_page' => 3, 'offset' => 0, 'category_name' => 'news');
+      $args = array('posts_per_page' => 3, 'offset' => 0, 'category_name' => 'news', 'tag__not_in' => array( 9 ) );
       $loop = new WP_Query( $args );
       while ($loop->have_posts()) : $loop->the_post();
         get_template_part('template-parts/front');
@@ -58,7 +58,7 @@
     <h2 class="section-title"><a href="<?php echo $category_link; ?>">Arts</a></h2>
     <div class="grid">
       <?php
-      $args = array('posts_per_page' => 3, 'offset' => 0, 'category_name' => 'arts');
+      $args = array('posts_per_page' => 3, 'offset' => 0, 'category_name' => 'arts', 'tag__not_in' => array( 9 ) );
       $loop = new WP_Query( $args );
       while ($loop->have_posts()) : $loop->the_post();
         get_template_part('template-parts/front');
@@ -76,7 +76,7 @@
     <h2 class="section-title"><a href="<?php echo $category_link; ?>">Features</a></h2>
     <div class="grid">
       <?php
-      $args = array('posts_per_page' => 3, 'offset' => 0, 'category_name' => 'features');
+      $args = array('posts_per_page' => 3, 'offset' => 0, 'category_name' => 'features', 'tag__not_in' => array( 9 ) );
       $loop = new WP_Query( $args );
       while ($loop->have_posts()) : $loop->the_post();
         get_template_part('template-parts/front');
@@ -95,7 +95,7 @@
     <h2 class="section-title"><a href="<?php echo $category_link; ?>">Sports</a></h2>
     <div class="grid">
       <?php
-      $args = array('posts_per_page' => 3, 'offset' => 0, 'category_name' => 'sports');
+      $args = array('posts_per_page' => 3, 'offset' => 0, 'category_name' => 'sports', 'tag__not_in' => array( 9 ) );
       $loop = new WP_Query( $args );
       while ($loop->have_posts()) : $loop->the_post();
         get_template_part('template-parts/front');
@@ -114,7 +114,7 @@
     <h2 class="section-title"><a href="<?php echo $category_link; ?>">Humor &amp; Satire</a></h2>
     <div class="grid">
       <?php
-      $args = array('posts_per_page' => 3, 'offset' => 0, 'category_name' => 'humor');
+      $args = array('posts_per_page' => 3, 'offset' => 0, 'category_name' => 'humor', 'tag__not_in' => array( 9 ) );
       $loop = new WP_Query( $args );
       while ($loop->have_posts()) : $loop->the_post();
         get_template_part('template-parts/front');
