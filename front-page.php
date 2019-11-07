@@ -67,13 +67,13 @@
     </div>
   </section>
 
-  <section class="front-section section-features">
+  <section class="front-section section-veterans-voices">
     <?php
     $idObj = get_category_by_slug('veterans-voices');
     $category_id = $idObj->term_id;
     $category_link = get_category_link( $category_id );
     ?>
-    <h2 class="section-title"><a href="<?php echo $category_link; ?>">Features</a></h2>
+    <h2 class="section-title"><a href="<?php echo $category_link; ?>">Veteran's Voices</a></h2>
     <div class="grid">
       <?php
       $args = array('posts_per_page' => 3, 'offset' => 0, 'category_name' => 'veterans-voices');
@@ -87,7 +87,7 @@
 
   <section class="front-section section-features">
     <?php
-    $idObj = get_category_by_slug('');
+    $idObj = get_category_by_slug('features');
     $category_id = $idObj->term_id;
     $category_link = get_category_link( $category_id );
     ?>
