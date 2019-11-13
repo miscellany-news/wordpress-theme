@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
     dot.onclick = () => switchTo(i);
     dotContainer.appendChild(dot);
   }
-  toggle(sliderDots[0], "slider-dot-active");
+  toggle(dotContainer.children[0], "slider-dot-active");
   featuredContainer.appendChild(dotContainer);
 
   setInterval(() => {
@@ -30,11 +30,11 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   function switchTo(n) {
-    const nextArticle = n % articleCount;
+    const nextArticle = n % dotContainer.children.length;
     toggle(frontArticles[currentArticle], "fl-article-visible");
     toggle(dotContainer.children[currentArticle], "slider-dot-active");
     toggle(frontArticles[nextArticle], "fl-article-visible");
-    toggle(sliderDots.children[nextArticle], "slider-dot-active")
+    toggle(dotContainer.children[nextArticle], "slider-dot-active")
 
     currentArticle = nextArticle;
   }
